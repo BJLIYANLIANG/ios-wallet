@@ -8,9 +8,11 @@
 
 import Foundation
 
+typealias AccountAddress = String
+
 struct Account: Codable {
 
-    let address: String
+    let address: AccountAddress
 }
 
 extension Account {

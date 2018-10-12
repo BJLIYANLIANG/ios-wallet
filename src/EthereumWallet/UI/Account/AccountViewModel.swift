@@ -42,7 +42,7 @@ class AccountViewModel: ViewModel<AccountController> {
     }
 
     override func loadData() -> NotifyCompletion {
-        load(task: accountsRepo.getAll()).notify { [weak self] in
+        load(task: accountsRepo.fetchAllAccounts()).notify { [weak self] in
             if $0.isSuccess {
                 self?.accounts = $0.result
             } else {
@@ -77,7 +77,7 @@ class AccountViewModel: ViewModel<AccountController> {
     }
 
     func createNewAccount() {
-        submit(task: accountsRepo.create(passphrase: "test passphrase")).notify { [weak self] in
+        submit(task: accountsRepo.createNewAccount(passphrase: "test passphrase")).notify { [weak self] in
             if $0.isSuccess {
                 let account = $0.result!
                 self?.accounts?.append(account)
@@ -92,7 +92,7 @@ class AccountViewModel: ViewModel<AccountController> {
         submit(task: view!.requetMnemonic().chainOnSuccess { [view] (textTask) in
             view!.reauetAccountIndex().map { (mnemonicText: textTask.result!, accountIndex: $0) }
         }.chainOnSuccess { [accountsRepo] (paramsTask) in
-            return accountsRepo.addDeterministicAccount(paramsTask.result!.mnemonicText,
+            return accountsRepo.createHDAccount(paramsTask.result!.mnemonicText,
                                                         mnemonicPassphrase: "",
                                                         keyIndex: paramsTask.result!.accountIndex,
                                                         accountPassphrase: "")
