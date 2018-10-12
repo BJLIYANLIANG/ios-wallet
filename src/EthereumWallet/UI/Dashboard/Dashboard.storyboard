@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="56c-O8-TgG">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Ssf-4z-nFs">
+            <objects>
+                <viewController id="56c-O8-TgG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pcr-D2-Zk9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KjW-LF-Q8H">
+                                <rect key="frame" x="16" y="44" width="343" height="734"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4b-MR-ZUg">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="350"/>
+                                        <subviews>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sdg-Q2-7Mh">
+                                                <rect key="frame" x="8" y="8" width="327" height="334"/>
+                                                <connections>
+                                                    <segue destination="jfJ-vU-5Aq" kind="embed" id="IsJ-Zp-Oeq"/>
+                                                </connections>
+                                            </containerView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.99607843139999996" green="0.16078431369999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Sdg-Q2-7Mh" firstAttribute="bottom" secondItem="B4b-MR-ZUg" secondAttribute="bottomMargin" id="Ctg-7K-Ghr"/>
+                                            <constraint firstItem="Sdg-Q2-7Mh" firstAttribute="leading" secondItem="B4b-MR-ZUg" secondAttribute="leadingMargin" id="cVQ-FH-oKt"/>
+                                            <constraint firstAttribute="height" constant="350" placeholder="YES" id="dR4-Md-62u"/>
+                                            <constraint firstItem="Sdg-Q2-7Mh" firstAttribute="top" secondItem="B4b-MR-ZUg" secondAttribute="topMargin" id="dbG-WR-I4u"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Sdg-Q2-7Mh" secondAttribute="trailing" id="xmi-B7-yLg"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3NN-7s-ZuQ">
+                                        <rect key="frame" x="0.0" y="358" width="343" height="376"/>
+                                        <subviews>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ECv-jI-zJz">
+                                                <rect key="frame" x="8" y="8" width="327" height="360"/>
+                                                <connections>
+                                                    <segue destination="0jx-oS-dd0" kind="embed" id="C7z-iQ-Ry2"/>
+                                                </connections>
+                                            </containerView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.16078431369999999" green="0.56862745100000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="ECv-jI-zJz" secondAttribute="trailing" id="2Zj-pU-FFB"/>
+                                            <constraint firstItem="ECv-jI-zJz" firstAttribute="leading" secondItem="3NN-7s-ZuQ" secondAttribute="leadingMargin" id="aNd-aX-cOj"/>
+                                            <constraint firstItem="ECv-jI-zJz" firstAttribute="top" secondItem="3NN-7s-ZuQ" secondAttribute="topMargin" id="v5u-6M-Gcy"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="ECv-jI-zJz" secondAttribute="bottom" id="yVc-B2-IoN"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="KjW-LF-Q8H" secondAttribute="trailing" id="O6m-u6-fym"/>
+                            <constraint firstItem="KjW-LF-Q8H" firstAttribute="leading" secondItem="pcr-D2-Zk9" secondAttribute="leadingMargin" id="SVA-RJ-nfs"/>
+                            <constraint firstItem="KjW-LF-Q8H" firstAttribute="top" secondItem="pcr-D2-Zk9" secondAttribute="topMargin" id="Y75-Hz-GSf"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="KjW-LF-Q8H" secondAttribute="bottom" id="hnG-Gt-OVV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ISz-Wa-XGx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eVx-7p-PjT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3182" y="-1886"/>
+        </scene>
+        <!--transactionsListController-->
+        <scene sceneID="7cx-JY-IOh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Transactions" referencedIdentifier="transactionsListController" id="0jx-oS-dd0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Met-KP-T2y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2356" y="-1690"/>
+        </scene>
+        <!--accountController-->
+        <scene sceneID="lrd-Zd-vLd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Account" referencedIdentifier="accountController" id="jfJ-vU-5Aq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Th-lh-z7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2394" y="-2082"/>
+        </scene>
+    </scenes>
+</document>

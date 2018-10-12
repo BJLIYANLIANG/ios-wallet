@@ -28,6 +28,12 @@
 		BA90CEC2216E13A000892462 /* JsonRPC+EthConverters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEC1216E13A000892462 /* JsonRPC+EthConverters.swift */; };
 		BA90CEC4216E373800892462 /* DeterministicAccountProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEC3216E373800892462 /* DeterministicAccountProvider.swift */; };
 		BA90CEC8216F7F4300892462 /* TrezorCryptoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEC7216F7F4300892462 /* TrezorCryptoHelper.swift */; };
+		BAA0FBDE2170F564000FEFCE /* TransactionHistostyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBDD2170F564000FEFCE /* TransactionHistostyRepository.swift */; };
+		BAA0FBE02170F669000FEFCE /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBDF2170F669000FEFCE /* Transaction.swift */; };
+		BAA0FBE42170FAF4000FEFCE /* TransactionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBE32170FAF4000FEFCE /* TransactionListController.swift */; };
+		BAA0FBE62170FB04000FEFCE /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBE52170FB04000FEFCE /* TransactionListViewModel.swift */; };
+		BAA0FBE8217103C6000FEFCE /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA0FBE7217103C6000FEFCE /* Dashboard.storyboard */; };
+		BAA0FBEA21710456000FEFCE /* Transactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA0FBE921710456000FEFCE /* Transactions.storyboard */; };
 		D298205C9BB74A34B73592AB /* Pods_EthereumWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C007EE49DBF447D9503B0E53 /* Pods_EthereumWallet.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +63,12 @@
 		BA90CEC1216E13A000892462 /* JsonRPC+EthConverters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JsonRPC+EthConverters.swift"; sourceTree = "<group>"; };
 		BA90CEC3216E373800892462 /* DeterministicAccountProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeterministicAccountProvider.swift; sourceTree = "<group>"; };
 		BA90CEC7216F7F4300892462 /* TrezorCryptoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrezorCryptoHelper.swift; sourceTree = "<group>"; };
+		BAA0FBDD2170F564000FEFCE /* TransactionHistostyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistostyRepository.swift; sourceTree = "<group>"; };
+		BAA0FBDF2170F669000FEFCE /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		BAA0FBE32170FAF4000FEFCE /* TransactionListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListController.swift; sourceTree = "<group>"; };
+		BAA0FBE52170FB04000FEFCE /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
+		BAA0FBE7217103C6000FEFCE /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		BAA0FBE921710456000FEFCE /* Transactions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Transactions.storyboard; sourceTree = "<group>"; };
 		C007EE49DBF447D9503B0E53 /* Pods_EthereumWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EthereumWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -109,6 +121,8 @@
 		BA90CE8C216BA6E200892462 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BAA0FBE22170F9DC000FEFCE /* Dashboard */,
+				BAA0FBE12170F9C0000FEFCE /* Transactions */,
 				BA90CE8F216BA70500892462 /* Account */,
 				BA90CEA9216BC37A00892462 /* UIExtensions.swift */,
 				BA90CEBD216DF97100892462 /* UIContants.swift */,
@@ -125,6 +139,7 @@
 				BA90CEC3216E373800892462 /* DeterministicAccountProvider.swift */,
 				BA90CEB9216CF13300892462 /* AccountRepository.swift */,
 				BA90CEBB216D16C900892462 /* AccountBalanceRepository.swift */,
+				BAA0FBDD2170F564000FEFCE /* TransactionHistostyRepository.swift */,
 				BA90CEBF216E137000892462 /* JsonRPC.swift */,
 				BA90CEC1216E13A000892462 /* JsonRPC+EthConverters.swift */,
 			);
@@ -134,9 +149,9 @@
 		BA90CE8F216BA70500892462 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				BA90CEB2216CE14D00892462 /* Account.storyboard */,
 				BA90CE98216BABD400892462 /* AccountViewModel.swift */,
 				BA90CE9A216BABF900892462 /* AccountController.swift */,
-				BA90CEB2216CE14D00892462 /* Account.storyboard */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -146,6 +161,7 @@
 			children = (
 				BA90CE9F216BAFBB00892462 /* User.swift */,
 				BA90CEAF216CB12800892462 /* Account.swift */,
+				BAA0FBDF2170F669000FEFCE /* Transaction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -157,6 +173,24 @@
 				BA90CEC7216F7F4300892462 /* TrezorCryptoHelper.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		BAA0FBE12170F9C0000FEFCE /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				BAA0FBE921710456000FEFCE /* Transactions.storyboard */,
+				BAA0FBE32170FAF4000FEFCE /* TransactionListController.swift */,
+				BAA0FBE52170FB04000FEFCE /* TransactionListViewModel.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		BAA0FBE22170F9DC000FEFCE /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				BAA0FBE7217103C6000FEFCE /* Dashboard.storyboard */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		D3E955FE5F3E342EE3CDA713 /* Pods */ = {
@@ -239,6 +273,8 @@
 				BA90CE85216BA44300892462 /* LaunchScreen.storyboard in Resources */,
 				BA90CEB3216CE14D00892462 /* Account.storyboard in Resources */,
 				BA90CE82216BA44300892462 /* Assets.xcassets in Resources */,
+				BAA0FBE8217103C6000FEFCE /* Dashboard.storyboard in Resources */,
+				BAA0FBEA21710456000FEFCE /* Transactions.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +336,7 @@
 			files = (
 				BA90CEC2216E13A000892462 /* JsonRPC+EthConverters.swift in Sources */,
 				BA90CEB0216CB12800892462 /* Account.swift in Sources */,
+				BAA0FBE42170FAF4000FEFCE /* TransactionListController.swift in Sources */,
 				BA90CE99216BABD400892462 /* AccountViewModel.swift in Sources */,
 				BA90CEAE216CAF5A00892462 /* Network.swift in Sources */,
 				BA90CEAA216BC37A00892462 /* UIExtensions.swift in Sources */,
@@ -311,7 +348,10 @@
 				BA90CEC8216F7F4300892462 /* TrezorCryptoHelper.swift in Sources */,
 				BA90CEB8216CEAE000892462 /* Logger.swift in Sources */,
 				BA90CEBE216DF97100892462 /* UIContants.swift in Sources */,
+				BAA0FBDE2170F564000FEFCE /* TransactionHistostyRepository.swift in Sources */,
+				BAA0FBE02170F669000FEFCE /* Transaction.swift in Sources */,
 				BA90CEB5216CE75400892462 /* GethAccountProvider.swift in Sources */,
+				BAA0FBE62170FB04000FEFCE /* TransactionListViewModel.swift in Sources */,
 				BA90CEAC216BC3E500892462 /* UtilsExtensions.swift in Sources */,
 				BA90CEBA216CF13300892462 /* AccountRepository.swift in Sources */,
 				BA90CEC0216E137000892462 /* JsonRPC.swift in Sources */,
