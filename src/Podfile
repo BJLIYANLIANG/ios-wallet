@@ -1,0 +1,11 @@
+platform :ios, '10.0'
+
+target 'EthereumWallet' do
+  	use_frameworks!
+
+    pod 'JetLib', :git => 'https://github.com/vbenkevich/ios_swift_utils.git', branch: 'develop'
+    pod 'DITranquillity'
+    pod 'Geth'
+    pod 'CryptoSwift'
+    pod 'TrezorCrypto'
+end

@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BA90CE7B216BA44300892462 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CE7A216BA44300892462 /* AppDelegate.swift */; };
+		BA90CE82216BA44300892462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA90CE81216BA44300892462 /* Assets.xcassets */; };
+		BA90CE85216BA44300892462 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA90CE83216BA44300892462 /* LaunchScreen.storyboard */; };
+		BA90CE97216BAA6B00892462 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CE96216BAA6B00892462 /* Container.swift */; };
+		BA90CE99216BABD400892462 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CE98216BABD400892462 /* AccountViewModel.swift */; };
+		BA90CE9B216BABF900892462 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CE9A216BABF900892462 /* AccountController.swift */; };
+		BA90CEA0216BAFBB00892462 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CE9F216BAFBB00892462 /* User.swift */; };
+		BA90CEAA216BC37A00892462 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEA9216BC37A00892462 /* UIExtensions.swift */; };
+		BA90CEAC216BC3E500892462 /* UtilsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEAB216BC3E500892462 /* UtilsExtensions.swift */; };
+		BA90CEAE216CAF5A00892462 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEAD216CAF5A00892462 /* Network.swift */; };
+		BA90CEB0216CB12800892462 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEAF216CB12800892462 /* Account.swift */; };
+		BA90CEB3216CE14D00892462 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA90CEB2216CE14D00892462 /* Account.storyboard */; };
+		BA90CEB5216CE75400892462 /* GethAccountProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEB4216CE75400892462 /* GethAccountProvider.swift */; };
+		BA90CEB8216CEAE000892462 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEB7216CEAE000892462 /* Logger.swift */; };
+		BA90CEBA216CF13300892462 /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEB9216CF13300892462 /* AccountRepository.swift */; };
+		BA90CEBC216D16C900892462 /* AccountBalanceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEBB216D16C900892462 /* AccountBalanceRepository.swift */; };
+		BA90CEBE216DF97100892462 /* UIContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEBD216DF97100892462 /* UIContants.swift */; };
+		BA90CEC0216E137000892462 /* JsonRPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEBF216E137000892462 /* JsonRPC.swift */; };
+		BA90CEC2216E13A000892462 /* JsonRPC+EthConverters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEC1216E13A000892462 /* JsonRPC+EthConverters.swift */; };
+		BA90CEC4216E373800892462 /* DeterministicAccountProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEC3216E373800892462 /* DeterministicAccountProvider.swift */; };
+		BA90CEC8216F7F4300892462 /* TrezorCryptoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEC7216F7F4300892462 /* TrezorCryptoHelper.swift */; };
+		D298205C9BB74A34B73592AB /* Pods_EthereumWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C007EE49DBF447D9503B0E53 /* Pods_EthereumWallet.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		22D39184D5616F0C18D8B7B9 /* Pods-EthereumWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthereumWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-EthereumWallet/Pods-EthereumWallet.release.xcconfig"; sourceTree = "<group>"; };
+		2B0AE80CC7B598D2C09EE79D /* Pods-EthereumWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthereumWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EthereumWallet/Pods-EthereumWallet.debug.xcconfig"; sourceTree = "<group>"; };
+		BA90CE77216BA44300892462 /* EthereumWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EthereumWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA90CE7A216BA44300892462 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BA90CE81216BA44300892462 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BA90CE84216BA44300892462 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BA90CE86216BA44300892462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA90CE96216BAA6B00892462 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		BA90CE98216BABD400892462 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		BA90CE9A216BABF900892462 /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
+		BA90CE9F216BAFBB00892462 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BA90CEA9216BC37A00892462 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		BA90CEAB216BC3E500892462 /* UtilsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsExtensions.swift; sourceTree = "<group>"; };
+		BA90CEAD216CAF5A00892462 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		BA90CEAF216CB12800892462 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		BA90CEB2216CE14D00892462 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		BA90CEB4216CE75400892462 /* GethAccountProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GethAccountProvider.swift; sourceTree = "<group>"; };
+		BA90CEB7216CEAE000892462 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		BA90CEB9216CF13300892462 /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
+		BA90CEBB216D16C900892462 /* AccountBalanceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBalanceRepository.swift; sourceTree = "<group>"; };
+		BA90CEBD216DF97100892462 /* UIContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIContants.swift; sourceTree = "<group>"; };
+		BA90CEBF216E137000892462 /* JsonRPC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonRPC.swift; sourceTree = "<group>"; };
+		BA90CEC1216E13A000892462 /* JsonRPC+EthConverters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JsonRPC+EthConverters.swift"; sourceTree = "<group>"; };
+		BA90CEC3216E373800892462 /* DeterministicAccountProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeterministicAccountProvider.swift; sourceTree = "<group>"; };
+		BA90CEC7216F7F4300892462 /* TrezorCryptoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrezorCryptoHelper.swift; sourceTree = "<group>"; };
+		C007EE49DBF447D9503B0E53 /* Pods_EthereumWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EthereumWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BA90CE74216BA44300892462 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D298205C9BB74A34B73592AB /* Pods_EthereumWallet.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BA90CE6E216BA44300892462 = {
+			isa = PBXGroup;
+			children = (
+				BA90CE79216BA44300892462 /* EthereumWallet */,
+				BA90CE78216BA44300892462 /* Products */,
+				D3E955FE5F3E342EE3CDA713 /* Pods */,
+				F6BDE16176C2F9574204DFDD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BA90CE78216BA44300892462 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA90CE77216BA44300892462 /* EthereumWallet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA90CE79216BA44300892462 /* EthereumWallet */ = {
+			isa = PBXGroup;
+			children = (
+				BA90CEB6216CEAD300892462 /* Utils */,
+				BA90CE9E216BAFAE00892462 /* Model */,
+				BA90CE8D216BA6EB00892462 /* Services */,
+				BA90CE8C216BA6E200892462 /* UI */,
+				BA90CE96216BAA6B00892462 /* Container.swift */,
+				BA90CE7A216BA44300892462 /* AppDelegate.swift */,
+				BA90CE81216BA44300892462 /* Assets.xcassets */,
+				BA90CE83216BA44300892462 /* LaunchScreen.storyboard */,
+				BA90CE86216BA44300892462 /* Info.plist */,
+			);
+			path = EthereumWallet;
+			sourceTree = "<group>";
+		};
+		BA90CE8C216BA6E200892462 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BA90CE8F216BA70500892462 /* Account */,
+				BA90CEA9216BC37A00892462 /* UIExtensions.swift */,
+				BA90CEBD216DF97100892462 /* UIContants.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		BA90CE8D216BA6EB00892462 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BA90CEAD216CAF5A00892462 /* Network.swift */,
+				BA90CEAB216BC3E500892462 /* UtilsExtensions.swift */,
+				BA90CEB4216CE75400892462 /* GethAccountProvider.swift */,
+				BA90CEC3216E373800892462 /* DeterministicAccountProvider.swift */,
+				BA90CEB9216CF13300892462 /* AccountRepository.swift */,
+				BA90CEBB216D16C900892462 /* AccountBalanceRepository.swift */,
+				BA90CEBF216E137000892462 /* JsonRPC.swift */,
+				BA90CEC1216E13A000892462 /* JsonRPC+EthConverters.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BA90CE8F216BA70500892462 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				BA90CE98216BABD400892462 /* AccountViewModel.swift */,
+				BA90CE9A216BABF900892462 /* AccountController.swift */,
+				BA90CEB2216CE14D00892462 /* Account.storyboard */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		BA90CE9E216BAFAE00892462 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA90CE9F216BAFBB00892462 /* User.swift */,
+				BA90CEAF216CB12800892462 /* Account.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA90CEB6216CEAD300892462 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BA90CEB7216CEAE000892462 /* Logger.swift */,
+				BA90CEC7216F7F4300892462 /* TrezorCryptoHelper.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D3E955FE5F3E342EE3CDA713 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B0AE80CC7B598D2C09EE79D /* Pods-EthereumWallet.debug.xcconfig */,
+				22D39184D5616F0C18D8B7B9 /* Pods-EthereumWallet.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F6BDE16176C2F9574204DFDD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C007EE49DBF447D9503B0E53 /* Pods_EthereumWallet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA90CE76216BA44300892462 /* EthereumWallet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA90CE89216BA44300892462 /* Build configuration list for PBXNativeTarget "EthereumWallet" */;
+			buildPhases = (
+				DBD080A2DB6233A2FBA2D81C /* [CP] Check Pods Manifest.lock */,
+				BA90CE73216BA44300892462 /* Sources */,
+				BA90CE74216BA44300892462 /* Frameworks */,
+				BA90CE75216BA44300892462 /* Resources */,
+				36A9F0FAB7BA4146E55AFA95 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EthereumWallet;
+			productName = "Ethereum Wallet";
+			productReference = BA90CE77216BA44300892462 /* EthereumWallet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BA90CE6F216BA44300892462 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = devpool;
+				TargetAttributes = {
+					BA90CE76216BA44300892462 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = BA90CE72216BA44300892462 /* Build configuration list for PBXProject "EthereumWallet" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BA90CE6E216BA44300892462;
+			productRefGroup = BA90CE78216BA44300892462 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA90CE76216BA44300892462 /* EthereumWallet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BA90CE75216BA44300892462 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA90CE85216BA44300892462 /* LaunchScreen.storyboard in Resources */,
+				BA90CEB3216CE14D00892462 /* Account.storyboard in Resources */,
+				BA90CE82216BA44300892462 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36A9F0FAB7BA4146E55AFA95 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EthereumWallet/Pods-EthereumWallet-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/DITranquillity/DITranquillity.framework",
+				"${BUILT_PRODUCTS_DIR}/JetLib/JetLib.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftLazy/SwiftLazy.framework",
+				"${BUILT_PRODUCTS_DIR}/TrezorCrypto/TrezorCrypto.framework",
+				"${BUILT_PRODUCTS_DIR}/secp256k1_ios/secp256k1_ios.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DITranquillity.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JetLib.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLazy.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TrezorCrypto.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1_ios.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EthereumWallet/Pods-EthereumWallet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBD080A2DB6233A2FBA2D81C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EthereumWallet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA90CE73216BA44300892462 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA90CEC2216E13A000892462 /* JsonRPC+EthConverters.swift in Sources */,
+				BA90CEB0216CB12800892462 /* Account.swift in Sources */,
+				BA90CE99216BABD400892462 /* AccountViewModel.swift in Sources */,
+				BA90CEAE216CAF5A00892462 /* Network.swift in Sources */,
+				BA90CEAA216BC37A00892462 /* UIExtensions.swift in Sources */,
+				BA90CEBC216D16C900892462 /* AccountBalanceRepository.swift in Sources */,
+				BA90CE97216BAA6B00892462 /* Container.swift in Sources */,
+				BA90CEA0216BAFBB00892462 /* User.swift in Sources */,
+				BA90CE9B216BABF900892462 /* AccountController.swift in Sources */,
+				BA90CE7B216BA44300892462 /* AppDelegate.swift in Sources */,
+				BA90CEC8216F7F4300892462 /* TrezorCryptoHelper.swift in Sources */,
+				BA90CEB8216CEAE000892462 /* Logger.swift in Sources */,
+				BA90CEBE216DF97100892462 /* UIContants.swift in Sources */,
+				BA90CEB5216CE75400892462 /* GethAccountProvider.swift in Sources */,
+				BA90CEAC216BC3E500892462 /* UtilsExtensions.swift in Sources */,
+				BA90CEBA216CF13300892462 /* AccountRepository.swift in Sources */,
+				BA90CEC0216E137000892462 /* JsonRPC.swift in Sources */,
+				BA90CEC4216E373800892462 /* DeterministicAccountProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BA90CE83216BA44300892462 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA90CE84216BA44300892462 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BA90CE87216BA44300892462 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BA90CE88216BA44300892462 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BA90CE8A216BA44300892462 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B0AE80CC7B598D2C09EE79D /* Pods-EthereumWallet.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MJ5AUMQ9YX;
+				INFOPLIST_FILE = "$(SRCROOT)/EthereumWallet/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.devpool.ethereum-wallet";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BA90CE8B216BA44300892462 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22D39184D5616F0C18D8B7B9 /* Pods-EthereumWallet.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MJ5AUMQ9YX;
+				INFOPLIST_FILE = "$(SRCROOT)/EthereumWallet/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.devpool.ethereum-wallet";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA90CE72216BA44300892462 /* Build configuration list for PBXProject "EthereumWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA90CE87216BA44300892462 /* Debug */,
+				BA90CE88216BA44300892462 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA90CE89216BA44300892462 /* Build configuration list for PBXNativeTarget "EthereumWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA90CE8A216BA44300892462 /* Debug */,
+				BA90CE8B216BA44300892462 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BA90CE6F216BA44300892462 /* Project object */;
+}
