@@ -62,16 +62,17 @@ class AccountController: UIViewController {
 
 extension AccountController {
 
-    func reloadAccounts() {
+    func accountsCollectionChanged() {
         accountsPicker.reloadAllComponents()
     }
 
-    func show(balance: String?) {
-        balanceLabel.text = balance
+    func accountBalanceChanged() {
+        balanceActivity.displayIf(nil: viewModel.balance)
+        balanceLabel.text = "Balance: \(viewModel.balance ?? "-")"
     }
 
-    func show(account: String?) {
-        accountNumber.setTitle(account, for: .normal)
+    func selcetedAccountChanged() {
+        accountNumber.setTitle("Account: \(viewModel.selected?.address ?? "-")", for: .normal)
     }
 }
 

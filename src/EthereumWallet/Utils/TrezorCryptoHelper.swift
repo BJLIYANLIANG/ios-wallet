@@ -28,7 +28,7 @@ class TrezorCrypto {
             hdnode_private_ckd(&node, index)
         }
 
-        return Data(bytes: withUnsafeBytes(of: &node.private_key) { $0 }).bytes
+        return Array(Data(withUnsafeBytes(of: &node.private_key) { $0 }))
     }
 
     static func publicKeyFrom(privateKey: [UInt8], compressed: Bool = true) -> [UInt8] {
@@ -43,7 +43,7 @@ class TrezorCrypto {
         }
     }
 
-    static func etheriumAddress2(privateKey: [UInt8]) -> [UInt8] {
+    static func etheriumAddress(privateKey: [UInt8]) -> [UInt8] {
         let publicKey = Array(publicKeyFrom(privateKey: privateKey, compressed: false)[1...64])
         var address = [UInt8](repeating: 0, count: Int(sha3_256_hash_size))
         keccak_256(publicKey, publicKey.count, &address)

@@ -9,6 +9,11 @@
 import Foundation
 import JetLib
 
+protocol AccountSelectionDelegate: class {
+
+    func selectionChanged(_ selectedAccount: Account?)
+}
+
 class AccountViewModel: ViewModel<AccountController> {
 
     let accountsRepo: AccountRepository
@@ -23,26 +28,32 @@ class AccountViewModel: ViewModel<AccountController> {
         didSet {
             // TODO store last selection
             selected = accounts?.first
-            view?.reloadAccounts()
+            view?.accountsCollectionChanged()
         }
     }
 
     var selected: Account? {
         didSet {
-            view?.show(account: "Account: \(selected?.address ?? "-")")
+            view?.selcetedAccountChanged()
+            delegate?.selectionChanged(selected)
             loadBalance(for: selected)
         }
     }
 
     var balance: String? {
         didSet {
-            view?.balanceActivity.displayIf(nil: balance)
-            view?.show(balance: "Balance: \(balance ?? "-")")
+            view?.accountBalanceChanged()
+        }
+    }
+
+    weak var delegate: AccountSelectionDelegate? {
+        didSet {
+            delegate?.selectionChanged(selected)
         }
     }
 
     override func loadData() -> NotifyCompletion {
-        load(task: accountsRepo.getAll()).notify { [weak self] in
+        load(task: accountsRepo.fetchAllAccounts()).notify { [weak self] in
             if $0.isSuccess {
                 self?.accounts = $0.result
             } else {
@@ -77,12 +88,12 @@ class AccountViewModel: ViewModel<AccountController> {
     }
 
     func createNewAccount() {
-        submit(task: accountsRepo.create(passphrase: "test passphrase")).notify { [weak self] in
+        submit(task: accountsRepo.createNewAccount(passphrase: "test passphrase")).notify { [weak self] in
             if $0.isSuccess {
                 let account = $0.result!
                 self?.accounts?.append(account)
                 self?.selected = account
-            } else {
+            } else if !$0.isCancelled {
                 Logger.error($0.error!)
             }
         }
@@ -92,16 +103,16 @@ class AccountViewModel: ViewModel<AccountController> {
         submit(task: view!.requetMnemonic().chainOnSuccess { [view] (textTask) in
             view!.reauetAccountIndex().map { (mnemonicText: textTask.result!, accountIndex: $0) }
         }.chainOnSuccess { [accountsRepo] (paramsTask) in
-            return accountsRepo.addDeterministicAccount(paramsTask.result!.mnemonicText,
-                                                        mnemonicPassphrase: "",
-                                                        keyIndex: paramsTask.result!.accountIndex,
-                                                        accountPassphrase: "")
+            return accountsRepo.createHDAccount(paramsTask.result!.mnemonicText,
+                                                mnemonicPassphrase: "",
+                                                keyIndex: paramsTask.result!.accountIndex,
+                                                accountPassphrase: "")
         }).notify { [weak self] in
             if $0.isSuccess {
                 let account = $0.result!
                 self?.accounts?.append(account)
                 self?.selected = account
-            } else {
+            } else if !$0.isCancelled {
                 Logger.error($0.error!)
             }
         }

@@ -34,8 +34,10 @@ private func newContainer() -> DIContainer {
 
     container.register(AccountRepository.init).lifetime(.perContainer(.strong))
     container.register(AccountBalanceRepository.init).lifetime(.perContainer(.strong))
+    container.register(TransactionHistostyRepository.init).lifetime(.perContainer(.strong))
 
-    container.register(AccountViewModel.init).lifetime(.perContainer(.strong))
+    container.register(AccountViewModel.init).lifetime(.objectGraph)
+    container.register1(TransactionListViewModel.init).lifetime(.objectGraph)
 
     #if DEBUG
     precondition(container.validate())

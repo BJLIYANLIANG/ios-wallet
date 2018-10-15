@@ -14,7 +14,7 @@ typealias AccountBalance = (account: Account, balance: Decimal)
 class AccountBalanceRepository {
 
     func fetchBalance(for account: Account) -> Task<AccountBalance> {
-        return try! HttpClient.default.post(Network.current.requestUrl, jsonBody: JsonRPC.Request.balance(for: account))
+        return try! HttpClient.default.post(Network.current.jsonRpc, jsonBody: JsonRPC.Request.balance(for: account))
             .map { (response: JsonResponse<JsonRPC.Response<String>>) in
                 try AccountBalance(account: account, balance: JsonRPC.EthConverters.accountBalance(from: response.data?.result))
             }

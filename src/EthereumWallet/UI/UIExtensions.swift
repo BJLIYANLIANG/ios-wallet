@@ -10,6 +10,20 @@ import Foundation
 import UIKit
 import JetLib
 
+extension ViewModel {
+
+    func reload(force: Bool = false) {
+        guard force else {
+            self.dataUpdateRequested(initiator: self)
+            return
+        }
+
+        cancelAll().notify(queue: DispatchQueue.main) {
+            self.dataUpdateRequested(initiator: self)
+        }
+    }
+}
+
 extension UIViewController {
 
     @discardableResult
