@@ -17,28 +17,32 @@ class TransactionListController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         attach(viewModel)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 }
 
+extension TransactionListController: AccountSelectionDelegate {
+
+    func selectionChanged(_ selectedAccount: Account?) {
+        viewModel.account = selectedAccount
+    }
+}
 
 extension TransactionListController {
 
     func reloadTransactions() {
         tableView.reloadData()
-        tableView.setContentOffset(CGPoint.zero, animated: false)
     }
 }
 
 extension TransactionListController {
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.transactions?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .default, reuseIdentifier: "cell")
-        cell.textLabel?.text = viewModel.transactions![indexPath.row].hash
+        let cell = tableView.dequeueReusableCell(withIdentifier: "transactionCell") as! TrasactionListCell
+        cell.transaction = viewModel.transactions![indexPath.row]
         return cell
     }
 
@@ -46,7 +50,25 @@ extension TransactionListController {
         return indexPath
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.indexPathsForSelectedRows?.contains(indexPath) == true
+            ? TrasactionListCell.expandedHeight
+            : TrasactionListCell.collapsedHeight
+    }
+
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.indexPathsForSelectedRows?.contains(indexPath) == true
+            ? TrasactionListCell.expandedHeight
+            : TrasactionListCell.collapsedHeight
+    }
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
 }

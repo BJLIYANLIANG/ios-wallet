@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CryptoSwift
 
 class DeterministicAccountProvider {
 
@@ -25,10 +24,10 @@ class DeterministicAccountProvider {
     func account(at index: Int) -> (address: String, privateKey: Data, publicKey: Data) {
         let path: [UInt32] = CryptoAccountPath("m/44'/60'/0'/0/\(index)")!.path
         let privateKey = TrezorCrypto.etheriumPrivateKey(at: path, with: seed)
-        let address = TrezorCrypto.etheriumAddress2(privateKey: privateKey)
+        let address = TrezorCrypto.etheriumAddress(privateKey: privateKey)
         let publicKey = TrezorCrypto.publicKeyFrom(privateKey: privateKey)
 
-        return (address: address.toHexString(), privateKey: Data(privateKey), publicKey: Data(publicKey))
+        return (address: "0x" + Array(address).hex, privateKey: Data(privateKey), publicKey: Data(publicKey))
     }
 
     struct CryptoAccountPath {

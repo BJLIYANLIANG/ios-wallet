@@ -34,6 +34,9 @@
 		BAA0FBE62170FB04000FEFCE /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBE52170FB04000FEFCE /* TransactionListViewModel.swift */; };
 		BAA0FBE8217103C6000FEFCE /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA0FBE7217103C6000FEFCE /* Dashboard.storyboard */; };
 		BAA0FBEA21710456000FEFCE /* Transactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA0FBE921710456000FEFCE /* Transactions.storyboard */; };
+		BAA0FBEC217497B2000FEFCE /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBEB217497B2000FEFCE /* Array+Extensions.swift */; };
+		BAA0FBEE21749DDA000FEFCE /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBED21749DDA000FEFCE /* DashboardController.swift */; };
+		BAA0FBF02174CB36000FEFCE /* TransactionListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBEF2174CB36000FEFCE /* TransactionListCell.swift */; };
 		D298205C9BB74A34B73592AB /* Pods_EthereumWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C007EE49DBF447D9503B0E53 /* Pods_EthereumWallet.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +72,9 @@
 		BAA0FBE52170FB04000FEFCE /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
 		BAA0FBE7217103C6000FEFCE /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		BAA0FBE921710456000FEFCE /* Transactions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Transactions.storyboard; sourceTree = "<group>"; };
+		BAA0FBEB217497B2000FEFCE /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		BAA0FBED21749DDA000FEFCE /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		BAA0FBEF2174CB36000FEFCE /* TransactionListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListCell.swift; sourceTree = "<group>"; };
 		C007EE49DBF447D9503B0E53 /* Pods_EthereumWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EthereumWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -171,6 +177,7 @@
 			children = (
 				BA90CEB7216CEAE000892462 /* Logger.swift */,
 				BA90CEC7216F7F4300892462 /* TrezorCryptoHelper.swift */,
+				BAA0FBEB217497B2000FEFCE /* Array+Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -181,6 +188,7 @@
 				BAA0FBE921710456000FEFCE /* Transactions.storyboard */,
 				BAA0FBE32170FAF4000FEFCE /* TransactionListController.swift */,
 				BAA0FBE52170FB04000FEFCE /* TransactionListViewModel.swift */,
+				BAA0FBEF2174CB36000FEFCE /* TransactionListCell.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -189,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				BAA0FBE7217103C6000FEFCE /* Dashboard.storyboard */,
+				BAA0FBED21749DDA000FEFCE /* DashboardController.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -288,21 +297,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-EthereumWallet/Pods-EthereumWallet-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/DITranquillity/DITranquillity.framework",
 				"${BUILT_PRODUCTS_DIR}/JetLib/JetLib.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftLazy/SwiftLazy.framework",
 				"${BUILT_PRODUCTS_DIR}/TrezorCrypto/TrezorCrypto.framework",
-				"${BUILT_PRODUCTS_DIR}/secp256k1_ios/secp256k1_ios.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DITranquillity.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JetLib.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLazy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TrezorCrypto.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1_ios.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -350,9 +355,12 @@
 				BA90CEBE216DF97100892462 /* UIContants.swift in Sources */,
 				BAA0FBDE2170F564000FEFCE /* TransactionHistostyRepository.swift in Sources */,
 				BAA0FBE02170F669000FEFCE /* Transaction.swift in Sources */,
+				BAA0FBEE21749DDA000FEFCE /* DashboardController.swift in Sources */,
 				BA90CEB5216CE75400892462 /* GethAccountProvider.swift in Sources */,
+				BAA0FBEC217497B2000FEFCE /* Array+Extensions.swift in Sources */,
 				BAA0FBE62170FB04000FEFCE /* TransactionListViewModel.swift in Sources */,
 				BA90CEAC216BC3E500892462 /* UtilsExtensions.swift in Sources */,
+				BAA0FBF02174CB36000FEFCE /* TransactionListCell.swift in Sources */,
 				BA90CEBA216CF13300892462 /* AccountRepository.swift in Sources */,
 				BA90CEC0216E137000892462 /* JsonRPC.swift in Sources */,
 				BA90CEC4216E373800892462 /* DeterministicAccountProvider.swift in Sources */,

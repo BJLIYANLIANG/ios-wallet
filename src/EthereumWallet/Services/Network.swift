@@ -11,21 +11,22 @@ import Foundation
 struct Network {
 
     static let infuraApiKey = "74d6c4da5ad64f609cf2eccd62a5d2c5"
+    static let etherscanApiKey = "XFZIBYHKYPY7FRIZ6FZRC6EZCF9ESNX856"
 
     // TODO: get from plist
     static let all: [Network] = [
         Network(networkName: "rinkeby",
                 infuraUrl: URL(string: "https://rinkeby.infura.io/v3")!,
-                eherScanUrl: URL(string: "https://rinkeby.etherscan.io/api")!),
+                eherscanUrl: URL(string: "https://rinkeby.etherscan.io/api")!),
         Network(networkName: "ropsten",
                 infuraUrl: URL(string: "https://ropsten.infura.io/v3")!,
-                eherScanUrl: URL(string: "https://ropsten.etherscan.io/api")!),
+                eherscanUrl: URL(string: "https://ropsten.etherscan.io/api")!),
         Network(networkName: "kovan",
                 infuraUrl: URL(string: "https://kovan.infura.io/v3")!,
-                eherScanUrl: URL(string: "https://kovan.etherscan.io/api")!),
+                eherscanUrl: URL(string: "https://kovan.etherscan.io/api")!),
         Network(networkName: "mainnet",
                 infuraUrl: URL(string: "https://mainnet.infura.io/v3")!,
-                eherScanUrl: URL(string: "https://???.etherscan.io/api")!),
+                eherscanUrl: URL(string: "https://???.etherscan.io/api")!),
     ]
 
     // TODO: store last selection
@@ -34,13 +35,13 @@ struct Network {
     let networkName: String
 
     fileprivate let infuraUrl: URL
-    fileprivate let eherScanUrl: URL
+    fileprivate let eherscanUrl: URL
 
     var jsonRpc: URL {
         return Network.current.infuraUrl.appendingPathComponent(Network.infuraApiKey)
     }
 
-    var eherScan: URL {
-        return Network.current.eherScanUrl
+    var eherscan: URL {
+        return Network.current.eherscanUrl
     }
 }

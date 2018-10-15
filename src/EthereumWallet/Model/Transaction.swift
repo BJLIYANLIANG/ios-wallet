@@ -8,29 +8,16 @@
 
 import Foundation
 
-struct Transaction: Codable {
-
-    let blockNumber: Int64
-    let timeStamp: Int64
+struct Transaction {
+    let timeStamp: Date
     let hash: String
-    let blockHash: String
-
-    let nonce: Int64
-    let transactionIndex: Int64
-
-    let from: AccountAddress
-    let to: AccountAddress
-
     let value: String
-    let gas: Int64
-    let gasPrice: Int64
+    let direction: Direction
 
-    let isError: UInt8
-    let txreceipt_status: String
-    let input: String
-
-    let contractAddress: String
-    let cumulativeGasUsed: Int64
-    let confirmations: Int64
+    enum Direction {
+        case income(account: AccountAddress)
+        case outcome(account: AccountAddress)
+    }
 }
+
 

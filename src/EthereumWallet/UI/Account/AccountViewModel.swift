@@ -9,6 +9,11 @@
 import Foundation
 import JetLib
 
+protocol AccountSelectionDelegate: class {
+
+    func selectionChanged(_ selectedAccount: Account?)
+}
+
 class AccountViewModel: ViewModel<AccountController> {
 
     let accountsRepo: AccountRepository
@@ -23,21 +28,27 @@ class AccountViewModel: ViewModel<AccountController> {
         didSet {
             // TODO store last selection
             selected = accounts?.first
-            view?.reloadAccounts()
+            view?.accountsCollectionChanged()
         }
     }
 
     var selected: Account? {
         didSet {
-            view?.show(account: "Account: \(selected?.address ?? "-")")
+            view?.selcetedAccountChanged()
+            delegate?.selectionChanged(selected)
             loadBalance(for: selected)
         }
     }
 
     var balance: String? {
         didSet {
-            view?.balanceActivity.displayIf(nil: balance)
-            view?.show(balance: "Balance: \(balance ?? "-")")
+            view?.accountBalanceChanged()
+        }
+    }
+
+    weak var delegate: AccountSelectionDelegate? {
+        didSet {
+            delegate?.selectionChanged(selected)
         }
     }
 
@@ -82,7 +93,7 @@ class AccountViewModel: ViewModel<AccountController> {
                 let account = $0.result!
                 self?.accounts?.append(account)
                 self?.selected = account
-            } else {
+            } else if !$0.isCancelled {
                 Logger.error($0.error!)
             }
         }
@@ -93,15 +104,15 @@ class AccountViewModel: ViewModel<AccountController> {
             view!.reauetAccountIndex().map { (mnemonicText: textTask.result!, accountIndex: $0) }
         }.chainOnSuccess { [accountsRepo] (paramsTask) in
             return accountsRepo.createHDAccount(paramsTask.result!.mnemonicText,
-                                                        mnemonicPassphrase: "",
-                                                        keyIndex: paramsTask.result!.accountIndex,
-                                                        accountPassphrase: "")
+                                                mnemonicPassphrase: "",
+                                                keyIndex: paramsTask.result!.accountIndex,
+                                                accountPassphrase: "")
         }).notify { [weak self] in
             if $0.isSuccess {
                 let account = $0.result!
                 self?.accounts?.append(account)
                 self?.selected = account
-            } else {
+            } else if !$0.isCancelled {
                 Logger.error($0.error!)
             }
         }
