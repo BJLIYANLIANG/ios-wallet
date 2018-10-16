@@ -11,7 +11,7 @@ import Foundation
 struct Transaction {
     let timeStamp: Date
     let hash: String
-    let value: String
+    let value: Ether
     let direction: Direction
 
     enum Direction {

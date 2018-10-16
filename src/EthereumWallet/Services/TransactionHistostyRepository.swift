@@ -61,7 +61,7 @@ class TransactionHistostyRepository {
         func convert(myAccount: Account) -> Transaction {
             return Transaction(timeStamp: Date(timeIntervalSince1970: TimeInterval(timeStamp) ?? 0),
                                hash: hash,
-                               value: value,
+                               value: value.ether!,
                                direction: myAccount.address == from ? .outcome(account: to) : .income(account: from))
         }
     }

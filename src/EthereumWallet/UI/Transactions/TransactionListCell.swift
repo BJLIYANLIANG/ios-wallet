@@ -37,7 +37,7 @@ class TrasactionListCell: UITableViewCell {
                 directionLabel.text = "-"
             }
 
-            valueLable.text = transaction?.value
+            valueLable.text = transaction?.value.description
             hashLabel.text = transaction?.hash
             dateLabel.text = transaction?.timeStamp.description
         }

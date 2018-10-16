@@ -59,9 +59,19 @@ class AccountViewModel: ViewModel<AccountController> {
             } else {
                 Logger.error($0.error!)
             }
-        }.notify { [weak self] in
-            if let vm = self, $0.result?.isEmpty == true {
+        }.notify { [weak self] (response) in
+            if let vm = self, response.result?.isEmpty == true {
                 vm.createNewAccount()
+            } else {
+                let service: TransactionService = container.resolve()
+                service.minGasPrice(for: Network.current).onSuccess { gasPrice in
+                    service.transfer(from:          response.result!.first!,
+                                     to:            response.result!.last!.address,
+                                     amount:        0.1,
+                                     gasPrice:      gasPrice,
+                                     network:       Network.current,
+                                     passphrase:    "test passphrase")
+                }
             }
         }
 

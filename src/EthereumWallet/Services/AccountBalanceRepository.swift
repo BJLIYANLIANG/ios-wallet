@@ -9,14 +9,14 @@
 import Foundation
 import JetLib
 
-typealias AccountBalance = (account: Account, balance: Decimal)
+typealias AccountBalance = (account: Account, balance: Ether)
 
 class AccountBalanceRepository {
 
     func fetchBalance(for account: Account) -> Task<AccountBalance> {
         return try! HttpClient.default.post(Network.current.jsonRpc, jsonBody: JsonRPC.Request.balance(for: account))
             .map { (response: JsonResponse<JsonRPC.Response<String>>) in
-                try AccountBalance(account: account, balance: JsonRPC.EthConverters.accountBalance(from: response.data?.result))
+                return try AccountBalance(account: account, balance: JsonRPC.EthConverters.ether(from: response.data?.result))
             }
     }
 }
