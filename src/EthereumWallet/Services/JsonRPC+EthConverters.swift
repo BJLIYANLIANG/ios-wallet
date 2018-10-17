@@ -12,16 +12,28 @@ extension JsonRPC {
 
     class EthConverters {
 
-        static func accountBalance(from string: String?) throws -> Decimal {
+        static func ether(from string: String?) throws -> Ether {
             guard let string = string else {
                 throw Errors.nilValue
             }
 
-            guard string.starts(with: "0x"), let integer = Int64(string.dropFirst(2), radix: 16) else {
+            guard string.starts(with: "0x"), let ether = string.ether else {
                 throw Errors.incorrectFormat
             }
 
-            return Decimal(integer)
+            return ether
+        }
+
+        static func wei(from string: String?) throws -> Wei {
+            guard let string = string else {
+                throw Errors.nilValue
+            }
+
+            guard string.starts(with: "0x") else {
+                throw Errors.incorrectFormat
+            }
+
+            return string
         }
 
         enum Errors: Error {

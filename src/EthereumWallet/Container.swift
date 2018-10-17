@@ -32,7 +32,10 @@ extension DIContainer {
 private func newContainer() -> DIContainer {
     let container = DIContainer()
 
-    container.register(AccountRepository.init).lifetime(.perContainer(.strong))
+    container.register(KeystoreProxy.init).lifetime(.perContainer(.strong))
+    container.register1(KeystoreAccountProvider.init).lifetime(.perContainer(.strong))
+    container.register1(AccountRepository.init).lifetime(.perContainer(.strong))
+    container.register(TransactionService.init).lifetime(.perContainer(.strong))
     container.register(AccountBalanceRepository.init).lifetime(.perContainer(.strong))
     container.register(TransactionHistostyRepository.init).lifetime(.perContainer(.strong))
 

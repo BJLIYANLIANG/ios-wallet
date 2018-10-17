@@ -1,5 +1,5 @@
 //
-//  DeterministicAccountProvider.swift
+//  DeterministicAccountFactory.swift
 //  EthereumWallet
 //
 //  Created by Vladimir Benkevich on 10/10/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DeterministicAccountProvider {
+class DeterministicAccountFactory {
 
     private let seed: [UInt8]
 

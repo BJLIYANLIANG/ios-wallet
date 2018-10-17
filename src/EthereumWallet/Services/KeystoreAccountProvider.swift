@@ -1,5 +1,5 @@
 //
-//  GethAccountProvider.swift
+//  KeystoreAccountProvider.swift
 //  EthereumWallet
 //
 //  Created by Vladimir Benkevich on 09/10/2018.
@@ -9,12 +9,21 @@
 import Foundation
 import Geth
 
-class GethAccountProvider {
+class KeystoreAccountProvider {
 
-    lazy var keyStore: GethKeyStore = {
-         let keystorePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/etherium-keys"
-        return GethNewKeyStore(keystorePath, GethLightScryptN, GethLightScryptP);
-    }()
+    private let proxy: KeystoreProxy
+
+    init(keyStoreProxy: KeystoreProxy) {
+        self.proxy = keyStoreProxy
+    }
+
+    var keyStore: GethKeyStore {
+        return proxy.keyStore
+    }
+
+    var syncQueue: DispatchQueue {
+        return proxy.syncQueue
+    }
 
     func all() throws -> [Account] {
         guard let collection = keyStore.getAccounts() else {
@@ -35,15 +44,15 @@ class GethAccountProvider {
     }
 
     func export(account: Account, passphrase: String, newPassphrase: String) throws -> Data {
-        return try keyStore.exportKey(find(by: account), passphrase: passphrase, newPassphrase: newPassphrase)
+        return try keyStore.exportKey(keyStore.find(by: account.address), passphrase: passphrase, newPassphrase: newPassphrase)
     }
 
     func update(account: Account, passphrase: String, newPassphrase: String) throws {
-        try keyStore.update(find(by: account), passphrase: passphrase, newPassphrase: newPassphrase)
+        try keyStore.update(keyStore.find(by: account.address), passphrase: passphrase, newPassphrase: newPassphrase)
     }
 
     func delete(account: Account, passphrase: String) throws {
-        try keyStore.delete(find(by: account), passphrase: passphrase)
+        try keyStore.delete(keyStore.find(by: account.address), passphrase: passphrase)
     }
 
     func importRaw(key: Data, passphrase: String) throws -> Account {
@@ -52,27 +61,6 @@ class GethAccountProvider {
 
     func importCrypted(key: Data, passphrase: String, newPassphrase: String) throws -> Account {
         return try keyStore.importKey(key, passphrase: passphrase, newPassphrase: newPassphrase).convert()
-    }
-
-    private func find(by account: Account) throws -> GethAccount {
-        guard let collection = keyStore.getAccounts() else {
-            throw Errors.storageNotFound
-        }
-
-        for i in 0..<collection.size() {
-            let gaccount = try collection.get(i)
-
-            if gaccount.getAddress()?.getHex() == account.address {
-                return gaccount
-            }
-        }
-
-        throw Errors.accountNotFound
-    }
-
-    enum Errors: Error {
-        case accountNotFound
-        case storageNotFound
     }
 }
 
