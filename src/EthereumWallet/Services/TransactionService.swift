@@ -31,7 +31,7 @@ class TransactionService {
         })
 
         return proxy.syncQueue.async(task).chainOnSuccess(nextTask: {
-            return self.sendTransaction($0.result!, network: network)
+            self.sendTransaction($0, network: network)
         })
     }
 
@@ -61,9 +61,6 @@ var error: NSError?
 
     fileprivate func sendTransaction(_ transaction: GethTransaction, network: Network) -> Task<Transaction> {
         return try! HttpClient.default.post(network.jsonRpc, jsonBody: JsonRPC.Request.sendRawTransaction(signed: transaction)).map { resp in
-            print(String(data: resp.content!, encoding: .utf8))
-            print(resp.origin)
-            print(resp.request)
             return Transaction(timeStamp: Date(), hash: "Ads", value: 0.2, direction: .outcome(account: transaction.getTo()!.getHex()) )
         }
     }

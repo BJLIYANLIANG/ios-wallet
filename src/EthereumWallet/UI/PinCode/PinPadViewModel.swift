@@ -9,7 +9,7 @@
 import Foundation
 import JetLib
 
-protocol PinpadSymbol {
+protocol PinpadSymbol: CustomStringConvertible {
 
     func append(to string: String) -> String
 }
@@ -17,9 +17,15 @@ protocol PinpadSymbol {
 
 class PinPadViewModel: ViewModel<PinPadController> {
 
-    let pinCode = PinCode()
+    private let pinCode = PinCode()
 
-    func appendSymbol(_ symbol: PinpadSymbol) {
+    override init() {
+
+    }
+
+    lazy var appendSymbolCommand = ActionCommand(self) { $0.appendSymbol($1) }
+
+    fileprivate func appendSymbol(_ symbol: PinpadSymbol) {
         pinCode.code = symbol.append(to: pinCode.code)
 
         view?.showPincode(pinCode)
@@ -33,18 +39,16 @@ class PinPadViewModel: ViewModel<PinPadController> {
         } else {
             view?.showWongCode()
         }
-
     }
 
     class PinCode {
 
         init() {
-
         }
 
         let lenght: Int = 6
 
-        let currecnt: Int {
+        var currecnt: Int {
             return code.count
         }
 
@@ -55,16 +59,16 @@ class PinPadViewModel: ViewModel<PinPadController> {
         }
 
         var isValid: Bool {
-            return isCompleted &&
+            return isCompleted && true
         }
     }
 
     struct NumericSymbol: PinpadSymbol {
 
-        var number: Int
+        let number: Int
 
-        init(number: Int) {
-            self.number = number
+        var description: String {
+            return number.description
         }
 
         func append(to string: String) -> String {
@@ -73,6 +77,10 @@ class PinPadViewModel: ViewModel<PinPadController> {
     }
 
     struct DeleteSymbol: PinpadSymbol {
+
+        var description: String {
+            return "Delete"
+        }
 
         func append(to string: String) -> String {
             if string.isEmpty {

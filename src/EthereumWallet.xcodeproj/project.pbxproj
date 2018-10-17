@@ -28,6 +28,7 @@
 		BA90CEC2216E13A000892462 /* JsonRPC+EthConverters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEC1216E13A000892462 /* JsonRPC+EthConverters.swift */; };
 		BA90CEC4216E373800892462 /* DeterministicAccountFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEC3216E373800892462 /* DeterministicAccountFactory.swift */; };
 		BA90CEC8216F7F4300892462 /* TrezorCryptoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEC7216F7F4300892462 /* TrezorCryptoHelper.swift */; };
+		BA9259F3217798B60002688E /* RoundBlurButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9259F2217798B60002688E /* RoundBlurButton.swift */; };
 		BAA0FBDE2170F564000FEFCE /* TransactionHistostyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBDD2170F564000FEFCE /* TransactionHistostyRepository.swift */; };
 		BAA0FBE02170F669000FEFCE /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBDF2170F669000FEFCE /* Transaction.swift */; };
 		BAA0FBE42170FAF4000FEFCE /* TransactionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBE32170FAF4000FEFCE /* TransactionListController.swift */; };
@@ -72,6 +73,7 @@
 		BA90CEC1216E13A000892462 /* JsonRPC+EthConverters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JsonRPC+EthConverters.swift"; sourceTree = "<group>"; };
 		BA90CEC3216E373800892462 /* DeterministicAccountFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeterministicAccountFactory.swift; sourceTree = "<group>"; };
 		BA90CEC7216F7F4300892462 /* TrezorCryptoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrezorCryptoHelper.swift; sourceTree = "<group>"; };
+		BA9259F2217798B60002688E /* RoundBlurButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundBlurButton.swift; sourceTree = "<group>"; };
 		BAA0FBDD2170F564000FEFCE /* TransactionHistostyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistostyRepository.swift; sourceTree = "<group>"; };
 		BAA0FBDF2170F669000FEFCE /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		BAA0FBE32170FAF4000FEFCE /* TransactionListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		BA90CE8C216BA6E200892462 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BA9259F1217798990002688E /* CustomViews */,
 				BACD958121777E8C008396D5 /* PinCode */,
 				BAA0FBE22170F9DC000FEFCE /* Dashboard */,
 				BAA0FBE12170F9C0000FEFCE /* Transactions */,
@@ -196,6 +199,14 @@
 				BAA0FBEB217497B2000FEFCE /* Array+Extensions.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		BA9259F1217798990002688E /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				BA9259F2217798B60002688E /* RoundBlurButton.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		BAA0FBE12170F9C0000FEFCE /* Transactions */ = {
@@ -376,6 +387,7 @@
 				BA90CEBC216D16C900892462 /* AccountBalanceRepository.swift in Sources */,
 				BA90CE97216BAA6B00892462 /* Container.swift in Sources */,
 				BA90CEA0216BAFBB00892462 /* User.swift in Sources */,
+				BA9259F3217798B60002688E /* RoundBlurButton.swift in Sources */,
 				BA90CE9B216BABF900892462 /* AccountController.swift in Sources */,
 				BA90CE7B216BA44300892462 /* AppDelegate.swift in Sources */,
 				BACD958721777F03008396D5 /* PinPadViewModel.swift in Sources */,

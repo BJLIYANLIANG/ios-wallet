@@ -1,7 +1,183 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hST-WD-BMg">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Pin Pad Controller-->
+        <scene sceneID="4kw-mr-Y7A">
+            <objects>
+                <viewController id="hST-WD-BMg" customClass="PinPadController" customModule="EthereumWallet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4kQ-ZJ-Ljc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mq1-gK-thA">
+                                <rect key="frame" x="64.5" y="183.5" width="285" height="529.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="gSA-KQ-1kA">
+                                        <rect key="frame" x="0.0" y="190.5" width="285" height="339"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Y6z-D1-8pj">
+                                                <rect key="frame" x="0.0" y="0.0" width="285" height="75"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6Q-uN-wNd" customClass="RoundedBlurButton" customModule="EthereumWallet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czK-zI-WSM" customClass="RoundedBlurButton" customModule="EthereumWallet" customModuleProvider="target">
+                                                        <rect key="frame" x="105" y="0.0" width="75" height="75"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Z6-WW-wpr" customClass="RoundedBlurButton" customModule="EthereumWallet" customModuleProvider="target">
+                                                        <rect key="frame" x="210" y="0.0" width="75" height="75"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="75" id="17w-hf-sgb"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Yxr-MY-FpC">
+                                                <rect key="frame" x="0.0" y="88" width="285" height="75"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKl-YH-BuZ" customClass="RoundedBlurButton" customModule="EthereumWallet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6m5-qW-uDp" customClass="RoundedBlurButton" customModule="EthereumWallet" customModuleProvider="target">
+                                                        <rect key="frame" x="105" y="0.0" width="75" height="75"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULH-KZ-iqO" customClass="RoundedBlurButton" customModule="EthereumWallet" customModuleProvider="target">
+                                                        <rect key="frame" x="210" y="0.0" width="75" height="75"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="75" id="BtM-vr-EzJ"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="yC1-Ol-JKA">
+                                                <rect key="frame" x="0.0" y="176" width="285" height="75"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ji-fh-fNE" customClass="RoundedBlurButton" customModule="EthereumWallet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coY-5X-xcA" customClass="RoundedBlurButton" customModule="EthereumWallet" customModuleProvider="target">
+                                                        <rect key="frame" x="105" y="0.0" width="75" height="75"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2P3-oc-WVr" customClass="RoundedBlurButton" customModule="EthereumWallet" customModuleProvider="target">
+                                                        <rect key="frame" x="210" y="0.0" width="75" height="75"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="75" id="uzy-R7-o0L"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="8rw-cc-R2n">
+                                                <rect key="frame" x="0.0" y="264" width="285" height="75"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DoA-Vz-ePx">
+                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                        <state key="normal" image="icon_face-id"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUc-62-9H8" customClass="RoundedBlurButton" customModule="EthereumWallet" customModuleProvider="target">
+                                                        <rect key="frame" x="105" y="0.0" width="75" height="75"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTQ-Ih-c2Y">
+                                                        <rect key="frame" x="210" y="0.0" width="75" height="75"/>
+                                                        <state key="normal" image="icon_pinpad_delete"/>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="75" id="95Q-Ke-nCG"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yej-7U-iEh">
+                                        <rect key="frame" x="22.5" y="158.5" width="240" height="16"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="7Oj-Pu-S0r"/>
+                                            <constraint firstAttribute="height" constant="16" id="IDS-OM-s3b"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iocn_logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="Ag1-wR-TT2">
+                                        <rect key="frame" x="100" y="0.0" width="85" height="85"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiger EtheriumWallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08y-4O-5ag">
+                                        <rect key="frame" x="11" y="101" width="263" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="gSA-KQ-1kA" secondAttribute="bottom" id="AqN-AU-aX1"/>
+                                    <constraint firstItem="Yej-7U-iEh" firstAttribute="top" secondItem="08y-4O-5ag" secondAttribute="bottom" constant="24" id="CL4-40-mV4"/>
+                                    <constraint firstItem="08y-4O-5ag" firstAttribute="centerX" secondItem="Mq1-gK-thA" secondAttribute="centerX" id="DcI-R7-2WP"/>
+                                    <constraint firstItem="gSA-KQ-1kA" firstAttribute="leading" secondItem="Mq1-gK-thA" secondAttribute="leading" id="Qsc-ms-E7n"/>
+                                    <constraint firstAttribute="width" constant="285" id="WhA-LQ-sIk"/>
+                                    <constraint firstAttribute="trailing" secondItem="gSA-KQ-1kA" secondAttribute="trailing" id="bvV-h2-orM"/>
+                                    <constraint firstItem="Ag1-wR-TT2" firstAttribute="centerX" secondItem="Mq1-gK-thA" secondAttribute="centerX" id="gHr-sq-Fqy"/>
+                                    <constraint firstItem="Ag1-wR-TT2" firstAttribute="top" secondItem="Mq1-gK-thA" secondAttribute="top" id="j5O-Fm-47T"/>
+                                    <constraint firstItem="gSA-KQ-1kA" firstAttribute="top" secondItem="Yej-7U-iEh" secondAttribute="bottom" constant="16" id="qtp-mN-Ghx"/>
+                                    <constraint firstItem="08y-4O-5ag" firstAttribute="top" secondItem="Ag1-wR-TT2" secondAttribute="bottom" constant="16" id="twV-Re-XJb"/>
+                                    <constraint firstItem="Yej-7U-iEh" firstAttribute="centerX" secondItem="Mq1-gK-thA" secondAttribute="centerX" id="ubU-2L-3cB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.24313725489999999" green="0.86666666670000003" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Mq1-gK-thA" firstAttribute="centerY" secondItem="4kQ-ZJ-Ljc" secondAttribute="centerY" id="8pQ-dA-Rc3"/>
+                            <constraint firstItem="Mq1-gK-thA" firstAttribute="centerX" secondItem="4kQ-ZJ-Ljc" secondAttribute="centerX" id="nAN-uw-yOj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qpx-hz-rnR"/>
+                    </view>
+                    <connections>
+                        <outletCollection property="numberButtons" destination="dUc-62-9H8" collectionClass="NSMutableArray" id="5ar-YY-Ybh"/>
+                        <outletCollection property="numberButtons" destination="N6Q-uN-wNd" collectionClass="NSMutableArray" id="hfm-6D-wCG"/>
+                        <outletCollection property="numberButtons" destination="czK-zI-WSM" collectionClass="NSMutableArray" id="nAO-2G-gVU"/>
+                        <outletCollection property="numberButtons" destination="9Z6-WW-wpr" collectionClass="NSMutableArray" id="VUb-LB-pIa"/>
+                        <outletCollection property="numberButtons" destination="VKl-YH-BuZ" collectionClass="NSMutableArray" id="TbQ-yT-SqH"/>
+                        <outletCollection property="numberButtons" destination="6m5-qW-uDp" collectionClass="NSMutableArray" id="o1c-UA-AX2"/>
+                        <outletCollection property="numberButtons" destination="ULH-KZ-iqO" collectionClass="NSMutableArray" id="cR1-Ij-agr"/>
+                        <outletCollection property="numberButtons" destination="2ji-fh-fNE" collectionClass="NSMutableArray" id="2nk-VK-5R7"/>
+                        <outletCollection property="numberButtons" destination="coY-5X-xcA" collectionClass="NSMutableArray" id="ivJ-sJ-E05"/>
+                        <outletCollection property="numberButtons" destination="2P3-oc-WVr" collectionClass="NSMutableArray" id="mYJ-jw-5Xl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DbU-zP-obx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-90.400000000000006" y="68.815592203898049"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_face-id" width="46" height="45"/>
+        <image name="icon_pinpad_delete" width="45" height="26"/>
+        <image name="iocn_logo_white" width="85" height="85"/>
+    </resources>
 </document>
