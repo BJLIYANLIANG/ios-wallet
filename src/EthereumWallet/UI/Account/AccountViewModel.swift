@@ -98,7 +98,7 @@ class AccountViewModel: ViewModel<AccountController> {
     }
 
     func createNewAccount() {
-        submit(task: accountsRepo.createNewAccount(passphrase: "test passphrase")).notify { [weak self] in
+        submit(task: accountsRepo.createNewAccount()).notify { [weak self] in
             if $0.isSuccess {
                 let account = $0.result!
                 self?.accounts?.append(account)
@@ -115,8 +115,7 @@ class AccountViewModel: ViewModel<AccountController> {
         }.chainOnSuccess { [accountsRepo] (result) in
             return accountsRepo.createHDAccount(result.mnemonicText,
                                                 mnemonicPassphrase: "",
-                                                keyIndex: result.accountIndex,
-                                                accountPassphrase: "")
+                                                keyIndex: result.accountIndex)
         }).notify { [weak self] in
             if $0.isSuccess {
                 let account = $0.result!

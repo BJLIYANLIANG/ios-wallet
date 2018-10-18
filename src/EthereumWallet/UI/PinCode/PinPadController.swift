@@ -14,11 +14,14 @@ class PinPadController: UIViewController {
 
     lazy var viewModel: PinPadViewModel = container.resolve()
 
-    @IBOutlet var numberButtons: [RoundedBlurButton]!
+    @IBOutlet var numberButtons: [UIButton]!
     @IBOutlet weak var biometricLoginButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var dotsStack: UIStackView!
-
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var logoStack: UIStackView!
+    @IBOutlet weak var logoLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,18 +29,27 @@ class PinPadController: UIViewController {
 
         for pair in numberButtons.enumerated() {
             let symbol = PinPadViewModel.NumericSymbol()
-            symbol.number = pair.offset
             let button = pair.element
-            button.setBackgroundImage(UIImage(color: UIColor.white.withAlphaComponent(0.25)), for: .normal)
-            button.setBackgroundImage(UIImage(color: UIColor.black.withAlphaComponent(0.5)), for: .highlighted)
-            button.setBackgroundImage(UIImage(color: UIColor.black.withAlphaComponent(0.5)), for: .selected)
+            symbol.number = pair.offset
+            button.setBackgroundImage(#imageLiteral(resourceName: "pinpad-button"), for: .normal)
+            button.setBackgroundImage(#imageLiteral(resourceName: "pinpad-button-pressed"), for: .highlighted)
             button.setTitle(symbol.description, for: .normal)
             button.commanParameter = symbol
             button.command = viewModel.appendSymbolCommand
         }
 
+        biometricLoginButton.command = viewModel.biometricLoginCommand
         deleteButton.commanParameter = PinPadViewModel.DeleteSymbol()
         deleteButton.command = viewModel.appendSymbolCommand
+
+        deleteButton.setImage(#imageLiteral(resourceName: "clear-pin-button"), for: .normal)
+        deleteButton.setImage(#imageLiteral(resourceName: "clear-pin-button-pressed"), for: .highlighted)
+
+        if min(UIScreen.main.bounds.size.height, UIScreen.main.bounds.size.width) < 375 {
+            logoStack.axis = .horizontal
+            logoLabel.font = logoLabel.font.withSize(18)
+            messageLabel.font = messageLabel.font.withSize(15)
+        }
     }
 }
 
@@ -49,8 +61,27 @@ extension PinPadController {
         self.present(controller, animated: true, completion: {})
     }
 
-    func showWongCode() {
+    func showMessage(_ show: Bool) {
+        messageLabel.isHidden = !show
+    }
 
+    func showBiometric(_ type: LocalLoginService.BiometricType) {
+        switch type {
+        case .faceId:
+            biometricLoginButton.setImage(#imageLiteral(resourceName: "icon_face-id"), for: .normal)
+            biometricLoginButton.setImage(#imageLiteral(resourceName: "face-id-pressed"), for: .highlighted)
+            biometricLoginButton.isHidden = false
+        case .touchId:
+            biometricLoginButton.setImage(#imageLiteral(resourceName: "touch-id"), for: .normal)
+            biometricLoginButton.setImage(#imageLiteral(resourceName: "touch-id-pressed"), for: .highlighted)
+            biometricLoginButton.isHidden = false
+        default:
+            biometricLoginButton.isHidden = true
+        }
+    }
+
+    func showWongCode() {
+        // TODO: alert or animation
     }
 
     func showPincode(_ pincode: PinPadViewModel.PinCode) {
@@ -67,7 +98,7 @@ extension PinPadController {
         }
 
         for pair in dotsStack.arrangedSubviews.enumerated() {
-            let image: UIImage? = pair.offset < pincode.currecnt ? #imageLiteral(resourceName: "icon_logo_white") : #imageLiteral(resourceName: "icon_faceid")
+            let image: UIImage? = pair.offset < pincode.currecnt ? #imageLiteral(resourceName: "pin-code-circle-filled") : #imageLiteral(resourceName: "pin-code-circle")
             (pair.element as? UIImageView)?.image = image
         }
     }
