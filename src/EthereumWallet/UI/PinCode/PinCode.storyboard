@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hST-WD-BMg">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,14 @@
             <objects>
                 <viewController id="hST-WD-BMg" customClass="PinPadController" customModule="EthereumWallet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4kQ-ZJ-Ljc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mq1-gK-thA">
-                                <rect key="frame" x="64.5" y="183.5" width="285" height="529.5"/>
+                                <rect key="frame" x="45" y="111.33333333333331" width="285" height="589.66666666666674"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="gSA-KQ-1kA">
-                                        <rect key="frame" x="0.0" y="190.5" width="285" height="339"/>
+                                        <rect key="frame" x="0.0" y="250.66666666666669" width="285" height="339.00000000000006"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Y6z-D1-8pj">
                                                 <rect key="frame" x="0.0" y="0.0" width="285" height="75"/>
@@ -98,7 +98,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DoA-Vz-ePx">
                                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
-                                                        <state key="normal" image="icon_face-id"/>
+                                                        <state key="normal" image="icon_faceid"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUc-62-9H8" customClass="RoundedBlurButton" customModule="EthereumWallet" customModuleProvider="target">
                                                         <rect key="frame" x="105" y="0.0" width="75" height="75"/>
@@ -117,34 +117,46 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yej-7U-iEh">
-                                        <rect key="frame" x="22.5" y="158.5" width="240" height="16"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="22.666666666666686" y="184.66666666666669" width="240" height="16"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GSN-cs-liZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="16"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="240" id="7Oj-Pu-S0r"/>
                                             <constraint firstAttribute="height" constant="16" id="IDS-OM-s3b"/>
+                                            <constraint firstAttribute="trailing" secondItem="GSN-cs-liZ" secondAttribute="trailing" id="JSd-J9-qZv"/>
+                                            <constraint firstItem="GSN-cs-liZ" firstAttribute="top" secondItem="Yej-7U-iEh" secondAttribute="top" id="Udp-uR-rpk"/>
+                                            <constraint firstAttribute="bottom" secondItem="GSN-cs-liZ" secondAttribute="bottom" id="fGt-Ha-LF0"/>
+                                            <constraint firstItem="GSN-cs-liZ" firstAttribute="leading" secondItem="Yej-7U-iEh" secondAttribute="leading" id="mk7-Z1-G4C"/>
+                                            <constraint firstAttribute="width" constant="240" placeholder="YES" id="xbo-fy-HgC"/>
                                         </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iocn_logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="Ag1-wR-TT2">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="icon_logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="Ag1-wR-TT2">
                                         <rect key="frame" x="100" y="0.0" width="85" height="85"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiger EtheriumWallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08y-4O-5ag">
-                                        <rect key="frame" x="11" y="101" width="263" height="33.5"/>
+                                        <rect key="frame" x="11" y="101.00000000000001" width="263" height="33.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="gSA-KQ-1kA" secondAttribute="bottom" id="AqN-AU-aX1"/>
-                                    <constraint firstItem="Yej-7U-iEh" firstAttribute="top" secondItem="08y-4O-5ag" secondAttribute="bottom" constant="24" id="CL4-40-mV4"/>
+                                    <constraint firstItem="Yej-7U-iEh" firstAttribute="top" secondItem="08y-4O-5ag" secondAttribute="bottom" priority="500" constant="50" id="CL4-40-mV4"/>
                                     <constraint firstItem="08y-4O-5ag" firstAttribute="centerX" secondItem="Mq1-gK-thA" secondAttribute="centerX" id="DcI-R7-2WP"/>
+                                    <constraint firstItem="Yej-7U-iEh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="08y-4O-5ag" secondAttribute="bottom" constant="20" id="M25-ZK-QrU"/>
                                     <constraint firstItem="gSA-KQ-1kA" firstAttribute="leading" secondItem="Mq1-gK-thA" secondAttribute="leading" id="Qsc-ms-E7n"/>
                                     <constraint firstAttribute="width" constant="285" id="WhA-LQ-sIk"/>
                                     <constraint firstAttribute="trailing" secondItem="gSA-KQ-1kA" secondAttribute="trailing" id="bvV-h2-orM"/>
                                     <constraint firstItem="Ag1-wR-TT2" firstAttribute="centerX" secondItem="Mq1-gK-thA" secondAttribute="centerX" id="gHr-sq-Fqy"/>
+                                    <constraint firstItem="gSA-KQ-1kA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Yej-7U-iEh" secondAttribute="bottom" constant="16" id="iJF-h2-M7U"/>
                                     <constraint firstItem="Ag1-wR-TT2" firstAttribute="top" secondItem="Mq1-gK-thA" secondAttribute="top" id="j5O-Fm-47T"/>
-                                    <constraint firstItem="gSA-KQ-1kA" firstAttribute="top" secondItem="Yej-7U-iEh" secondAttribute="bottom" constant="16" id="qtp-mN-Ghx"/>
+                                    <constraint firstItem="gSA-KQ-1kA" firstAttribute="top" secondItem="Yej-7U-iEh" secondAttribute="bottom" priority="250" constant="50" id="qtp-mN-Ghx"/>
                                     <constraint firstItem="08y-4O-5ag" firstAttribute="top" secondItem="Ag1-wR-TT2" secondAttribute="bottom" constant="16" id="twV-Re-XJb"/>
                                     <constraint firstItem="Yej-7U-iEh" firstAttribute="centerX" secondItem="Mq1-gK-thA" secondAttribute="centerX" id="ubU-2L-3cB"/>
                                 </constraints>
@@ -153,11 +165,16 @@
                         <color key="backgroundColor" red="0.24313725489999999" green="0.86666666670000003" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Mq1-gK-thA" firstAttribute="centerY" secondItem="4kQ-ZJ-Ljc" secondAttribute="centerY" id="8pQ-dA-Rc3"/>
+                            <constraint firstItem="Mq1-gK-thA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4kQ-ZJ-Ljc" secondAttribute="top" constant="24" id="Tye-j2-LxL"/>
                             <constraint firstItem="Mq1-gK-thA" firstAttribute="centerX" secondItem="4kQ-ZJ-Ljc" secondAttribute="centerX" id="nAN-uw-yOj"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Mq1-gK-thA" secondAttribute="bottom" constant="24" id="wF1-eP-iYR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qpx-hz-rnR"/>
                     </view>
                     <connections>
+                        <outlet property="biometricLoginButton" destination="DoA-Vz-ePx" id="MY2-xV-AOM"/>
+                        <outlet property="deleteButton" destination="uTQ-Ih-c2Y" id="cr8-kH-ef1"/>
+                        <outlet property="dotsStack" destination="GSN-cs-liZ" id="oxP-2r-21Z"/>
                         <outletCollection property="numberButtons" destination="dUc-62-9H8" collectionClass="NSMutableArray" id="5ar-YY-Ybh"/>
                         <outletCollection property="numberButtons" destination="N6Q-uN-wNd" collectionClass="NSMutableArray" id="hfm-6D-wCG"/>
                         <outletCollection property="numberButtons" destination="czK-zI-WSM" collectionClass="NSMutableArray" id="nAO-2G-gVU"/>
@@ -176,8 +193,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_face-id" width="46" height="45"/>
+        <image name="icon_faceid" width="46" height="45"/>
+        <image name="icon_logo_white" width="85" height="85"/>
         <image name="icon_pinpad_delete" width="45" height="26"/>
-        <image name="iocn_logo_white" width="85" height="85"/>
     </resources>
 </document>

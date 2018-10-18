@@ -17,36 +17,47 @@ protocol PinpadSymbol: CustomStringConvertible {
 
 class PinPadViewModel: ViewModel<PinPadController> {
 
-    private let pinCode = PinCode()
-
     override init() {
-
+        pinCode = PinCode(lenght: 6)
     }
 
     lazy var appendSymbolCommand = ActionCommand(self) { $0.appendSymbol($1) }
 
+    var pinCode: PinCode {
+        didSet {
+            view?.showPincode(pinCode)
+        }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        pinCode.code = ""
+    }
+
     fileprivate func appendSymbol(_ symbol: PinpadSymbol) {
         pinCode.code = symbol.append(to: pinCode.code)
-
-        view?.showPincode(pinCode)
 
         guard pinCode.isCompleted else  {
             return
         }
 
         if pinCode.isValid {
+            // TODO:
             view?.showDashboard()
+            pinCode.code = ""
         } else {
             view?.showWongCode()
+            pinCode.code = ""
         }
     }
 
-    class PinCode {
+    struct PinCode {
 
-        init() {
+        init(lenght: Int) {
+            self.lenght = lenght
         }
 
-        let lenght: Int = 6
+        let lenght: Int
 
         var currecnt: Int {
             return code.count
@@ -59,13 +70,13 @@ class PinPadViewModel: ViewModel<PinPadController> {
         }
 
         var isValid: Bool {
-            return isCompleted && true
+            return isCompleted && true // TODO:
         }
     }
 
-    struct NumericSymbol: PinpadSymbol {
+    class NumericSymbol: PinpadSymbol {
 
-        let number: Int
+        var number: Int = 0
 
         var description: String {
             return number.description
@@ -76,7 +87,7 @@ class PinPadViewModel: ViewModel<PinPadController> {
         }
     }
 
-    struct DeleteSymbol: PinpadSymbol {
+    class DeleteSymbol: PinpadSymbol {
 
         var description: String {
             return "Delete"
