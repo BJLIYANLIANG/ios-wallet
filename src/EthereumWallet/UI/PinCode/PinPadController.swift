@@ -21,7 +21,8 @@ class PinPadController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var logoStack: UIStackView!
     @IBOutlet weak var logoLabel: UILabel!
-    
+    @IBOutlet weak var logoIcon: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,6 +49,7 @@ class PinPadController: UIViewController {
         if min(UIScreen.main.bounds.size.height, UIScreen.main.bounds.size.width) < 375 {
             logoStack.axis = .horizontal
             logoLabel.font = logoLabel.font.withSize(18)
+            logoIcon.image = #imageLiteral(resourceName: "logo-white-small")
             messageLabel.font = messageLabel.font.withSize(15)
         }
     }
@@ -68,7 +70,7 @@ extension PinPadController {
     func showBiometric(_ type: LocalLoginService.BiometricType) {
         switch type {
         case .faceId:
-            biometricLoginButton.setImage(#imageLiteral(resourceName: "icon_face-id"), for: .normal)
+            biometricLoginButton.setImage(#imageLiteral(resourceName: "face-id"), for: .normal)
             biometricLoginButton.setImage(#imageLiteral(resourceName: "face-id-pressed"), for: .highlighted)
             biometricLoginButton.isHidden = false
         case .touchId:

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hST-WD-BMg">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,17 +16,17 @@
             <objects>
                 <viewController id="hST-WD-BMg" customClass="PinPadController" customModule="EthereumWallet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4kQ-ZJ-Ljc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin-code-wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="2Yi-Zt-dvh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mq1-gK-thA">
-                                <rect key="frame" x="45" y="24" width="285" height="619"/>
+                                <rect key="frame" x="17.5" y="24" width="285" height="520"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="gSA-KQ-1kA">
-                                        <rect key="frame" x="0.0" y="240" width="285" height="379"/>
+                                        <rect key="frame" x="0.0" y="141" width="285" height="379"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Y6z-D1-8pj">
                                                 <rect key="frame" x="0.0" y="0.0" width="285" height="85"/>
@@ -122,10 +122,10 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLC-OP-sQ1">
-                                        <rect key="frame" x="0.0" y="134.5" width="285" height="105.5"/>
+                                        <rect key="frame" x="0.0" y="76" width="285" height="65"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="C3z-WK-P4z">
-                                                <rect key="frame" x="0.0" y="20.5" width="285" height="65"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="285" height="65"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2k-CT-WFM">
                                                         <rect key="frame" x="10" y="0.0" width="265" height="41"/>
@@ -166,13 +166,13 @@ that will be used to access the app</string>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="T6s-BT-j6K">
-                                        <rect key="frame" x="0.0" y="0.0" width="285" height="134.5"/>
+                                        <rect key="frame" x="10" y="0.0" width="265" height="76"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="logo-white" translatesAutoresizingMaskIntoConstraints="NO" id="Ag1-wR-TT2">
-                                                <rect key="frame" x="100" y="0.0" width="85" height="85"/>
+                                                <rect key="frame" x="90" y="0.0" width="85" height="26.5"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiger EtheriumWallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08y-4O-5ag">
-                                                <rect key="frame" x="11" y="101" width="263" height="33.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiger EtheriumWallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="08y-4O-5ag">
+                                                <rect key="frame" x="1" y="42.5" width="263" height="33.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -189,10 +189,10 @@ that will be used to access the app</string>
                                     <constraint firstItem="gSA-KQ-1kA" firstAttribute="top" secondItem="dLC-OP-sQ1" secondAttribute="bottom" id="Gr1-YV-RmC"/>
                                     <constraint firstItem="gSA-KQ-1kA" firstAttribute="leading" secondItem="Mq1-gK-thA" secondAttribute="leading" id="Qsc-ms-E7n"/>
                                     <constraint firstAttribute="width" constant="285" id="WhA-LQ-sIk"/>
-                                    <constraint firstAttribute="trailing" secondItem="T6s-BT-j6K" secondAttribute="trailing" id="Yn1-92-uQl"/>
+                                    <constraint firstAttribute="trailing" secondItem="T6s-BT-j6K" secondAttribute="trailing" constant="10" id="Yn1-92-uQl"/>
                                     <constraint firstAttribute="trailing" secondItem="gSA-KQ-1kA" secondAttribute="trailing" id="bvV-h2-orM"/>
                                     <constraint firstItem="dLC-OP-sQ1" firstAttribute="top" secondItem="T6s-BT-j6K" secondAttribute="bottom" id="c7U-95-KaA"/>
-                                    <constraint firstItem="T6s-BT-j6K" firstAttribute="leading" secondItem="Mq1-gK-thA" secondAttribute="leading" id="zw9-87-fvm"/>
+                                    <constraint firstItem="T6s-BT-j6K" firstAttribute="leading" secondItem="Mq1-gK-thA" secondAttribute="leading" constant="10" id="zw9-87-fvm"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -213,6 +213,7 @@ that will be used to access the app</string>
                         <outlet property="biometricLoginButton" destination="DoA-Vz-ePx" id="MY2-xV-AOM"/>
                         <outlet property="deleteButton" destination="uTQ-Ih-c2Y" id="cr8-kH-ef1"/>
                         <outlet property="dotsStack" destination="GSN-cs-liZ" id="oxP-2r-21Z"/>
+                        <outlet property="logoIcon" destination="Ag1-wR-TT2" id="7Fh-eR-13T"/>
                         <outlet property="logoLabel" destination="08y-4O-5ag" id="U5m-gh-Ojb"/>
                         <outlet property="logoStack" destination="T6s-BT-j6K" id="v4T-TC-rpL"/>
                         <outlet property="messageLabel" destination="t2k-CT-WFM" id="PVg-kE-yg3"/>
