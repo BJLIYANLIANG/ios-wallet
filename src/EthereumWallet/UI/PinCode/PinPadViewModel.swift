@@ -23,7 +23,7 @@ private protocol PinPadState {
     func willAppear(viewModel: PinPadViewModel)
 }
 
-class PinPadViewModel: ViewModel<PinPadController> {
+class PinPadViewModel: ViewModel {
 
     private let loginService: LocalLoginService
 
@@ -32,6 +32,8 @@ class PinPadViewModel: ViewModel<PinPadController> {
         self.loginService = loginService
         self.state = SetCodeState()
     }
+
+    weak var view: PinPadController?
 
     lazy var appendSymbolCommand = ActionCommand(self) { $0.appendSymbol($1) }
 

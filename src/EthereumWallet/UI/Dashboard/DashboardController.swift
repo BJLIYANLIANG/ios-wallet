@@ -12,11 +12,11 @@ import JetLib
 
 class DashboardController: UIViewController {
 
-    @IBOutlet weak var rootScrollView: RootScrollView?
+    lazy var accountViewModel: AccountViewModel = container.resolve()
+    lazy var accountListViewModel: AccountListViewModel = container.resolve()
 
-    var accoutController: AccountController? {
-        return children.first(where: { $0 is AccountController}) as? AccountController
-    }
+    @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var rootScrollView: RootScrollView?
 
     var transactionListController: TransactionListController? {
         return children.first(where: { $0 is TransactionListController}) as? TransactionListController
@@ -24,7 +24,37 @@ class DashboardController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        accoutController?.viewModel.delegate = transactionListController
+
+        add(accountListViewModel)
+        add(accountViewModel)
+
+        accountViewModel.view = self
+        accountListViewModel.view = self
+
         rootScrollView?.nestedScrollView =  transactionListController?.tableView
+    }
+}
+
+extension DashboardController: AccountView {
+
+    func balanceChanged(_ viewModel: AccountViewModel) {
+
+    }
+
+    func accountChanged(_ viewModel: AccountViewModel) {
+
+    }
+}
+
+extension DashboardController: AccountListView {
+
+    func collectionChanged(_ viewModel: AccountListViewModel) {
+        emptyView.isHidden = !(viewModel.accounts?.isEmpty == false)
+        rootScrollView?.isHidden = viewModel.accounts?.isEmpty == false
+    }
+
+    func selcetedChanged(_ viewModel: AccountListViewModel) {
+        accountViewModel.account = viewModel.selected
+        transactionListController?.viewModel.account = viewModel.selected
     }
 }

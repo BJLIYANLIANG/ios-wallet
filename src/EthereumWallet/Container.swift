@@ -42,6 +42,7 @@ private func newContainer() -> DIContainer {
 
     container.register1(PinPadViewModel.init).lifetime(.objectGraph)
     container.register(AccountViewModel.init).lifetime(.objectGraph)
+    container.register1(AccountListViewModel.init).lifetime(.objectGraph)
     container.register1(TransactionListViewModel.init).lifetime(.objectGraph)
 
     #if DEBUG

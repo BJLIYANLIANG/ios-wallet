@@ -27,18 +27,8 @@ extension ViewModel {
 extension UIViewController {
 
     @discardableResult
-    func attach<T: UIViewController>(_ viewModel: ViewModel<T>) -> ViewModel<T> {
-        defer {
-            add(viewModel)
-        }
-
-        guard let view = self as? T else {
-            print("ERROR: view and viewModel types mistmath")
-            return viewModel
-        }
-
-        viewModel.view = view
-
+    func attach(_ viewModel: ViewModel) -> ViewModel {
+        add(viewModel)
         return viewModel
     }
 

@@ -14,16 +14,10 @@ class TransactionListController: UITableViewController {
 
     lazy var viewModel: TransactionListViewModel = container.resolve()
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         attach(viewModel)
-    }
-}
-
-extension TransactionListController: AccountSelectionDelegate {
-
-    func selectionChanged(_ selectedAccount: Account?) {
-        viewModel.account = selectedAccount
     }
 }
 

@@ -26,6 +26,7 @@ class PinPadController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewModel.view = self
         attach(viewModel)
 
         for pair in numberButtons.enumerated() {

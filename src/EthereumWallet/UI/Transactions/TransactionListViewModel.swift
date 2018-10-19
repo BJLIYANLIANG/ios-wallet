@@ -9,13 +9,15 @@
 import Foundation
 import JetLib
 
-class TransactionListViewModel: ViewModel<TransactionListController> {
+class TransactionListViewModel: ViewModel {
 
     private let historyRepo: TransactionHistostyRepository
 
     init(historyRepo: TransactionHistostyRepository) {
         self.historyRepo = historyRepo
     }
+
+    weak var view: TransactionListController?
 
     var account: Account? {
         didSet {
