@@ -28,6 +28,8 @@
 		BA90CEC2216E13A000892462 /* JsonRPC+EthConverters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEC1216E13A000892462 /* JsonRPC+EthConverters.swift */; };
 		BA90CEC4216E373800892462 /* DeterministicAccountFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEC3216E373800892462 /* DeterministicAccountFactory.swift */; };
 		BA90CEC8216F7F4300892462 /* TrezorCryptoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEC7216F7F4300892462 /* TrezorCryptoHelper.swift */; };
+		BA9259F3217798B60002688E /* RoundBlurButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9259F2217798B60002688E /* RoundBlurButton.swift */; };
+		BA9259F52178AAC40002688E /* LocalLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9259F42178AAC40002688E /* LocalLoginService.swift */; };
 		BAA0FBDE2170F564000FEFCE /* TransactionHistostyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBDD2170F564000FEFCE /* TransactionHistostyRepository.swift */; };
 		BAA0FBE02170F669000FEFCE /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBDF2170F669000FEFCE /* Transaction.swift */; };
 		BAA0FBE42170FAF4000FEFCE /* TransactionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBE32170FAF4000FEFCE /* TransactionListController.swift */; };
@@ -40,6 +42,9 @@
 		BACAAD092174EB1B0039CC76 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACAAD082174EB1B0039CC76 /* TransactionService.swift */; };
 		BACAAD0D2174ED5F0039CC76 /* KeystoreProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACAAD0C2174ED5F0039CC76 /* KeystoreProxy.swift */; };
 		BACAAD0F2174FA840039CC76 /* Wei.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACAAD0E2174FA840039CC76 /* Wei.swift */; };
+		BACD958321777EA8008396D5 /* PinCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BACD958221777EA8008396D5 /* PinCode.storyboard */; };
+		BACD958521777ECC008396D5 /* PinPadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACD958421777ECC008396D5 /* PinPadController.swift */; };
+		BACD958721777F03008396D5 /* PinPadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACD958621777F03008396D5 /* PinPadViewModel.swift */; };
 		D298205C9BB74A34B73592AB /* Pods_EthereumWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C007EE49DBF447D9503B0E53 /* Pods_EthereumWallet.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +74,8 @@
 		BA90CEC1216E13A000892462 /* JsonRPC+EthConverters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JsonRPC+EthConverters.swift"; sourceTree = "<group>"; };
 		BA90CEC3216E373800892462 /* DeterministicAccountFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeterministicAccountFactory.swift; sourceTree = "<group>"; };
 		BA90CEC7216F7F4300892462 /* TrezorCryptoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrezorCryptoHelper.swift; sourceTree = "<group>"; };
+		BA9259F2217798B60002688E /* RoundBlurButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundBlurButton.swift; sourceTree = "<group>"; };
+		BA9259F42178AAC40002688E /* LocalLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLoginService.swift; sourceTree = "<group>"; };
 		BAA0FBDD2170F564000FEFCE /* TransactionHistostyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistostyRepository.swift; sourceTree = "<group>"; };
 		BAA0FBDF2170F669000FEFCE /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		BAA0FBE32170FAF4000FEFCE /* TransactionListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListController.swift; sourceTree = "<group>"; };
@@ -81,6 +88,9 @@
 		BACAAD082174EB1B0039CC76 /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
 		BACAAD0C2174ED5F0039CC76 /* KeystoreProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeystoreProxy.swift; sourceTree = "<group>"; };
 		BACAAD0E2174FA840039CC76 /* Wei.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wei.swift; sourceTree = "<group>"; };
+		BACD958221777EA8008396D5 /* PinCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PinCode.storyboard; sourceTree = "<group>"; };
+		BACD958421777ECC008396D5 /* PinPadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinPadController.swift; sourceTree = "<group>"; };
+		BACD958621777F03008396D5 /* PinPadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinPadViewModel.swift; sourceTree = "<group>"; };
 		C007EE49DBF447D9503B0E53 /* Pods_EthereumWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EthereumWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -133,6 +143,8 @@
 		BA90CE8C216BA6E200892462 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BA9259F1217798990002688E /* CustomViews */,
+				BACD958121777E8C008396D5 /* PinCode */,
 				BAA0FBE22170F9DC000FEFCE /* Dashboard */,
 				BAA0FBE12170F9C0000FEFCE /* Transactions */,
 				BA90CE8F216BA70500892462 /* Account */,
@@ -156,6 +168,7 @@
 				BACAAD0C2174ED5F0039CC76 /* KeystoreProxy.swift */,
 				BA90CEB4216CE75400892462 /* KeystoreAccountProvider.swift */,
 				BA90CEC3216E373800892462 /* DeterministicAccountFactory.swift */,
+				BA9259F42178AAC40002688E /* LocalLoginService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -191,6 +204,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		BA9259F1217798990002688E /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				BA9259F2217798B60002688E /* RoundBlurButton.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		BAA0FBE12170F9C0000FEFCE /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +230,16 @@
 				BAA0FBED21749DDA000FEFCE /* DashboardController.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		BACD958121777E8C008396D5 /* PinCode */ = {
+			isa = PBXGroup;
+			children = (
+				BACD958221777EA8008396D5 /* PinCode.storyboard */,
+				BACD958421777ECC008396D5 /* PinPadController.swift */,
+				BACD958621777F03008396D5 /* PinPadViewModel.swift */,
+			);
+			path = PinCode;
 			sourceTree = "<group>";
 		};
 		D3E955FE5F3E342EE3CDA713 /* Pods */ = {
@@ -291,6 +322,7 @@
 				BA90CE85216BA44300892462 /* LaunchScreen.storyboard in Resources */,
 				BA90CEB3216CE14D00892462 /* Account.storyboard in Resources */,
 				BA90CE82216BA44300892462 /* Assets.xcassets in Resources */,
+				BACD958321777EA8008396D5 /* PinCode.storyboard in Resources */,
 				BAA0FBE8217103C6000FEFCE /* Dashboard.storyboard in Resources */,
 				BAA0FBEA21710456000FEFCE /* Transactions.storyboard in Resources */,
 			);
@@ -353,12 +385,16 @@
 				BAA0FBE42170FAF4000FEFCE /* TransactionListController.swift in Sources */,
 				BA90CE99216BABD400892462 /* AccountViewModel.swift in Sources */,
 				BA90CEAE216CAF5A00892462 /* Network.swift in Sources */,
+				BACD958521777ECC008396D5 /* PinPadController.swift in Sources */,
 				BA90CEAA216BC37A00892462 /* UIExtensions.swift in Sources */,
+				BA9259F52178AAC40002688E /* LocalLoginService.swift in Sources */,
 				BA90CEBC216D16C900892462 /* AccountBalanceRepository.swift in Sources */,
 				BA90CE97216BAA6B00892462 /* Container.swift in Sources */,
 				BA90CEA0216BAFBB00892462 /* User.swift in Sources */,
+				BA9259F3217798B60002688E /* RoundBlurButton.swift in Sources */,
 				BA90CE9B216BABF900892462 /* AccountController.swift in Sources */,
 				BA90CE7B216BA44300892462 /* AppDelegate.swift in Sources */,
+				BACD958721777F03008396D5 /* PinPadViewModel.swift in Sources */,
 				BA90CEC8216F7F4300892462 /* TrezorCryptoHelper.swift in Sources */,
 				BACAAD092174EB1B0039CC76 /* TransactionService.swift in Sources */,
 				BACAAD0F2174FA840039CC76 /* Wei.swift in Sources */,
@@ -516,6 +552,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MJ5AUMQ9YX;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/EthereumWallet/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -525,7 +562,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devpool.ethereum-wallet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -536,6 +573,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MJ5AUMQ9YX;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/EthereumWallet/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -545,7 +583,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devpool.ethereum-wallet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -17,7 +17,6 @@ class KeystoreProxy {
     }()
 
     let syncQueue: DispatchQueue = DispatchQueue(label: "geth.keystore.queue", qos: .userInitiated)
-
 }
 
 extension GethKeyStore {

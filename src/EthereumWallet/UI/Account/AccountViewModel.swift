@@ -98,7 +98,7 @@ class AccountViewModel: ViewModel<AccountController> {
     }
 
     func createNewAccount() {
-        submit(task: accountsRepo.createNewAccount(passphrase: "test passphrase")).notify { [weak self] in
+        submit(task: accountsRepo.createNewAccount()).notify { [weak self] in
             if $0.isSuccess {
                 let account = $0.result!
                 self?.accounts?.append(account)
@@ -110,13 +110,12 @@ class AccountViewModel: ViewModel<AccountController> {
     }
 
     func addMnemonicAccount() {
-        submit(task: view!.requetMnemonic().chainOnSuccess { [view] (textTask) in
-            view!.reauetAccountIndex().map { (mnemonicText: textTask.result!, accountIndex: $0) }
-        }.chainOnSuccess { [accountsRepo] (paramsTask) in
-            return accountsRepo.createHDAccount(paramsTask.result!.mnemonicText,
+        submit(task: view!.requetMnemonic().chainOnSuccess { [view] (result) in
+            view!.reauetAccountIndex().map { (mnemonicText: result, accountIndex: $0) }
+        }.chainOnSuccess { [accountsRepo] (result) in
+            return accountsRepo.createHDAccount(result.mnemonicText,
                                                 mnemonicPassphrase: "",
-                                                keyIndex: paramsTask.result!.accountIndex,
-                                                accountPassphrase: "")
+                                                keyIndex: result.accountIndex)
         }).notify { [weak self] in
             if $0.isSuccess {
                 let account = $0.result!
