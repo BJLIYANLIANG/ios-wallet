@@ -8,8 +8,11 @@
 
 import Foundation
 import UIKit
+import JetLib
 
 class DashboardController: UIViewController {
+
+    @IBOutlet weak var rootScrollView: RootScrollView?
 
     var accoutController: AccountController? {
         return children.first(where: { $0 is AccountController}) as? AccountController
@@ -22,5 +25,6 @@ class DashboardController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         accoutController?.viewModel.delegate = transactionListController
+        rootScrollView?.nestedScrollView =  transactionListController?.tableView
     }
 }
