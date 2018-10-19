@@ -19,7 +19,7 @@ private protocol PinPadState {
     var hasMessage: Bool { get }
 
     func biometricType(viewModel: PinPadViewModel) -> LocalLoginService.BiometricType
-    func prcessPinCode(viewModel: PinPadViewModel)
+    func processPinCode(viewModel: PinPadViewModel)
     func willAppear(viewModel: PinPadViewModel)
 }
 
@@ -73,7 +73,7 @@ class PinPadViewModel: ViewModel<PinPadController> {
             return
         }
 
-        state.prcessPinCode(viewModel: self)
+        state.processPinCode(viewModel: self)
     }
 
     struct PinCode {
@@ -128,15 +128,20 @@ class PinPadViewModel: ViewModel<PinPadController> {
         let hasMessage = false
 
         func biometricType(viewModel: PinPadViewModel) -> LocalLoginService.BiometricType {
-            return viewModel.loginService.biometricType
+            return viewModel.loginService.isBiometricLoginPreffered
+                ? viewModel.loginService.biometricType
+                : LocalLoginService.BiometricType.none
         }
 
         func willAppear(viewModel: PinPadViewModel) {
             viewModel.pinCode.code = ""
-            viewModel.biometricLoginCommand.execute()
+
+            if viewModel.loginService.isBiometricLoginPreffered {
+                viewModel.biometricLoginCommand.execute()
+            }
         }
 
-        func prcessPinCode(viewModel: PinPadViewModel) {
+        func processPinCode(viewModel: PinPadViewModel) {
             if viewModel.loginService.pincodeLogin(pincode: viewModel.pinCode.code) {
                 viewModel.view?.showDashboard()
                 viewModel.pinCode.code = ""
@@ -159,9 +164,23 @@ class PinPadViewModel: ViewModel<PinPadController> {
             return .none
         }
 
-        func prcessPinCode(viewModel: PinPadViewModel) {
+        func processPinCode(viewModel: PinPadViewModel) {
             try! viewModel.loginService.setPinCode(pincode: viewModel.pinCode.code)
-            viewModel.view?.showDashboard()
+
+            guard viewModel.loginService.biometricType != .none else {
+                viewModel.view?.showDashboard()
+                return
+            }
+
+            viewModel.view?.showAlert(
+                title: "<TODO> login via biometric",
+                message: "<TODO> Do you want use \(viewModel.loginService.biometricType)?",
+                ok: "Yes", cancel: "No")
+            .onSuccess { [weak viewModel] (_) in
+                viewModel?.loginService.isBiometricLoginPreffered = true
+            }.notify { [weak viewModel] (_) in
+                viewModel?.view?.showDashboard()
+            }
         }
     }
 }

@@ -83,6 +83,24 @@ extension UIViewController {
 
         return source.task
     }
+
+    func showAlert(title: String?, message: String? = nil,
+                   ok: String = "OK", cancel: String? = nil) -> Task<Bool> {
+        let source = Task<Bool>.Source()
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: ok, style: .default, handler: {(_) in
+            try? source.complete(true)
+        }))
+
+        if let cancel = cancel {
+            alert.addAction(UIAlertAction(title: cancel, style: .cancel, handler: { _ in try? source.cancel() }))
+        }
+
+        self.present(alert, animated: true, completion: nil)
+
+        return source.task
+    }
 }
 
 public extension UIImage {
