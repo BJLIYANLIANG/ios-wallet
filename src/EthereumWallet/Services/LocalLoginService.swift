@@ -12,6 +12,7 @@ import LocalAuthentication
 
 enum LocalStorageKeys: String {
     case useBiomericLogin
+    case pincodeInited
 }
 
 class LocalLoginService {
@@ -48,12 +49,8 @@ class LocalLoginService {
     }
 
     var isPincodeInited: Bool {
-        do {
-            let pin = try readPincodeFromKeychain()
-            return pin != nil
-        } catch {
-            return false
-        }
+        get { return UserDefaults.standard.bool(forKey: LocalStorageKeys.pincodeInited.rawValue) }
+        set { UserDefaults.standard.set(newValue, forKey: LocalStorageKeys.pincodeInited.rawValue) }
     }
 
     var biometricType: BiometricType {
@@ -72,7 +69,7 @@ class LocalLoginService {
 
     func biometricLogin() -> Task<Bool> {
         let taskSource = Task<Bool>.Source()
-        let reason = "<TODO> WTF"
+        let reason = "<TODO> ..."
 
         context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
             if let error = $1 {
@@ -97,36 +94,57 @@ class LocalLoginService {
 
     func setPinCode(pincode: String) throws {
         try queue.sync {
-            guard !isPincodeInited else {
-                throw Errors.pincodeAlredySet
+            if (try? readPincodeImpl()) != nil {
+                try removePinImpl()
             }
 
-            var query = newPincodeQuery()
-            query[kSecValueData as String] = pincode.data(using: .utf8) as AnyObject?
-
-            let status = SecItemAdd(query as CFDictionary, nil)
-            if status != noErr {
-                throw Errors.keychainError(status: status)
-            }
+            try setPincodeImpl(pincode)
+            isPincodeInited = true
         }
     }
 
     func clearPincode() throws {
         try queue.sync {
-            guard isPincodeInited else {
-                throw Errors.pincodeNotSet
-            }
-
-            let query = newPincodeQuery()
-            let status = SecItemDelete(query as CFDictionary)
-
-            guard status == noErr || status == errSecItemNotFound else {
-                throw Errors.keychainError(status: status)
-            }
+            isPincodeInited = false
+            try removePinImpl()
         }
     }
 
     func readPincodeFromKeychain() throws -> String? {
+        return try queue.sync {
+            return try readPincodeImpl()
+        }
+    }
+
+    fileprivate func newPincodeQuery() -> [String: AnyObject] {
+        var query = [String: AnyObject]()
+        query[kSecAttrAccessGroup as String] = nil
+        query[kSecClass as String] = kSecClassGenericPassword
+        query[kSecAttrService as String] = serviceName as AnyObject
+
+        return query
+    }
+
+    fileprivate func setPincodeImpl(_ pincode: String) throws {
+        var query = newPincodeQuery()
+        query[kSecValueData as String] = pincode.data(using: .utf8) as AnyObject?
+
+        let status = SecItemAdd(query as CFDictionary, nil)
+        if status != noErr {
+            throw Errors.keychainError(status: status)
+        }
+    }
+
+    fileprivate func removePinImpl() throws {
+        let query = newPincodeQuery()
+        let status = SecItemDelete(query as CFDictionary)
+
+        guard status == noErr || status == errSecItemNotFound else {
+            throw Errors.keychainError(status: status)
+        }
+    }
+
+    fileprivate func readPincodeImpl() throws -> String? {
         var result: AnyObject?
 
         var query = newPincodeQuery()
@@ -149,19 +167,10 @@ class LocalLoginService {
         guard let item = result as? [String : AnyObject],
             let data = item[kSecValueData as String] as? Data,
             let pincode = String(data: data, encoding: .utf8)
-        else {
-            throw Errors.brokenData
+            else {
+                throw Errors.brokenData
         }
 
         return pincode
-    }
-
-    func newPincodeQuery() -> [String: AnyObject] {
-        var query = [String: AnyObject]()
-        query[kSecAttrAccessGroup as String] = nil
-        query[kSecClass as String] = kSecClassGenericPassword
-        query[kSecAttrService as String] = serviceName as AnyObject
-
-        return query
     }
 }
