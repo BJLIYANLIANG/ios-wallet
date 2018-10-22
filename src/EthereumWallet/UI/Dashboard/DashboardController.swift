@@ -46,23 +46,9 @@ class DashboardController: UIViewController {
             self?.accountListViewModel.reload(force: true)
         }
 
-        sendButton.command = ActionCommand(self) {
-            let storyboard = UIStoryboard(name: "Transactions", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "sendTransaction")
-            $0.navigationController?.pushViewController(controller, animated: true)
-        }
-
-        contractButton.command = ActionCommand(self) {
-            let storyboard = UIStoryboard(name: "Contracts", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "executeContract")
-            $0.navigationController?.pushViewController(controller, animated: true)
-        }
-
-        settingButton.command = ActionCommand(self) {
-            let storyboard = UIStoryboard(name: "Settings", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "settings")
-            $0.navigationController?.pushViewController(controller, animated: true)
-        }
+        sendButton.command = ActionCommand.pushScreen(self, sbName: "Transactions", controllerId: "sendTransaction")
+        contractButton.command = ActionCommand.pushScreen(self, sbName: "Contracts", controllerId: "executeContract")
+        settingButton.command = ActionCommand.pushScreen(self, sbName: "Settings", controllerId: "settings")
 
         rootScrollView?.nestedScrollView =  transactionListController?.tableView
         rootScrollView?.insertSubview(refresher, at: 0)

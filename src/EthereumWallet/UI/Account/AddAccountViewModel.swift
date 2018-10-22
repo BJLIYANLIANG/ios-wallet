@@ -47,11 +47,11 @@ class AddAccountViewModel: ViewModel {
             view!.requestAccountIndex().map { (mnemonicText: result, accountIndex: $0) }
         }.chainOnSuccess { [repo] (result) in
             return repo.createHDAccount(result.mnemonicText, mnemonicPassphrase: "", keyIndex: result.accountIndex)
-        }).onSuccess { [weak self] _ in
+        }.onSuccess { [weak self] _ in
             self?.onAccountAdded?()
         }.onFail { [weak self] in
             Logger.error($0)
             self?.view?.showAlert(title: $0.localizedDescription) // TODO
-        }
+        })
     }
 }

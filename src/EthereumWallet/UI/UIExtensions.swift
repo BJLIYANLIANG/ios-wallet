@@ -147,3 +147,20 @@ public extension UIButton {
         set { return setImage(newValue, for: .highlighted) }
     }
 }
+
+extension ActionCommand {
+
+    static func pushScreen(_ from: UIViewController, sbName: String, controllerId: String) -> ActionCommand {
+        return ActionCommand(from) {
+            let storyboard = UIStoryboard(name: "Transactions", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "sendTransaction")
+            $0.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+
+    static func pushScreen(_ from: UIViewController, create: @escaping () -> UIViewController) -> ActionCommand {
+        return ActionCommand(from) {
+            $0.navigationController?.pushViewController(create(), animated: true)
+        }
+    }
+}
