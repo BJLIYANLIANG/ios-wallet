@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MXw-gp-C8B">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,33 +16,33 @@
             <objects>
                 <viewController id="eXO-Id-CpI" customClass="AddAccountController" customModule="EthereumWallet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M0E-Vp-bcu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oD9-up-f14">
-                                <rect key="frame" x="48" y="80" width="224" height="408.5"/>
+                                <rect key="frame" x="56.333333333333343" y="201.99999999999997" width="262.33333333333326" height="408.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To signup....." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZc-Px-ytb">
-                                        <rect key="frame" x="0.0" y="0.0" width="224" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="262.33333333333331" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ADc-jr-6dN">
-                                        <rect key="frame" x="0.0" y="36.5" width="224" height="372"/>
+                                        <rect key="frame" x="0.0" y="36.333333333333343" width="262.33333333333331" height="372"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d81-6B-9zx">
-                                                <rect key="frame" x="0.0" y="0.0" width="224" height="174"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="262.33333333333331" height="174"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXt-cu-9eg">
-                                                        <rect key="frame" x="43" y="43" width="149" height="30"/>
+                                                        <rect key="frame" x="43" y="42.999999999999972" width="149" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="9jV-ob-g9W"/>
                                                         </constraints>
                                                         <state key="normal" title="Create mnemonic key"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7D-D6-IIO">
-                                                        <rect key="frame" x="43" y="101" width="149" height="30"/>
+                                                        <rect key="frame" x="43" y="100.99999999999997" width="149" height="30"/>
                                                         <state key="normal" title="Import mnemonic key"/>
                                                     </button>
                                                 </subviews>
@@ -57,10 +57,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w1Z-BC-evM">
-                                                <rect key="frame" x="0.0" y="198" width="224" height="174"/>
+                                                <rect key="frame" x="0.0" y="198" width="262.33333333333331" height="174"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfc-de-MOF">
-                                                        <rect key="frame" x="43" y="101" width="73" height="30"/>
+                                                        <rect key="frame" x="43" y="101.00000000000006" width="73" height="30"/>
                                                         <state key="normal" title="Import key"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pre-Do-o6q">
@@ -119,14 +119,14 @@
             <objects>
                 <viewController id="Ms3-Di-pne" customClass="DashboardController" customModule="EthereumWallet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Prn-vR-Hd6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GyK-Be-J2F">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeA-ba-DbU">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                         <connections>
                                             <segue destination="eXO-Id-CpI" kind="embed" id="tiH-Wn-Mr3"/>
                                         </connections>
@@ -140,29 +140,29 @@
                                     <constraint firstItem="zeA-ba-DbU" firstAttribute="top" secondItem="GyK-Be-J2F" secondAttribute="top" id="goO-9e-uhp"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3G0-O9-cKB" customClass="RootScrollView" customModule="EthereumWallet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="320" height="476"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3G0-O9-cKB" customClass="RootScrollView" customModule="EthereumWallet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="116" width="375" height="696"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zwr-w7-vhq">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="737"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zwr-w7-vhq">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="957"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="exD-9W-ELs">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="253"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="253"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ethereum-icon" translatesAutoresizingMaskIntoConstraints="NO" id="SEd-rJ-CXW">
-                                                        <rect key="frame" x="144.5" y="24" width="31" height="49"/>
+                                                        <rect key="frame" x="172" y="24" width="31" height="49"/>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8Ni-eY-vdF">
-                                                        <rect key="frame" x="116" y="93" width="88.5" height="40"/>
+                                                        <rect key="frame" x="143.33333333333334" y="93" width="88.333333333333343" height="40"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgn-9D-KFV">
-                                                                <rect key="frame" x="0.0" y="0.0" width="15.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="15.333333333333334" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
                                                                 <color key="textColor" red="0.090196078431372548" green="0.66274509803921566" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UH1-c6-2G5">
-                                                                <rect key="frame" x="23.5" y="0.0" width="65" height="40"/>
+                                                                <rect key="frame" x="23.333333333333314" y="0.0" width="65" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
                                                                 <color key="textColor" red="0.41960784313725491" green="0.74117647058823533" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -173,10 +173,10 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="x60-G8-cTv">
-                                                        <rect key="frame" x="16" y="163" width="288" height="60"/>
+                                                        <rect key="frame" x="16" y="163" width="343" height="60"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtC-gk-sF8" customClass="ShadowButton" customModule="EthereumWallet" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="134" height="60"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="161.66666666666666" height="60"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                 <state key="normal" title="Send" backgroundImage="button"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -195,7 +195,6 @@
                                                                     <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                                                         <size key="value" width="-4" height="4"/>
                                                                     </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="pressedBackImage" value="button-pressed"/>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacityPressed">
                                                                         <real key="value" value="0.80000000000000004"/>
@@ -212,7 +211,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTW-EB-3DU" customClass="ShadowButton" customModule="EthereumWallet" customModuleProvider="target">
-                                                                <rect key="frame" x="154" y="0.0" width="134" height="60"/>
+                                                                <rect key="frame" x="181.66666666666663" y="0.0" width="161.33333333333337" height="60"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                 <state key="normal" title="Contract" backgroundImage="button"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -231,7 +230,6 @@
                                                                     <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                                                         <size key="value" width="-4" height="4"/>
                                                                     </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="pressedBackImage" value="button-pressed"/>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacityPressed">
                                                                         <real key="value" value="0.80000000000000004"/>
@@ -268,27 +266,37 @@
                                                 <edgeInsets key="layoutMargins" top="24" left="8" bottom="30" right="8"/>
                                             </view>
                                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v64-bM-pJ4">
-                                                <rect key="frame" x="0.0" y="261" width="320" height="476"/>
+                                                <rect key="frame" x="0.0" y="261" width="375" height="696"/>
                                                 <subviews>
+                                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3A1-Ba-p8D">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1392"/>
+                                                        <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
                                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbr-62-ncx">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="476"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="696"/>
                                                         <connections>
                                                             <segue destination="0jx-oS-dd0" kind="embed" id="6yU-gu-tOC"/>
                                                         </connections>
                                                     </containerView>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="3A1-Ba-p8D" firstAttribute="leading" secondItem="v64-bM-pJ4" secondAttribute="leading" id="3tH-EQ-rGy"/>
                                                     <constraint firstAttribute="trailingMargin" secondItem="xbr-62-ncx" secondAttribute="trailing" id="Luy-4a-GFX"/>
                                                     <constraint firstAttribute="bottomMargin" secondItem="xbr-62-ncx" secondAttribute="bottom" id="Oxf-35-zke"/>
                                                     <constraint firstItem="xbr-62-ncx" firstAttribute="top" secondItem="v64-bM-pJ4" secondAttribute="topMargin" id="dvi-jp-FqB"/>
+                                                    <constraint firstItem="3A1-Ba-p8D" firstAttribute="top" secondItem="v64-bM-pJ4" secondAttribute="top" id="gcb-eM-dEK"/>
+                                                    <constraint firstItem="3A1-Ba-p8D" firstAttribute="height" secondItem="v64-bM-pJ4" secondAttribute="height" multiplier="2" id="ryu-LJ-S6W"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3A1-Ba-p8D" secondAttribute="trailing" id="sSc-Ih-5At"/>
                                                     <constraint firstItem="xbr-62-ncx" firstAttribute="leading" secondItem="v64-bM-pJ4" secondAttribute="leadingMargin" id="xXf-H3-mch"/>
                                                 </constraints>
                                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                             </view>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Zwr-w7-vhq" firstAttribute="leading" secondItem="3G0-O9-cKB" secondAttribute="leading" id="3kO-fX-C0K"/>
                                     <constraint firstAttribute="bottom" secondItem="Zwr-w7-vhq" secondAttribute="bottom" id="4zX-Rc-cfw"/>
@@ -299,10 +307,10 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nb7-hv-Irq">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IAV-g7-pYu">
-                                        <rect key="frame" x="16" y="36" width="288" height="40"/>
+                                        <rect key="frame" x="16" y="60" width="343" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="247" verticalHuggingPriority="251" image="logo-small" translatesAutoresizingMaskIntoConstraints="NO" id="1qe-Mp-TyX">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -312,16 +320,16 @@
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" horizontalHuggingPriority="253" translatesAutoresizingMaskIntoConstraints="NO" id="mB3-X8-Zr8">
-                                                <rect key="frame" x="48" y="0.0" width="192" height="40"/>
+                                                <rect key="frame" x="48" y="0.0" width="247" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" text="Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUU-gv-Pd8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="192" height="24"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="247" height="24"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wba-Ua-5D8">
-                                                        <rect key="frame" x="0.0" y="40" width="192" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="40" width="247" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                         <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -338,7 +346,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmS-cM-PoP">
-                                                <rect key="frame" x="248" y="0.0" width="40" height="40"/>
+                                                <rect key="frame" x="303" y="0.0" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="Avf-ss-V9l"/>
                                                     <constraint firstAttribute="height" constant="40" id="fCy-YW-zii"/>
@@ -390,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JbA-r4-kac" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2385" y="-2127.4647887323945"/>
+            <point key="canvasLocation" x="-2386.4000000000001" y="-2128.07881773399"/>
         </scene>
         <!--transactionsListController-->
         <scene sceneID="7cx-JY-IOh">

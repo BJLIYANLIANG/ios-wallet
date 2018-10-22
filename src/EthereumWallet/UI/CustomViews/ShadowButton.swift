@@ -52,35 +52,54 @@ class ShadowButton: UIButton {
 
     @IBInspectable var shadowOffsetPressed: CGSize = CGSize.zero
 
+    override var isHighlighted: Bool {
+        get { return super.isHighlighted }
+        set {
+            guard newValue != isHighlighted else {
+                return
+            }
+
+            UIView.transition(with: self, duration: 0.250, options: [.allowAnimatedContent, .curveEaseInOut], animations: {
+                super.isHighlighted = newValue
+            }, completion: nil)
+
+            CATransaction.begin()
+            CATransaction.setAnimationDuration(0.250)
+            CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut))
+
+            if newValue {
+                layer.shadowColor = shadowColorPressed.cgColor
+                layer.shadowOpacity = shadowOpacityPressed
+                layer.shadowRadius = shadowRadiusPressed
+                layer.shadowOffset = shadowOffsetPressed
+            } else {
+                layer.shadowColor = shadowColor.cgColor
+                layer.shadowOpacity = shadowOpacity
+                layer.shadowRadius = shadowRadius
+                layer.shadowOffset = shadowOffset
+            }
+
+            CATransaction.commit()
+        }
+    }
+
+    override var frame: CGRect {
+        didSet {
+            if let imageView = subviews.first(where: {$0 is UIImageView}) as? UIImageView {
+                imageView.clipsToBounds = true
+                imageView.layer.cornerRadius = cornerRadius
+                imageView.layer.masksToBounds = true
+            }
+        }
+    }
+
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        if let imageView = subviews.first(where: {$0 is UIImageView}) as? UIImageView {
+        if let imageView = subviews.first(where: {$0 is UIImageView}) as? UIImageView, imageView.layer.cornerRadius != cornerRadius {
             imageView.clipsToBounds = true
             imageView.layer.cornerRadius = cornerRadius
             imageView.layer.masksToBounds = true
         }
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-
-        layer.shadowColor = shadowColorPressed.cgColor
-        layer.shadowOpacity = shadowOpacityPressed
-        layer.shadowRadius = shadowRadiusPressed
-        layer.shadowOffset = shadowOffsetPressed
-
-        setNeedsDisplay()
-    }
-
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-
-        layer.shadowColor = shadowColor.cgColor
-        layer.shadowOpacity = shadowOpacity
-        layer.shadowRadius = shadowRadius
-        layer.shadowOffset = shadowOffset
-
-        setNeedsDisplay()
     }
 }
