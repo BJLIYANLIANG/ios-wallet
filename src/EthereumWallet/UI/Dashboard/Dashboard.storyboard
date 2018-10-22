@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Add Account Controller-->
         <scene sceneID="Dqz-KJ-eVm">
             <objects>
-                <viewController id="eXO-Id-CpI" sceneMemberID="viewController">
+                <viewController id="eXO-Id-CpI" customClass="AddAccountController" customModule="EthereumWallet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M0E-Vp-bcu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,6 +103,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="q10-cg-GTQ"/>
                     </view>
+                    <connections>
+                        <outlet property="mnemonicCreate" destination="zXt-cu-9eg" id="xV4-al-o78"/>
+                        <outlet property="mnemonicImport" destination="v7D-D6-IIO" id="7zZ-G1-05f"/>
+                        <outlet property="regularCreate" destination="Pre-Do-o6q" id="AyJ-pH-5uM"/>
+                        <outlet property="regularImport" destination="wfc-de-MOF" id="nY6-dB-H8o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFb-hC-N7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -134,17 +140,17 @@
                                     <constraint firstItem="zeA-ba-DbU" firstAttribute="top" secondItem="GyK-Be-J2F" secondAttribute="top" id="goO-9e-uhp"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3G0-O9-cKB" customClass="RootScrollView" customModule="EthereumWallet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="96" width="320" height="472"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3G0-O9-cKB" customClass="RootScrollView" customModule="EthereumWallet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="320" height="476"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zwr-w7-vhq">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="472"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="476"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v64-bM-pJ4">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="472"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="476"/>
                                                 <subviews>
                                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbr-62-ncx">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="472"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="476"/>
                                                         <connections>
                                                             <segue destination="0jx-oS-dd0" kind="embed" id="6yU-gu-tOC"/>
                                                         </connections>
@@ -171,24 +177,58 @@
                                     <constraint firstItem="Zwr-w7-vhq" firstAttribute="width" secondItem="3G0-O9-cKB" secondAttribute="width" id="qm6-YN-2P9"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nb7-hv-Irq">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
+                            <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nb7-hv-Irq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5M-SU-LPa">
-                                        <rect key="frame" x="8" y="28" width="304" height="60"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="HHt-Tu-PWY"/>
-                                        </constraints>
-                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IAV-g7-pYu">
+                                        <rect key="frame" x="16" y="36" width="288" height="40"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="247" verticalHuggingPriority="251" image="logo-small" translatesAutoresizingMaskIntoConstraints="NO" id="1qe-Mp-TyX">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="DlF-Jv-Ik2"/>
+                                                </constraints>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" horizontalHuggingPriority="253" translatesAutoresizingMaskIntoConstraints="NO" id="mB3-X8-Zr8">
+                                                <rect key="frame" x="48" y="0.0" width="192" height="40"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" text="Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUU-gv-Pd8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="192" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wba-Ua-5D8">
+                                                        <rect key="frame" x="0.0" y="40" width="192" height="0.0"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                        <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="BUU-gv-Pd8" firstAttribute="top" secondItem="mB3-X8-Zr8" secondAttribute="top" id="ELR-XF-OLV"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Wba-Ua-5D8" secondAttribute="trailing" id="GvV-dz-epx"/>
+                                                    <constraint firstAttribute="trailing" secondItem="BUU-gv-Pd8" secondAttribute="trailing" id="L43-PA-9Am"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Wba-Ua-5D8" secondAttribute="bottom" id="UNf-Yj-I4q"/>
+                                                    <constraint firstItem="Wba-Ua-5D8" firstAttribute="leading" secondItem="mB3-X8-Zr8" secondAttribute="leading" id="hc5-W4-sEs"/>
+                                                    <constraint firstItem="BUU-gv-Pd8" firstAttribute="leading" secondItem="mB3-X8-Zr8" secondAttribute="leading" id="tlN-tC-fhR"/>
+                                                </constraints>
+                                            </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="251" image="settings-icon" translatesAutoresizingMaskIntoConstraints="NO" id="iAb-J2-gXp">
+                                                <rect key="frame" x="248" y="0.0" width="40" height="40"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottomMargin" secondItem="G5M-SU-LPa" secondAttribute="bottom" id="Jz0-Db-0T5"/>
-                                    <constraint firstItem="G5M-SU-LPa" firstAttribute="top" secondItem="Nb7-hv-Irq" secondAttribute="topMargin" id="Kdq-WY-Kle"/>
-                                    <constraint firstItem="G5M-SU-LPa" firstAttribute="leading" secondItem="Nb7-hv-Irq" secondAttribute="leadingMargin" id="Ktp-4c-FqR"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="G5M-SU-LPa" secondAttribute="trailing" id="yZS-QM-KXV"/>
+                                    <constraint firstItem="IAV-g7-pYu" firstAttribute="bottom" secondItem="Nb7-hv-Irq" secondAttribute="bottomMargin" id="DF8-Ni-jen"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="IAV-g7-pYu" secondAttribute="trailing" id="Mjh-tM-l4k"/>
+                                    <constraint firstItem="IAV-g7-pYu" firstAttribute="leading" secondItem="Nb7-hv-Irq" secondAttribute="leadingMargin" id="Q5q-nR-GR6"/>
+                                    <constraint firstItem="IAV-g7-pYu" firstAttribute="top" secondItem="Nb7-hv-Irq" secondAttribute="topMargin" id="hBs-mv-hVL"/>
                                 </constraints>
+                                <edgeInsets key="layoutMargins" top="16" left="8" bottom="16" right="8"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -208,13 +248,14 @@
                         <viewLayoutGuide key="safeArea" id="KIH-Jd-smM"/>
                     </view>
                     <connections>
+                        <outlet property="accountAddressLabel" destination="Wba-Ua-5D8" id="zll-55-0qd"/>
                         <outlet property="emptyView" destination="GyK-Be-J2F" id="5LC-eO-4jP"/>
                         <outlet property="rootScrollView" destination="3G0-O9-cKB" id="Ve2-tQ-QQV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JbA-r4-kac" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3382" y="-2127"/>
+            <point key="canvasLocation" x="-3382.5" y="-2127.4647887323945"/>
         </scene>
         <!--Dashboard Controller-->
         <scene sceneID="Ssf-4z-nFs">
@@ -298,6 +339,10 @@
             <point key="canvasLocation" x="-2394" y="-2082"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo-small" width="40" height="40"/>
+        <image name="settings-icon" width="40" height="40"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6yU-gu-tOC"/>
     </inferredMetricsTieBreakers>

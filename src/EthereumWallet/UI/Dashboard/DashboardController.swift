@@ -17,9 +17,14 @@ class DashboardController: UIViewController {
 
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var rootScrollView: RootScrollView?
+    @IBOutlet weak var accountAddressLabel: UILabel!
 
     var transactionListController: TransactionListController? {
-        return children.first(where: { $0 is TransactionListController}) as? TransactionListController
+        return children.first(where: { $0 is TransactionListController }) as? TransactionListController
+    }
+
+    var addAccountCountroller: AddAccountController? {
+        return children.first(where: { $0 is AddAccountController }) as? AddAccountController
     }
 
     override func viewDidLoad() {
@@ -32,6 +37,10 @@ class DashboardController: UIViewController {
         accountListViewModel.view = self
 
         rootScrollView?.nestedScrollView =  transactionListController?.tableView
+
+        addAccountCountroller?.viewModel.onAccountAdded = { [weak self] in
+            self?.accountListViewModel.reload(force: true)
+        }
     }
 }
 
@@ -42,15 +51,15 @@ extension DashboardController: AccountView {
     }
 
     func accountChanged(_ viewModel: AccountViewModel) {
-
+        accountAddressLabel.text = viewModel.account?.address
     }
 }
 
 extension DashboardController: AccountListView {
 
     func collectionChanged(_ viewModel: AccountListViewModel) {
-        emptyView.isHidden = !(viewModel.accounts?.isEmpty == false)
-        rootScrollView?.isHidden = viewModel.accounts?.isEmpty == false
+        emptyView.isVisible = viewModel.accounts?.isEmpty == true
+        rootScrollView?.isVisible = viewModel.accounts?.isEmpty == false
     }
 
     func selcetedChanged(_ viewModel: AccountListViewModel) {

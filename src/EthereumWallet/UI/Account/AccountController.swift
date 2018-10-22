@@ -31,7 +31,7 @@ class AccountController: UIViewController {
 
         view.translatesAutoresizingMaskIntoConstraints = false
 
-        attach(viewModel)
+        add(viewModel)
         //viewModel.view = self
 
         accountCardExpandedHeight = accountCardConstraint.constant
@@ -78,32 +78,6 @@ class AccountController: UIViewController {
 //    }
 //}
 
-extension AccountController {
-
-    func resquestMnemonic() -> Task<String> {
-        return self.requestValueInAlert(title: "Mnemonic", ok: "Ok", cancel: "Cancel") {
-            $0.placeholder = "Mnemonic phrase"
-            $0.keyboardType = .alphabet
-        }
-    }
-
-    func requestAccountIndex() ->Task<Int> {
-        return self.requestValueInAlert(title: "Account Index", ok: "Ok", cancel: "Cancel") {
-            $0.placeholder = "Index"
-            $0.keyboardType = .numberPad
-        }.map {
-            if let index = Int($0) {
-                return index
-            } else {
-                throw Error.invalidIndex
-            }
-        }
-    }
-}
-
-fileprivate enum Error: Swift.Error {
-    case invalidIndex
-}
 //
 //extension AccountController: UIPickerViewDataSource, UIPickerViewDelegate {
 //

@@ -24,19 +24,6 @@ extension ViewModel {
     }
 }
 
-extension UIViewController {
-
-    @discardableResult
-    func attach(_ viewModel: ViewModel) -> ViewModel {
-        add(viewModel)
-        return viewModel
-    }
-
-    func endEditing() {
-        view.endEditing(true)
-    }
-}
-
 extension UIActivityIndicatorView {
 
     func displayIf<T>(nil value: T?) {
@@ -53,6 +40,7 @@ extension UIActivityIndicatorView {
 
 extension UIViewController {
 
+    @discardableResult
     func requestValueInAlert(title: String?, message: String? = nil,
                              ok: String = "OK", cancel: String? = nil,
                              configurationHandler: ((UITextField) -> Void)? = nil) -> Task<String> {
@@ -74,6 +62,7 @@ extension UIViewController {
         return source.task
     }
 
+    @discardableResult
     func showAlert(title: String?, message: String? = nil,
                    ok: String = "OK", cancel: String? = nil) -> Task<Bool> {
         let source = Task<Bool>.Source()
@@ -104,5 +93,13 @@ public extension UIImage {
 
         guard let cgImage = image?.cgImage else { return nil }
         self.init(cgImage: cgImage)
+    }
+}
+
+public extension UIView {
+
+    var isVisible: Bool {
+        get { return !isHidden }
+        set { isHidden = !newValue }
     }
 }

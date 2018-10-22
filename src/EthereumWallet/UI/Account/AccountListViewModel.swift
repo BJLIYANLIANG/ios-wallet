@@ -50,34 +50,4 @@ class AccountListViewModel: ViewModel {
 
         return super.loadData()
     }
-//
-//    func createNewAccount() {
-//        submit(task: accountsRepo.createNewAccount()).notify { [weak self] in
-//            if $0.isSuccess {
-//                let account = $0.result!
-//                self?.accounts?.append(account)
-//                self?.selected = account
-//            } else if !$0.isCancelled {
-//                Logger.error($0.error!)
-//            }
-//        }
-//    }
-//
-//    func addMnemonicAccount() {
-//                submit(task: view!.resquestMnemonic().chainOnSuccess { [view] (result) in
-//                    view!.requestAccountIndex().map { (mnemonicText: result, accountIndex: $0) }
-//                    }.chainOnSuccess { [accountsRepo] (result) in
-//                        return accountsRepo.createHDAccount(result.mnemonicText,
-//                                                            mnemonicPassphrase: "",
-//                                                            keyIndex: result.accountIndex)
-//                }).notify { [weak self] in
-//                    if $0.isSuccess {
-//                        let account = $0.result!
-//                        self?.accounts?.append(account)
-//                        self?.selected = account
-//                    } else if !$0.isCancelled {
-//                        Logger.error($0.error!)
-//                    }
-//                }
-//    }
 }

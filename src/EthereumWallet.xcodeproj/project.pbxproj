@@ -31,6 +31,8 @@
 		BA9259F52178AAC40002688E /* LocalLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9259F42178AAC40002688E /* LocalLoginService.swift */; };
 		BA9259F7217A22A40002688E /* RootScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9259F6217A22A40002688E /* RootScrollView.swift */; };
 		BA9259F9217A3B1B0002688E /* AccountListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9259F8217A3B1B0002688E /* AccountListViewModel.swift */; };
+		BA9259FB217DCCF20002688E /* AddAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9259FA217DCCF20002688E /* AddAccountController.swift */; };
+		BA9259FD217DCD210002688E /* AddAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9259FC217DCD210002688E /* AddAccountViewModel.swift */; };
 		BAA0FBDE2170F564000FEFCE /* TransactionHistostyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBDD2170F564000FEFCE /* TransactionHistostyRepository.swift */; };
 		BAA0FBE02170F669000FEFCE /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBDF2170F669000FEFCE /* Transaction.swift */; };
 		BAA0FBE42170FAF4000FEFCE /* TransactionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBE32170FAF4000FEFCE /* TransactionListController.swift */; };
@@ -78,6 +80,8 @@
 		BA9259F42178AAC40002688E /* LocalLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLoginService.swift; sourceTree = "<group>"; };
 		BA9259F6217A22A40002688E /* RootScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScrollView.swift; sourceTree = "<group>"; };
 		BA9259F8217A3B1B0002688E /* AccountListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListViewModel.swift; sourceTree = "<group>"; };
+		BA9259FA217DCCF20002688E /* AddAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountController.swift; sourceTree = "<group>"; };
+		BA9259FC217DCD210002688E /* AddAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewModel.swift; sourceTree = "<group>"; };
 		BAA0FBDD2170F564000FEFCE /* TransactionHistostyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistostyRepository.swift; sourceTree = "<group>"; };
 		BAA0FBDF2170F669000FEFCE /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		BAA0FBE32170FAF4000FEFCE /* TransactionListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListController.swift; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				BA90CEB2216CE14D00892462 /* Account.storyboard */,
+				BA9259FA217DCCF20002688E /* AddAccountController.swift */,
+				BA9259FC217DCD210002688E /* AddAccountViewModel.swift */,
 				BA90CE9A216BABF900892462 /* AccountController.swift */,
 				BA90CE98216BABD400892462 /* AccountViewModel.swift */,
 				BA9259F8217A3B1B0002688E /* AccountListViewModel.swift */,
@@ -388,6 +394,7 @@
 				BAA0FBE42170FAF4000FEFCE /* TransactionListController.swift in Sources */,
 				BA90CE99216BABD400892462 /* AccountViewModel.swift in Sources */,
 				BA90CEAE216CAF5A00892462 /* Network.swift in Sources */,
+				BA9259FD217DCD210002688E /* AddAccountViewModel.swift in Sources */,
 				BACD958521777ECC008396D5 /* PinPadController.swift in Sources */,
 				BA90CEAA216BC37A00892462 /* UIExtensions.swift in Sources */,
 				BA9259F52178AAC40002688E /* LocalLoginService.swift in Sources */,
@@ -414,6 +421,7 @@
 				BAA0FBF02174CB36000FEFCE /* TransactionListCell.swift in Sources */,
 				BA90CEBA216CF13300892462 /* AccountRepository.swift in Sources */,
 				BA90CEC0216E137000892462 /* JsonRPC.swift in Sources */,
+				BA9259FB217DCCF20002688E /* AddAccountController.swift in Sources */,
 				BA9259F7217A22A40002688E /* RootScrollView.swift in Sources */,
 				BA90CEC4216E373800892462 /* DeterministicAccountFactory.swift in Sources */,
 			);
