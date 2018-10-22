@@ -50,6 +50,7 @@ class AddAccountViewModel: ViewModel {
         }).onSuccess { [weak self] _ in
             self?.onAccountAdded?()
         }.onFail { [weak self] in
+            Logger.error($0)
             self?.view?.showAlert(title: $0.localizedDescription) // TODO
         }
     }

@@ -9,7 +9,7 @@
 import Foundation
 import JetLib
 
-protocol AccountView: View {
+protocol AccountView: View, AlertPresenter {
 
     func balanceChanged(_ viewModel: AccountViewModel)
     func accountChanged(_ viewModel: AccountViewModel)
@@ -51,15 +51,13 @@ class AccountViewModel: ViewModel {
             return
         }
 
-        load(task: balancesRepo.fetchBalance(for: account), tag: account.address).notify { [weak self] in
-            if $0.isSuccess {
-                let account = $0.result!.account
-                if account.address == self?.account?.address {
-                    self?.balance = $0.result!.balance
-                }
-            } else if $0.isFailed {
-                Logger.error($0.error!)
+        load(task: balancesRepo.fetchBalance(for: account), tag: account.address).onSuccess { [weak self] in
+            if $0.account.address == self?.account?.address {
+                self?.balance = $0.balance
             }
+        }.onFail { [weak self] in
+            Logger.error($0)
+            self?.view?.showAlert(title: $0.localizedDescription) // TODO
         }
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import JetLib
 
-protocol AccountListView: View {
+protocol AccountListView: View, AlertPresenter {
 
     func collectionChanged(_ viewModel: AccountListViewModel)
     func selectedChanged(_ viewModel: AccountListViewModel)
@@ -40,12 +40,11 @@ class AccountListViewModel: ViewModel {
     }
 
     override func loadData() -> NotifyCompletion {
-        load(task: accountsRepo.fetchAllAccounts()).notify { [weak self] in
-            if $0.isSuccess {
-                self?.accounts = $0.result
-            } else {
-                Logger.error($0.error!)
-            }
+        load(task: accountsRepo.fetchAllAccounts()).onSuccess { [weak self] in
+            self?.accounts = $0
+        }.onFail { [weak self] in
+            Logger.error($0)
+            self?.view?.showAlert(title: $0.localizedDescription) // TODO
         }
 
         return super.loadData()

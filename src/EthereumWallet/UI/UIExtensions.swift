@@ -51,7 +51,26 @@ extension UIActivityIndicatorView {
     }
 }
 
-extension UIViewController {
+protocol AlertPresenter {
+
+    @discardableResult
+    func showAlert(title: String?, message: String?, ok: String, cancel: String?) -> Task<Bool>
+}
+
+extension AlertPresenter {
+
+    @discardableResult
+    func showAlert(title: String?) -> Task<Bool> {
+        return showAlert(title: title, message: nil, ok: "OK", cancel: nil)
+    }
+
+    @discardableResult
+    func showAlert(title: String?, message: String?) -> Task<Bool> {
+        return showAlert(title: title, message: message, ok: "OK", cancel: nil)
+    }
+}
+
+extension UIViewController: AlertPresenter {
 
     @discardableResult
     func requestValueInAlert(title: String?, message: String? = nil,
@@ -76,8 +95,7 @@ extension UIViewController {
     }
 
     @discardableResult
-    func showAlert(title: String?, message: String? = nil,
-                   ok: String = "OK", cancel: String? = nil) -> Task<Bool> {
+    func showAlert(title: String?, message: String?, ok: String, cancel: String?) -> Task<Bool> {
         let source = Task<Bool>.Source()
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
