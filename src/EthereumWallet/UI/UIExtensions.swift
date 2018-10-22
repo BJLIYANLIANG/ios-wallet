@@ -10,17 +10,31 @@ import Foundation
 import UIKit
 import JetLib
 
-extension ViewModel {
+extension UIRefreshControl: UpdateInitiator {
 
-    func reload(force: Bool = false) {
-        guard force else {
-            self.dataUpdateRequested(initiator: self)
-            return
-        }
+    public func updateStarted() {
+        beginRefreshing()
+    }
 
-        cancelAll().notify(queue: DispatchQueue.main) {
-            self.dataUpdateRequested(initiator: self)
-        }
+    public func updateCompleted() {
+        endRefreshing()
+    }
+
+    public func updateAborted() {
+        endRefreshing()
+    }
+}
+
+extension DispatchGroup: UpdateInitiator {
+    public func updateStarted() {
+        enter()
+    }
+
+    public func updateCompleted() {
+        leave()
+    }
+
+    public func updateAborted() {
     }
 }
 
@@ -36,7 +50,6 @@ extension UIActivityIndicatorView {
         }
     }
 }
-
 
 extension UIViewController {
 
@@ -101,5 +114,18 @@ public extension UIView {
     var isVisible: Bool {
         get { return !isHidden }
         set { isHidden = !newValue }
+    }
+}
+
+public extension UIButton {
+
+    @IBInspectable var pressedBackImage: UIImage? {
+        get { return backgroundImage(for: .highlighted) }
+        set { return setBackgroundImage(newValue, for: .highlighted) }
+    }
+
+    @IBInspectable var pressedImage: UIImage? {
+        get { return image(for: .highlighted) }
+        set { return setImage(newValue, for: .highlighted) }
     }
 }

@@ -30,11 +30,12 @@ class AccountViewModel: ViewModel {
     var account: Account? {
         didSet {
             view?.accountChanged(self)
+            balance = nil
             reload(force: true)
         }
     }
 
-    var balance: String? {
+    var balance: Ether? {
         didSet {
             view?.balanceChanged(self)
         }
@@ -46,8 +47,6 @@ class AccountViewModel: ViewModel {
     }
 
     private func reloadBalance() {
-        balance = nil
-
         guard let account = account else {
             return
         }
@@ -56,7 +55,7 @@ class AccountViewModel: ViewModel {
             if $0.isSuccess {
                 let account = $0.result!.account
                 if account.address == self?.account?.address {
-                    self?.balance = $0.result!.balance.description
+                    self?.balance = $0.result!.balance
                 }
             } else if $0.isFailed {
                 Logger.error($0.error!)

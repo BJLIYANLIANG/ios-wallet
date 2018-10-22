@@ -12,7 +12,7 @@ import JetLib
 protocol AccountListView: View {
 
     func collectionChanged(_ viewModel: AccountListViewModel)
-    func selcetedChanged(_ viewModel: AccountListViewModel)
+    func selectedChanged(_ viewModel: AccountListViewModel)
 }
 
 class AccountListViewModel: ViewModel {
@@ -35,7 +35,7 @@ class AccountListViewModel: ViewModel {
 
     var selected: Account? {
         didSet {
-            view?.selcetedChanged(self)
+            view?.selectedChanged(self)
         }
     }
 

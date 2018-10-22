@@ -18,6 +18,12 @@ class DashboardController: UIViewController {
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var rootScrollView: RootScrollView?
     @IBOutlet weak var accountAddressLabel: UILabel!
+    @IBOutlet weak var accountBalanceLabel: UILabel!
+    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var contractButton: UIButton!
+    @IBOutlet weak var settingButton: UIButton!
+
+    let refresher: UIRefreshControl = UIRefreshControl()
 
     var transactionListController: TransactionListController? {
         return children.first(where: { $0 is TransactionListController }) as? TransactionListController
@@ -36,10 +42,57 @@ class DashboardController: UIViewController {
         accountViewModel.view = self
         accountListViewModel.view = self
 
-        rootScrollView?.nestedScrollView =  transactionListController?.tableView
-
         addAccountCountroller?.viewModel.onAccountAdded = { [weak self] in
             self?.accountListViewModel.reload(force: true)
+        }
+
+        sendButton.command = ActionCommand(self) {
+            let storyboard = UIStoryboard(name: "Transactions", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "sendTransaction")
+            $0.navigationController?.pushViewController(controller, animated: true)
+        }
+
+        contractButton.command = ActionCommand(self) {
+            let storyboard = UIStoryboard(name: "Contracts", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "executeContract")
+            $0.navigationController?.pushViewController(controller, animated: true)
+        }
+
+        settingButton.command = ActionCommand(self) {
+            let storyboard = UIStoryboard(name: "Settings", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "settings")
+            $0.navigationController?.pushViewController(controller, animated: true)
+        }
+
+        rootScrollView?.nestedScrollView =  transactionListController?.tableView
+        rootScrollView?.insertSubview(refresher, at: 0)
+
+        refresher.addTarget(self, action: #selector(handleRefresher), for: .valueChanged)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+       rootScrollView?.snapToOffsets = [
+            accountBalanceLabel.convert(CGPoint.zero, to: rootScrollView).y,
+            sendButton.convert(CGPoint.zero, to: rootScrollView).y - 16,
+            transactionListController!.view.convert(CGPoint.zero, to: rootScrollView).y
+        ]
+    }
+
+    @objc
+    fileprivate func handleRefresher(_ sender: UIRefreshControl) {
+        let group = DispatchGroup()
+        accountViewModel.dataUpdateRequested(initiator: group)
+        transactionListController?.viewModel.dataUpdateRequested(initiator: group)
+
+        group.notify(queue: DispatchQueue.main) {
+            sender.endRefreshing()
         }
     }
 }
@@ -47,7 +100,7 @@ class DashboardController: UIViewController {
 extension DashboardController: AccountView {
 
     func balanceChanged(_ viewModel: AccountViewModel) {
-
+        accountBalanceLabel.text = viewModel.balance?.description
     }
 
     func accountChanged(_ viewModel: AccountViewModel) {
@@ -62,7 +115,7 @@ extension DashboardController: AccountListView {
         rootScrollView?.isVisible = viewModel.accounts?.isEmpty == false
     }
 
-    func selcetedChanged(_ viewModel: AccountListViewModel) {
+    func selectedChanged(_ viewModel: AccountListViewModel) {
         accountViewModel.account = viewModel.selected
         transactionListController?.viewModel.account = viewModel.selected
     }

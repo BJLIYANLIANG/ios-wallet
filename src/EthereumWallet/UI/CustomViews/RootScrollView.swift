@@ -24,6 +24,8 @@ class RootScrollView: UIScrollView, UIScrollViewDelegate {
         }
     }
 
+    var snapToOffsets: [CGFloat] = []
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let nested = nestedScrollView else {
             return
@@ -36,5 +38,25 @@ class RootScrollView: UIScrollView, UIScrollViewDelegate {
 
         nested.contentOffset.y = nestedOffset
         contentOffset.y = totalOffset - nestedOffset
+    }
+
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+
+        guard !snapToOffsets.isEmpty else {
+            return
+        }
+
+        var prev: CGFloat = 0
+        let target = targetContentOffset.pointee.y
+
+        for level in snapToOffsets {
+            if target < level {
+                let mid = (level + prev) / 2
+                targetContentOffset.pointee.y = target > mid ? level : prev
+                break
+            }
+
+            prev = level
+        }
     }
 }

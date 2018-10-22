@@ -11,8 +11,8 @@ import UIKit
 
 class TrasactionListCell: UITableViewCell {
 
-    static let collapsedHeight: CGFloat = 72
-    static let expandedHeight: CGFloat = 130
+    static let collapsedHeight: CGFloat = 92
+    static let expandedHeight: CGFloat = 150
 
     @IBOutlet weak var directionIcon: UIImageView!
     @IBOutlet weak var directionLabel: UILabel!
@@ -41,6 +41,10 @@ class TrasactionListCell: UITableViewCell {
             hashLabel.text = transaction?.hash
             dateLabel.text = transaction?.timeStamp.description
         }
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
 }
 
