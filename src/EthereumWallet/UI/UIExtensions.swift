@@ -10,34 +10,6 @@ import Foundation
 import UIKit
 import JetLib
 
-extension UIRefreshControl: UpdateInitiator {
-
-    public func updateStarted() {
-        beginRefreshing()
-    }
-
-    public func updateCompleted() {
-        endRefreshing()
-    }
-
-    public func updateAborted() {
-        endRefreshing()
-    }
-}
-
-extension DispatchGroup: UpdateInitiator {
-    public func updateStarted() {
-        enter()
-    }
-
-    public func updateCompleted() {
-        leave()
-    }
-
-    public func updateAborted() {
-    }
-}
-
 extension UIActivityIndicatorView {
 
     func displayIf<T>(nil value: T?) {
