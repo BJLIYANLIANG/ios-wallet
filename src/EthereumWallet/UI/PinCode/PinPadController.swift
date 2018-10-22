@@ -27,7 +27,7 @@ class PinPadController: UIViewController {
         super.viewDidLoad()
 
         viewModel.view = self
-        attach(viewModel)
+        add(viewModel)
 
         for pair in numberButtons.enumerated() {
             let symbol = PinPadViewModel.NumericSymbol()

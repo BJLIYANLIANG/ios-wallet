@@ -17,7 +17,8 @@ class TransactionListController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        attach(viewModel)
+        add(viewModel)
+        viewModel.view = self
     }
 }
 
