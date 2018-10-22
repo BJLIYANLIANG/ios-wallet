@@ -28,11 +28,7 @@ class AccountViewModel: ViewModel {
     weak var view: AccountView?
 
     var account: Account? {
-        didSet {
-            view?.accountChanged(self)
-            balance = nil
-            reload(force: true)
-        }
+        return accountsRepo.selected
     }
 
     var balance: Ether? {
@@ -42,6 +38,7 @@ class AccountViewModel: ViewModel {
     }
 
     override func loadData() -> NotifyCompletion {
+        view?.accountChanged(self)
         reloadBalance()
         return super.loadData()
     }

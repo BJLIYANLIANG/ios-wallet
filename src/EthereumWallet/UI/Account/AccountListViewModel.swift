@@ -27,14 +27,15 @@ class AccountListViewModel: ViewModel {
 
     var accounts: [Account]? {
         didSet {
-            // TODO store last selection
-            selected = accounts?.first
+            selected = accounts?.first(where: { $0.address == selected?.address })
             view?.collectionChanged(self)
         }
     }
 
     var selected: Account? {
-        didSet {
+        get { return accountsRepo.selected }
+        set {
+            accountsRepo.selected = selected
             view?.selectedChanged(self)
         }
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA08DB7B217E8149006B8DDF /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA08DB7A217E8149006B8DDF /* LocalStorage.swift */; };
 		BA90CE7B216BA44300892462 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CE7A216BA44300892462 /* AppDelegate.swift */; };
 		BA90CE82216BA44300892462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA90CE81216BA44300892462 /* Assets.xcassets */; };
 		BA90CE85216BA44300892462 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA90CE83216BA44300892462 /* LaunchScreen.storyboard */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		22D39184D5616F0C18D8B7B9 /* Pods-EthereumWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthereumWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-EthereumWallet/Pods-EthereumWallet.release.xcconfig"; sourceTree = "<group>"; };
 		2B0AE80CC7B598D2C09EE79D /* Pods-EthereumWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthereumWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EthereumWallet/Pods-EthereumWallet.debug.xcconfig"; sourceTree = "<group>"; };
+		BA08DB7A217E8149006B8DDF /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		BA90CE77216BA44300892462 /* EthereumWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EthereumWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA90CE7A216BA44300892462 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA90CE81216BA44300892462 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				BA90CEB4216CE75400892462 /* KeystoreAccountProvider.swift */,
 				BA90CEC3216E373800892462 /* DeterministicAccountFactory.swift */,
 				BA9259F42178AAC40002688E /* LocalLoginService.swift */,
+				BA08DB7A217E8149006B8DDF /* LocalStorage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				BA9259FB217DCCF20002688E /* AddAccountController.swift in Sources */,
 				BA9259F7217A22A40002688E /* RootScrollView.swift in Sources */,
 				BAC97059217E02BD00D95CB8 /* ShadowView.swift in Sources */,
+				BA08DB7B217E8149006B8DDF /* LocalStorage.swift in Sources */,
 				BA90CEC4216E373800892462 /* DeterministicAccountFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,7 +27,8 @@ class AddAccountViewModel: ViewModel {
     lazy var importKeysCommand: AsyncCommand = AsyncCommand(self, task: { $0.importKeys() })
 
     fileprivate func createKey() -> Task<Account> {
-        return submit(task: repo.createNewAccount()).onSuccess{ [weak self] _ in
+        return submit(task: repo.createNewAccount()).onSuccess{ [weak self] in
+            self?.repo.selected = $0
             self?.onAccountAdded?()
         }.onFail { [weak self] in
             self?.view?.showAlert(title: $0.localizedDescription) // TODO

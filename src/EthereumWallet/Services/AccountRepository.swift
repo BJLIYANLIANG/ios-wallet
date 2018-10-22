@@ -19,6 +19,11 @@ class AccountRepository {
         self.loginService = loginService
     }
 
+    var selected: Account? {
+        get { return UserDefaults.standard.value(forKey: LocalStorageKeys.selectedAccount) }
+        set { UserDefaults.standard.set(newValue, forKey: LocalStorageKeys.selectedAccount) }
+    }
+
     func fetchAllAccounts() -> Task<[Account]> {
         return provider.syncQueue.async(Task(execute: { try self.provider.all() }))
     }

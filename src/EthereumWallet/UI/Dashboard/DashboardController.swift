@@ -13,7 +13,6 @@ import JetLib
 class DashboardController: UIViewController {
 
     lazy var accountViewModel: AccountViewModel = container.resolve()
-    lazy var accountListViewModel: AccountListViewModel = container.resolve()
 
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var rootScrollView: RootScrollView?
@@ -36,14 +35,12 @@ class DashboardController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        add(accountListViewModel)
         add(accountViewModel)
 
         accountViewModel.view = self
-        accountListViewModel.view = self
 
         addAccountCountroller?.viewModel.onAccountAdded = { [weak self] in
-            self?.accountListViewModel.reload(force: true)
+            self?.accountViewModel.reload(force: true)
         }
 
         sendButton.command = ActionCommand.pushScreen(self, sbName: "Transactions", controllerId: "sendTransaction")
@@ -90,19 +87,9 @@ extension DashboardController: AccountView {
     }
 
     func accountChanged(_ viewModel: AccountViewModel) {
+        emptyView.isVisible = viewModel.account == nil
+        rootScrollView?.isVisible = viewModel.account != nil
         accountAddressLabel.text = viewModel.account?.address
-    }
-}
-
-extension DashboardController: AccountListView {
-
-    func collectionChanged(_ viewModel: AccountListViewModel) {
-        emptyView.isVisible = viewModel.accounts?.isEmpty == true
-        rootScrollView?.isVisible = viewModel.accounts?.isEmpty == false
-    }
-
-    func selectedChanged(_ viewModel: AccountListViewModel) {
-        accountViewModel.account = viewModel.selected
-        transactionListController?.viewModel.account = viewModel.selected
+        transactionListController?.viewModel.account = viewModel.account
     }
 }
