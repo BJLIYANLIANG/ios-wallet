@@ -324,25 +324,53 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" text="Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUU-gv-Pd8">
                                                         <rect key="frame" x="0.0" y="0.0" width="247" height="24"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                         <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wba-Ua-5D8">
-                                                        <rect key="frame" x="0.0" y="40" width="247" height="0.0"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                        <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdg-8O-DAp">
+                                                        <rect key="frame" x="106" y="26.666666666666668" width="35" height="13.333333333333332"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" text="-" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wba-Ua-5D8">
+                                                                <rect key="frame" x="0.0" y="0.0" width="5.333333333333333" height="13.333333333333334"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="copy" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFL-4V-ZpG">
+                                                                <rect key="frame" x="9.3333333333333446" y="0.0" width="25.666666666666671" height="13.333333333333334"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <color key="textColor" red="0.078431372549019607" green="0.66274509803921566" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="Wba-Ua-5D8" secondAttribute="bottom" id="BPK-2T-xlo"/>
+                                                            <constraint firstItem="dFL-4V-ZpG" firstAttribute="top" secondItem="cdg-8O-DAp" secondAttribute="top" id="CIy-qA-kFL"/>
+                                                            <constraint firstAttribute="bottom" secondItem="dFL-4V-ZpG" secondAttribute="bottom" id="Dux-u7-er4"/>
+                                                            <constraint firstItem="dFL-4V-ZpG" firstAttribute="leading" secondItem="Wba-Ua-5D8" secondAttribute="trailing" constant="4" id="H2h-kE-Zsq"/>
+                                                            <constraint firstItem="Wba-Ua-5D8" firstAttribute="top" secondItem="cdg-8O-DAp" secondAttribute="top" id="IGt-wZ-sQh"/>
+                                                            <constraint firstItem="Wba-Ua-5D8" firstAttribute="leading" secondItem="cdg-8O-DAp" secondAttribute="leading" id="fy9-ky-UzP"/>
+                                                            <constraint firstAttribute="trailing" secondItem="dFL-4V-ZpG" secondAttribute="trailing" id="rqc-Rq-vwF"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjR-7Q-HeU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="247" height="40"/>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="TjR-7Q-HeU" firstAttribute="leading" secondItem="mB3-X8-Zr8" secondAttribute="leading" id="1tq-hp-4ff"/>
                                                     <constraint firstItem="BUU-gv-Pd8" firstAttribute="top" secondItem="mB3-X8-Zr8" secondAttribute="top" id="ELR-XF-OLV"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Wba-Ua-5D8" secondAttribute="trailing" id="GvV-dz-epx"/>
+                                                    <constraint firstAttribute="bottom" secondItem="TjR-7Q-HeU" secondAttribute="bottom" id="Fak-ya-MLJ"/>
                                                     <constraint firstAttribute="trailing" secondItem="BUU-gv-Pd8" secondAttribute="trailing" id="L43-PA-9Am"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Wba-Ua-5D8" secondAttribute="bottom" id="UNf-Yj-I4q"/>
-                                                    <constraint firstItem="Wba-Ua-5D8" firstAttribute="leading" secondItem="mB3-X8-Zr8" secondAttribute="leading" id="hc5-W4-sEs"/>
+                                                    <constraint firstItem="TjR-7Q-HeU" firstAttribute="top" secondItem="mB3-X8-Zr8" secondAttribute="top" id="N1J-RK-jDh"/>
+                                                    <constraint firstItem="cdg-8O-DAp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mB3-X8-Zr8" secondAttribute="leading" id="cTl-gf-LVE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="TjR-7Q-HeU" secondAttribute="trailing" id="ofC-Ou-bnP"/>
+                                                    <constraint firstItem="cdg-8O-DAp" firstAttribute="centerX" secondItem="mB3-X8-Zr8" secondAttribute="centerX" id="rcX-el-66t"/>
                                                     <constraint firstItem="BUU-gv-Pd8" firstAttribute="leading" secondItem="mB3-X8-Zr8" secondAttribute="leading" id="tlN-tC-fhR"/>
+                                                    <constraint firstAttribute="bottom" secondItem="cdg-8O-DAp" secondAttribute="bottom" id="uke-DH-b1x"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmS-cM-PoP">
@@ -390,6 +418,7 @@
                         <outlet property="accountAddressLabel" destination="Wba-Ua-5D8" id="zll-55-0qd"/>
                         <outlet property="accountBalanceLabel" destination="mgn-9D-KFV" id="GPe-44-wTJ"/>
                         <outlet property="contractButton" destination="WTW-EB-3DU" id="TCj-qh-8YT"/>
+                        <outlet property="copyAddressButton" destination="TjR-7Q-HeU" id="WsV-tP-R0Z"/>
                         <outlet property="emptyView" destination="GyK-Be-J2F" id="5LC-eO-4jP"/>
                         <outlet property="rootScrollView" destination="3G0-O9-cKB" id="Ve2-tQ-QQV"/>
                         <outlet property="sendButton" destination="jtC-gk-sF8" id="BgX-XS-ftl"/>

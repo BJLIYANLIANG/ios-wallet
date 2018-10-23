@@ -38,6 +38,7 @@ extension TransactionListController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "transactionCell") as! TrasactionListCell
         cell.transaction = viewModel.transactions![indexPath.row]
+        cell.isSelected = tableView.indexPathsForSelectedRows?.contains(indexPath) == true
         return cell
     }
 

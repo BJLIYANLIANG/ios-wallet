@@ -22,6 +22,8 @@ class TrasactionListCell: UITableViewCell {
     @IBOutlet weak var hashLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
 
+    @IBOutlet weak var arrowImage: UIImageView!
+
     @IBOutlet var stackConstraint: NSLayoutConstraint!
 
     @IBOutlet weak var compactAddress: UILabel?
@@ -60,6 +62,7 @@ class TrasactionListCell: UITableViewCell {
 
         UIView.animate(withDuration: 0.250) {
             self.compactAddress?.isHidden = selected
+            self.arrowImage.image = selected ? #imageLiteral(resourceName: "arrow-up") :#imageLiteral(resourceName: "arrow-down")
             self.layoutSubviews()
         }
     }

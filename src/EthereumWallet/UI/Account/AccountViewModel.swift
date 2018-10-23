@@ -27,6 +27,10 @@ class AccountViewModel: ViewModel {
 
     weak var view: AccountView?
 
+    lazy var copyAddressCommand = ActionCommand(self) {
+        UIPasteboard.general.string = $0.account?.address
+    }
+
     var account: Account? {
         return accountsRepo.selected
     }

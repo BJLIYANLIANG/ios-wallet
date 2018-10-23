@@ -21,6 +21,7 @@ class DashboardController: SlideMenuViewController {
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var contractButton: UIButton!
     @IBOutlet weak var settingButton: UIButton!
+    @IBOutlet weak var copyAddressButton: UIButton!
 
     let refresher: UIRefreshControl = UIRefreshControl()
 
@@ -42,6 +43,8 @@ class DashboardController: SlideMenuViewController {
         addAccountCountroller?.viewModel.onAccountAdded = { [weak self] in
             self?.accountViewModel.reload(force: true)
         }
+
+        copyAddressButton.command = accountViewModel.copyAddressCommand
 
         sendButton.command = ActionCommand.pushScreen(self, sbName: "Transactions", controllerId: "sendTransaction")
         contractButton.command = ActionCommand.pushScreen(self, sbName: "Contracts", controllerId: "executeContract")
