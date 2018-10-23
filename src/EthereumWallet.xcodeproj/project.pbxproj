@@ -49,6 +49,7 @@
 		BAC9705F217E1FAE00D95CB8 /* Contracts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAC9705E217E1FAE00D95CB8 /* Contracts.storyboard */; };
 		BAC97061217E1FCB00D95CB8 /* ContractController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC97060217E1FCB00D95CB8 /* ContractController.swift */; };
 		BAC97063217E20D500D95CB8 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC97062217E20D500D95CB8 /* SettingsController.swift */; };
+		BAC97067217F253400D95CB8 /* AccountListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC97066217F253400D95CB8 /* AccountListController.swift */; };
 		BACAAD092174EB1B0039CC76 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACAAD082174EB1B0039CC76 /* TransactionService.swift */; };
 		BACAAD0D2174ED5F0039CC76 /* KeystoreProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACAAD0C2174ED5F0039CC76 /* KeystoreProxy.swift */; };
 		BACAAD0F2174FA840039CC76 /* Wei.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACAAD0E2174FA840039CC76 /* Wei.swift */; };
@@ -106,6 +107,7 @@
 		BAC9705E217E1FAE00D95CB8 /* Contracts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contracts.storyboard; sourceTree = "<group>"; };
 		BAC97060217E1FCB00D95CB8 /* ContractController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractController.swift; sourceTree = "<group>"; };
 		BAC97062217E20D500D95CB8 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		BAC97066217F253400D95CB8 /* AccountListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListController.swift; sourceTree = "<group>"; };
 		BACAAD082174EB1B0039CC76 /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
 		BACAAD0C2174ED5F0039CC76 /* KeystoreProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeystoreProxy.swift; sourceTree = "<group>"; };
 		BACAAD0E2174FA840039CC76 /* Wei.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wei.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				BA90CE9A216BABF900892462 /* AccountController.swift */,
 				BA90CE98216BABD400892462 /* AccountViewModel.swift */,
 				BA9259F8217A3B1B0002688E /* AccountListViewModel.swift */,
+				BAC97066217F253400D95CB8 /* AccountListController.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				BA90CEAA216BC37A00892462 /* UIExtensions.swift in Sources */,
 				BA9259F52178AAC40002688E /* LocalLoginService.swift in Sources */,
 				BAC97057217DFC7900D95CB8 /* SendTransactionController.swift in Sources */,
+				BAC97067217F253400D95CB8 /* AccountListController.swift in Sources */,
 				BA90CEBC216D16C900892462 /* AccountBalanceRepository.swift in Sources */,
 				BA90CE97216BAA6B00892462 /* Container.swift in Sources */,
 				BA90CEA0216BAFBB00892462 /* User.swift in Sources */,

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import JetLib
 
-class DashboardController: UIViewController {
+class DashboardController: SlideMenuViewController {
 
     lazy var accountViewModel: AccountViewModel = container.resolve()
 
@@ -51,6 +51,12 @@ class DashboardController: UIViewController {
         rootScrollView?.insertSubview(refresher, at: 0)
 
         refresher.addTarget(self, action: #selector(handleRefresher), for: .valueChanged)
+
+        let accountStoryboard = UIStoryboard(name: "Account", bundle: nil)
+        let accountList = accountStoryboard.instantiateViewController(withIdentifier: "accountList") as! AccountListController
+        panMenuFromLeft = true
+        menuController = accountList
+        accountList.delegate = accountViewModel
     }
 
     override func viewWillAppear(_ animated: Bool) {

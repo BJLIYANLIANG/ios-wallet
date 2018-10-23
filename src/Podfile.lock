@@ -1,7 +1,7 @@
 PODS:
   - DITranquillity (3.5.1):
     - SwiftLazy
-  - Geth (1.8.16)
+  - Geth (1.8.17)
   - JetLib (0.1.0)
   - SwiftLazy (1.1.0)
   - TrezorCrypto (0.0.8)
@@ -26,12 +26,12 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   JetLib:
-    :commit: 8d2c4509a556f12af24c71a3ce3669649ea7689e
+    :commit: dec0cebd0df58a8cc4b556619650453e85ecf816
     :git: https://github.com/vbenkevich/ios_swift_utils.git
 
 SPEC CHECKSUMS:
   DITranquillity: bf0e4be6562a490818c4d11d766c83623dd92a51
-  Geth: aa689f4f5e7164edef967e9bbbedae22b94911e7
+  Geth: f75304914f9feda13bd388bad8e2ba2fd46cb2df
   JetLib: fee15e586034939396570966134abf05e8896bc8
   SwiftLazy: 90d61205fa3c2e492da870310ba719c0a63cdce3
   TrezorCrypto: 938c4b715fff7824a9c891a105e65ee0e4e81662

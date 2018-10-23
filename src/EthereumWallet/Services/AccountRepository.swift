@@ -21,7 +21,10 @@ class AccountRepository {
 
     var selected: Account? {
         get { return UserDefaults.standard.value(forKey: LocalStorageKeys.selectedAccount) }
-        set { UserDefaults.standard.set(newValue, forKey: LocalStorageKeys.selectedAccount) }
+        set {
+            UserDefaults.standard.set(newValue, forKey: LocalStorageKeys.selectedAccount)
+            UserDefaults.standard.synchronize()
+        }
     }
 
     func fetchAllAccounts() -> Task<[Account]> {

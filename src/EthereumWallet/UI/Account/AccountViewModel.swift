@@ -58,3 +58,10 @@ class AccountViewModel: ViewModel {
         }
     }
 }
+
+extension AccountViewModel: SelectedAccountDelegate {
+
+    func accountChanged(_ account: Account?) {
+        reload(force: true)
+    }
+}

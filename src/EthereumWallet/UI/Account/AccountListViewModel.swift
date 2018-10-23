@@ -33,14 +33,15 @@ class AccountListViewModel: ViewModel {
     }
 
     var selected: Account? {
-        get { return accountsRepo.selected }
-        set {
+        didSet {
             accountsRepo.selected = selected
             view?.selectedChanged(self)
         }
     }
 
     override func loadData() -> NotifyCompletion {
+        selected = accountsRepo.selected
+
         load(task: accountsRepo.fetchAllAccounts()).onSuccess { [weak self] in
             self?.accounts = $0
         }.onFail { [weak self] in
