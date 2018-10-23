@@ -31,18 +31,19 @@ class AccountController: UIViewController {
 
         view.translatesAutoresizingMaskIntoConstraints = false
 
-        attach(viewModel)
+        add(viewModel)
+        //viewModel.view = self
 
         accountCardExpandedHeight = accountCardConstraint.constant
         accountCardConstraint.constant = 0
 
         accountsCard.isHidden = true
-        accountsPicker.delegate = self
-        accountsPicker.dataSource = self
+//        accountsPicker.delegate = self
+//        accountsPicker.dataSource = self
 
-        accountNumber.command = ActionCommand(self) { $0.hideShowPicker() }
-        newAccountButton.command = ActionCommand(self) { $0.viewModel.createNewAccount() }
-        mnemonicButton.command = ActionCommand(self) { $0.viewModel.addMnemonicAccount() }
+        //accountNumber.command = ActionCommand(self) { $0.hideShowPicker() }
+        //newAccountButton.command = ActionCommand(self) { $0.viewModel.createNewAccount() }
+        //mnemonicButton.command = ActionCommand(self) { $0.viewModel.addMnemonicAccount() }
     }
 
     func hideShowPicker(show: Bool? = nil) {
@@ -59,66 +60,41 @@ class AccountController: UIViewController {
         }
     }
 }
+//
+//extension AccountController: AccountView {
+//
+//    func balanceChanged() {
+//        balanceActivity.displayIf(nil: viewModel.balance)
+//        balanceLabel.text = "Balance: \(viewModel.balance ?? "-")"
+//    }
+//
+//    func accountChanged() {
+//        accountNumber.setTitle("Account: \(viewModel.selected?.address ?? "-")", for: .normal)
+//    }
+//
+//
+//    func accountsCollectionChanged() {
+//        accountsPicker.reloadAllComponents()
+//    }
+//}
 
-extension AccountController {
-
-    func accountsCollectionChanged() {
-        accountsPicker.reloadAllComponents()
-    }
-
-    func accountBalanceChanged() {
-        balanceActivity.displayIf(nil: viewModel.balance)
-        balanceLabel.text = "Balance: \(viewModel.balance ?? "-")"
-    }
-
-    func selcetedAccountChanged() {
-        accountNumber.setTitle("Account: \(viewModel.selected?.address ?? "-")", for: .normal)
-    }
-}
-
-extension AccountController {
-
-    func requetMnemonic() -> Task<String> {
-        return self.requestValueInAlert(title: "Mnemonic", ok: "Ok", cancel: "Cancel") {
-            $0.placeholder = "Mnemonic phrase"
-            $0.keyboardType = .alphabet
-        }
-    }
-
-    func reauetAccountIndex() ->Task<Int> {
-        return self.requestValueInAlert(title: "Account Index", ok: "Ok", cancel: "Cancel") {
-            $0.placeholder = "Index"
-            $0.keyboardType = .numberPad
-        }.map {
-            if let index = Int($0) {
-                return index
-            } else {
-                throw Error.invalidIndex
-            }
-        }
-    }
-}
-
-fileprivate enum Error: Swift.Error {
-    case invalidIndex
-}
-
-extension AccountController: UIPickerViewDataSource, UIPickerViewDelegate {
-
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return viewModel.accounts?.count ?? 0
-    }
-
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        viewModel.selected = viewModel.accounts?[row]
-    }
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return viewModel.accounts?[row].numberTrancatedInMiddle()
-    }
-}
-
+//
+//extension AccountController: UIPickerViewDataSource, UIPickerViewDelegate {
+//
+//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//        return 1
+//    }
+//
+//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        return viewModel.accounts?.count ?? 0
+//    }
+//
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        viewModel.selected = viewModel.accounts?[row]
+//    }
+//
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return viewModel.accounts?[row].numberTrancatedInMiddle()
+//    }
+//}
+//

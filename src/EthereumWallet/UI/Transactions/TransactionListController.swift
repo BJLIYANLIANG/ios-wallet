@@ -14,16 +14,11 @@ class TransactionListController: UITableViewController {
 
     lazy var viewModel: TransactionListViewModel = container.resolve()
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        attach(viewModel)
-    }
-}
-
-extension TransactionListController: AccountSelectionDelegate {
-
-    func selectionChanged(_ selectedAccount: Account?) {
-        viewModel.account = selectedAccount
+        add(viewModel)
+        viewModel.view = self
     }
 }
 
@@ -43,6 +38,7 @@ extension TransactionListController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "transactionCell") as! TrasactionListCell
         cell.transaction = viewModel.transactions![indexPath.row]
+        cell.isSelected = tableView.indexPathsForSelectedRows?.contains(indexPath) == true
         return cell
     }
 

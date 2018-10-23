@@ -10,11 +10,6 @@ import Foundation
 import JetLib
 import LocalAuthentication
 
-enum LocalStorageKeys: String {
-    case useBiomericLogin
-    case pincodeInited
-}
-
 class LocalLoginService {
 
     enum BiometricType {

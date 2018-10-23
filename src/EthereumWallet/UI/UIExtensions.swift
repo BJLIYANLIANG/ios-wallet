@@ -10,43 +10,6 @@ import Foundation
 import UIKit
 import JetLib
 
-extension ViewModel {
-
-    func reload(force: Bool = false) {
-        guard force else {
-            self.dataUpdateRequested(initiator: self)
-            return
-        }
-
-        cancelAll().notify(queue: DispatchQueue.main) {
-            self.dataUpdateRequested(initiator: self)
-        }
-    }
-}
-
-extension UIViewController {
-
-    @discardableResult
-    func attach<T: UIViewController>(_ viewModel: ViewModel<T>) -> ViewModel<T> {
-        defer {
-            add(viewModel)
-        }
-
-        guard let view = self as? T else {
-            print("ERROR: view and viewModel types mistmath")
-            return viewModel
-        }
-
-        viewModel.view = view
-
-        return viewModel
-    }
-
-    func endEditing() {
-        view.endEditing(true)
-    }
-}
-
 extension UIActivityIndicatorView {
 
     func displayIf<T>(nil value: T?) {
@@ -60,9 +23,28 @@ extension UIActivityIndicatorView {
     }
 }
 
+protocol AlertPresenter {
 
-extension UIViewController {
+    @discardableResult
+    func showAlert(title: String?, message: String?, ok: String, cancel: String?) -> Task<Bool>
+}
 
+extension AlertPresenter {
+
+    @discardableResult
+    func showAlert(title: String?) -> Task<Bool> {
+        return showAlert(title: title, message: nil, ok: "OK", cancel: nil)
+    }
+
+    @discardableResult
+    func showAlert(title: String?, message: String?) -> Task<Bool> {
+        return showAlert(title: title, message: message, ok: "OK", cancel: nil)
+    }
+}
+
+extension UIViewController: AlertPresenter {
+
+    @discardableResult
     func requestValueInAlert(title: String?, message: String? = nil,
                              ok: String = "OK", cancel: String? = nil,
                              configurationHandler: ((UITextField) -> Void)? = nil) -> Task<String> {
@@ -84,8 +66,8 @@ extension UIViewController {
         return source.task
     }
 
-    func showAlert(title: String?, message: String? = nil,
-                   ok: String = "OK", cancel: String? = nil) -> Task<Bool> {
+    @discardableResult
+    func showAlert(title: String?, message: String?, ok: String, cancel: String?) -> Task<Bool> {
         let source = Task<Bool>.Source()
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
@@ -114,5 +96,43 @@ public extension UIImage {
 
         guard let cgImage = image?.cgImage else { return nil }
         self.init(cgImage: cgImage)
+    }
+}
+
+public extension UIView {
+
+    var isVisible: Bool {
+        get { return !isHidden }
+        set { isHidden = !newValue }
+    }
+}
+
+public extension UIButton {
+
+    @IBInspectable var pressedBackImage: UIImage? {
+        get { return backgroundImage(for: .highlighted) }
+        set { return setBackgroundImage(newValue, for: .highlighted) }
+    }
+
+    @IBInspectable var pressedImage: UIImage? {
+        get { return image(for: .highlighted) }
+        set { return setImage(newValue, for: .highlighted) }
+    }
+}
+
+extension ActionCommand {
+
+    static func pushScreen(_ from: UIViewController, sbName: String, controllerId: String) -> ActionCommand {
+        return ActionCommand(from) {
+            let storyboard = UIStoryboard(name: "Transactions", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "sendTransaction")
+            $0.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+
+    static func pushScreen(_ from: UIViewController, create: @escaping () -> UIViewController) -> ActionCommand {
+        return ActionCommand(from) {
+            $0.navigationController?.pushViewController(create(), animated: true)
+        }
     }
 }

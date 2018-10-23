@@ -9,13 +9,15 @@
 import Foundation
 import JetLib
 
-class TransactionListViewModel: ViewModel<TransactionListController> {
+class TransactionListViewModel: ViewModel {
 
     private let historyRepo: TransactionHistostyRepository
 
     init(historyRepo: TransactionHistostyRepository) {
         self.historyRepo = historyRepo
     }
+
+    weak var view: TransactionListController?
 
     var account: Account? {
         didSet {
@@ -39,12 +41,11 @@ class TransactionListViewModel: ViewModel<TransactionListController> {
             return super.loadData()
         }
 
-        load(task: historyRepo.fetchTransactions(account: account)).notify { [weak self] in
-            if $0.isSuccess {
-                self?.transactions = $0.result
-            } else {
-                // TODO: display error
-            }
+        load(task: historyRepo.fetchTransactions(account: account)).onSuccess { [weak self] in
+            self?.transactions = $0
+        }.onFail { [weak self] in
+            Logger.error($0)
+            self?.view?.showAlert(title: $0.localizedDescription)  // TODO
         }
 
         return super.loadData()
