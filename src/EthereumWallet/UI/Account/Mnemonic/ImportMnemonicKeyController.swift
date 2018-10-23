@@ -14,11 +14,13 @@ class ImportMnemonicKeyController: UIViewController {
 
     lazy var viewModel: ImportMnemonicKeyViewModel = container.resolve()
 
-    @IBOutlet weak var mnemonicTextView: UITextView!
-    @IBOutlet weak var mnemonicTextError: UILabel!
-    @IBOutlet weak var mnemonicTextPlaceholderLabel: UILabel!
-    @IBOutlet weak var accountNumberField: UITextField!
-    @IBOutlet weak var mnemonicNumberError: UILabel!
+    @IBOutlet weak var mnemonicField: UITextView!
+    @IBOutlet weak var mnemonicErrorLabel: UILabel!
+    @IBOutlet weak var mnemonicErrorView: UIStackView!
+    @IBOutlet weak var mnemonicPlaceholderLabel: UILabel!
+    @IBOutlet weak var indexField: UITextField!
+    @IBOutlet weak var indexErrorLabel: UILabel!
+    @IBOutlet weak var indexErrorView: UIStackView!
 
     @IBOutlet weak var saveButton: UIButton!
 
@@ -26,10 +28,10 @@ class ImportMnemonicKeyController: UIViewController {
         super.viewDidLoad()
         viewModel.view = self
         saveButton.command = viewModel.createCommand
-        mnemonicTextView.delegate = self
-        accountNumberField.delegate = self
-        mnemonicTextError.isHidden = true
-        mnemonicNumberError.isHidden = true
+        mnemonicField.delegate = self
+        indexField.delegate = self
+        mnemonicErrorView.isHidden = true
+        indexErrorView.isHidden = true
     }
 }
 
@@ -52,13 +54,13 @@ extension ImportMnemonicKeyController: UITextFieldDelegate {
 extension ImportMnemonicKeyController: UITextViewDelegate {
 
     func textViewDidChange(_ textView: UITextView) {
-        mnemonicTextPlaceholderLabel.isVisible = textView.text.isEmpty
-        viewModel.errors.textError = nil
+        mnemonicPlaceholderLabel.isVisible = textView.text.isEmpty
+        viewModel.errors.mnemonicError = nil
     }
 
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         guard text != "\n" else {
-            accountNumberField.becomeFirstResponder()
+            indexField.becomeFirstResponder()
             return false
         }
 
@@ -74,9 +76,9 @@ extension ImportMnemonicKeyController: UITextViewDelegate {
 extension ImportMnemonicKeyController {
 
     func display(errors: ImportMnemonicKeyViewModel.Errors) {
-        mnemonicNumberError.text = errors.indexError
-        mnemonicTextError.text = errors.textError
-        mnemonicTextError.isHidden = errors.textError == nil
-        mnemonicNumberError.isHidden = errors.indexError == nil
+        indexErrorLabel.text = errors.indexError
+        mnemonicErrorLabel.text = errors.mnemonicError
+        mnemonicErrorView.isHidden = errors.mnemonicError == nil
+        indexErrorView.isHidden = errors.indexError == nil
     }
 }
