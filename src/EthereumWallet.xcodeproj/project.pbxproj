@@ -8,12 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		BA08DB7B217E8149006B8DDF /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA08DB7A217E8149006B8DDF /* LocalStorage.swift */; };
+		BA7D1CAD217F7B7000DEA924 /* CreateMnemonicKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CAC217F7B7000DEA924 /* CreateMnemonicKeyController.swift */; };
+		BA7D1CB0217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CAF217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift */; };
+		BA8C8E7D217F59F4000BC7CF /* ImportMnemonicKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E7C217F59F4000BC7CF /* ImportMnemonicKeyController.swift */; };
+		BA8C8E7F217F652F000BC7CF /* CompareUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E7E217F652F000BC7CF /* CompareUtils.swift */; };
+		BA8C8E81217F6763000BC7CF /* ImportMnemonicKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E80217F6763000BC7CF /* ImportMnemonicKeyViewModel.swift */; };
+		BA8C8E83217F6FF1000BC7CF /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E82217F6FF1000BC7CF /* Style.swift */; };
+		BA8C8E85217F708C000BC7CF /* UIViewsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E84217F708C000BC7CF /* UIViewsExtensions.swift */; };
+		BA8C8E87217F70D3000BC7CF /* UIViewControllersExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E86217F70D3000BC7CF /* UIViewControllersExtensions.swift */; };
 		BA90CE7B216BA44300892462 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CE7A216BA44300892462 /* AppDelegate.swift */; };
 		BA90CE82216BA44300892462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA90CE81216BA44300892462 /* Assets.xcassets */; };
 		BA90CE85216BA44300892462 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA90CE83216BA44300892462 /* LaunchScreen.storyboard */; };
 		BA90CE97216BAA6B00892462 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CE96216BAA6B00892462 /* Container.swift */; };
 		BA90CE99216BABD400892462 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CE98216BABD400892462 /* AccountViewModel.swift */; };
-		BA90CE9B216BABF900892462 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CE9A216BABF900892462 /* AccountController.swift */; };
 		BA90CEA0216BAFBB00892462 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CE9F216BAFBB00892462 /* User.swift */; };
 		BA90CEAA216BC37A00892462 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEA9216BC37A00892462 /* UIExtensions.swift */; };
 		BA90CEAC216BC3E500892462 /* UtilsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEAB216BC3E500892462 /* UtilsExtensions.swift */; };
@@ -33,7 +40,6 @@
 		BA9259F7217A22A40002688E /* RootScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9259F6217A22A40002688E /* RootScrollView.swift */; };
 		BA9259F9217A3B1B0002688E /* AccountListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9259F8217A3B1B0002688E /* AccountListViewModel.swift */; };
 		BA9259FB217DCCF20002688E /* AddAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9259FA217DCCF20002688E /* AddAccountController.swift */; };
-		BA9259FD217DCD210002688E /* AddAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9259FC217DCD210002688E /* AddAccountViewModel.swift */; };
 		BAA0FBDE2170F564000FEFCE /* TransactionHistostyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBDD2170F564000FEFCE /* TransactionHistostyRepository.swift */; };
 		BAA0FBE02170F669000FEFCE /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBDF2170F669000FEFCE /* Transaction.swift */; };
 		BAA0FBE42170FAF4000FEFCE /* TransactionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBE32170FAF4000FEFCE /* TransactionListController.swift */; };
@@ -64,6 +70,14 @@
 		22D39184D5616F0C18D8B7B9 /* Pods-EthereumWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthereumWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-EthereumWallet/Pods-EthereumWallet.release.xcconfig"; sourceTree = "<group>"; };
 		2B0AE80CC7B598D2C09EE79D /* Pods-EthereumWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthereumWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EthereumWallet/Pods-EthereumWallet.debug.xcconfig"; sourceTree = "<group>"; };
 		BA08DB7A217E8149006B8DDF /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		BA7D1CAC217F7B7000DEA924 /* CreateMnemonicKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMnemonicKeyController.swift; sourceTree = "<group>"; };
+		BA7D1CAF217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMnemonicKeyViewModel.swift; sourceTree = "<group>"; };
+		BA8C8E7C217F59F4000BC7CF /* ImportMnemonicKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMnemonicKeyController.swift; sourceTree = "<group>"; };
+		BA8C8E7E217F652F000BC7CF /* CompareUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareUtils.swift; sourceTree = "<group>"; };
+		BA8C8E80217F6763000BC7CF /* ImportMnemonicKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMnemonicKeyViewModel.swift; sourceTree = "<group>"; };
+		BA8C8E82217F6FF1000BC7CF /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		BA8C8E84217F708C000BC7CF /* UIViewsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewsExtensions.swift; sourceTree = "<group>"; };
+		BA8C8E86217F70D3000BC7CF /* UIViewControllersExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllersExtensions.swift; sourceTree = "<group>"; };
 		BA90CE77216BA44300892462 /* EthereumWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EthereumWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA90CE7A216BA44300892462 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA90CE81216BA44300892462 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,7 +85,6 @@
 		BA90CE86216BA44300892462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA90CE96216BAA6B00892462 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		BA90CE98216BABD400892462 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
-		BA90CE9A216BABF900892462 /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		BA90CE9F216BAFBB00892462 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BA90CEA9216BC37A00892462 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		BA90CEAB216BC3E500892462 /* UtilsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsExtensions.swift; sourceTree = "<group>"; };
@@ -91,7 +104,6 @@
 		BA9259F6217A22A40002688E /* RootScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScrollView.swift; sourceTree = "<group>"; };
 		BA9259F8217A3B1B0002688E /* AccountListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListViewModel.swift; sourceTree = "<group>"; };
 		BA9259FA217DCCF20002688E /* AddAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountController.swift; sourceTree = "<group>"; };
-		BA9259FC217DCD210002688E /* AddAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewModel.swift; sourceTree = "<group>"; };
 		BAA0FBDD2170F564000FEFCE /* TransactionHistostyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistostyRepository.swift; sourceTree = "<group>"; };
 		BAA0FBDF2170F669000FEFCE /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		BAA0FBE32170FAF4000FEFCE /* TransactionListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListController.swift; sourceTree = "<group>"; };
@@ -130,6 +142,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA7D1CAE217F7C0200DEA924 /* Mnemonic */ = {
+			isa = PBXGroup;
+			children = (
+				BA7D1CAC217F7B7000DEA924 /* CreateMnemonicKeyController.swift */,
+				BA7D1CAF217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift */,
+				BA8C8E80217F6763000BC7CF /* ImportMnemonicKeyViewModel.swift */,
+				BA8C8E7C217F59F4000BC7CF /* ImportMnemonicKeyController.swift */,
+			);
+			path = Mnemonic;
+			sourceTree = "<group>";
+		};
 		BA90CE6E216BA44300892462 = {
 			isa = PBXGroup;
 			children = (
@@ -203,10 +226,9 @@
 		BA90CE8F216BA70500892462 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				BA7D1CAE217F7C0200DEA924 /* Mnemonic */,
 				BA90CEB2216CE14D00892462 /* Account.storyboard */,
 				BA9259FA217DCCF20002688E /* AddAccountController.swift */,
-				BA9259FC217DCD210002688E /* AddAccountViewModel.swift */,
-				BA90CE9A216BABF900892462 /* AccountController.swift */,
 				BA90CE98216BABD400892462 /* AccountViewModel.swift */,
 				BA9259F8217A3B1B0002688E /* AccountListViewModel.swift */,
 				BAC97066217F253400D95CB8 /* AccountListController.swift */,
@@ -231,6 +253,7 @@
 				BA90CEB7216CEAE000892462 /* Logger.swift */,
 				BA90CEC7216F7F4300892462 /* TrezorCryptoHelper.swift */,
 				BAA0FBEB217497B2000FEFCE /* Array+Extensions.swift */,
+				BA8C8E7E217F652F000BC7CF /* CompareUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -241,6 +264,9 @@
 				BA9259F6217A22A40002688E /* RootScrollView.swift */,
 				BACF7A88217DE31900B1F9C4 /* ShadowButton.swift */,
 				BAC97058217E02BD00D95CB8 /* ShadowView.swift */,
+				BA8C8E82217F6FF1000BC7CF /* Style.swift */,
+				BA8C8E84217F708C000BC7CF /* UIViewsExtensions.swift */,
+				BA8C8E86217F70D3000BC7CF /* UIViewControllersExtensions.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -436,39 +462,45 @@
 			files = (
 				BA90CEC2216E13A000892462 /* JsonRPC+EthConverters.swift in Sources */,
 				BAC97061217E1FCB00D95CB8 /* ContractController.swift in Sources */,
+				BA8C8E81217F6763000BC7CF /* ImportMnemonicKeyViewModel.swift in Sources */,
 				BA90CEB0216CB12800892462 /* Account.swift in Sources */,
 				BAA0FBE42170FAF4000FEFCE /* TransactionListController.swift in Sources */,
 				BA90CE99216BABD400892462 /* AccountViewModel.swift in Sources */,
 				BA90CEAE216CAF5A00892462 /* Network.swift in Sources */,
-				BA9259FD217DCD210002688E /* AddAccountViewModel.swift in Sources */,
 				BACD958521777ECC008396D5 /* PinPadController.swift in Sources */,
 				BA90CEAA216BC37A00892462 /* UIExtensions.swift in Sources */,
 				BA9259F52178AAC40002688E /* LocalLoginService.swift in Sources */,
 				BAC97057217DFC7900D95CB8 /* SendTransactionController.swift in Sources */,
+				BA7D1CAD217F7B7000DEA924 /* CreateMnemonicKeyController.swift in Sources */,
 				BAC97067217F253400D95CB8 /* AccountListController.swift in Sources */,
 				BA90CEBC216D16C900892462 /* AccountBalanceRepository.swift in Sources */,
 				BA90CE97216BAA6B00892462 /* Container.swift in Sources */,
 				BA90CEA0216BAFBB00892462 /* User.swift in Sources */,
-				BA90CE9B216BABF900892462 /* AccountController.swift in Sources */,
 				BA90CE7B216BA44300892462 /* AppDelegate.swift in Sources */,
 				BAC97063217E20D500D95CB8 /* SettingsController.swift in Sources */,
 				BACD958721777F03008396D5 /* PinPadViewModel.swift in Sources */,
+				BA8C8E7D217F59F4000BC7CF /* ImportMnemonicKeyController.swift in Sources */,
 				BA90CEC8216F7F4300892462 /* TrezorCryptoHelper.swift in Sources */,
 				BACAAD092174EB1B0039CC76 /* TransactionService.swift in Sources */,
 				BACAAD0F2174FA840039CC76 /* Wei.swift in Sources */,
 				BA90CEB8216CEAE000892462 /* Logger.swift in Sources */,
 				BACF7A89217DE31900B1F9C4 /* ShadowButton.swift in Sources */,
 				BA90CEBE216DF97100892462 /* UIContants.swift in Sources */,
+				BA8C8E7F217F652F000BC7CF /* CompareUtils.swift in Sources */,
 				BAA0FBDE2170F564000FEFCE /* TransactionHistostyRepository.swift in Sources */,
 				BAA0FBE02170F669000FEFCE /* Transaction.swift in Sources */,
 				BAA0FBEE21749DDA000FEFCE /* DashboardController.swift in Sources */,
+				BA8C8E87217F70D3000BC7CF /* UIViewControllersExtensions.swift in Sources */,
 				BACAAD0D2174ED5F0039CC76 /* KeystoreProxy.swift in Sources */,
 				BA90CEB5216CE75400892462 /* KeystoreAccountProvider.swift in Sources */,
 				BAA0FBEC217497B2000FEFCE /* Array+Extensions.swift in Sources */,
 				BA9259F9217A3B1B0002688E /* AccountListViewModel.swift in Sources */,
+				BA8C8E83217F6FF1000BC7CF /* Style.swift in Sources */,
+				BA7D1CB0217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift in Sources */,
 				BAA0FBE62170FB04000FEFCE /* TransactionListViewModel.swift in Sources */,
 				BA90CEAC216BC3E500892462 /* UtilsExtensions.swift in Sources */,
 				BAA0FBF02174CB36000FEFCE /* TransactionListCell.swift in Sources */,
+				BA8C8E85217F708C000BC7CF /* UIViewsExtensions.swift in Sources */,
 				BA90CEBA216CF13300892462 /* AccountRepository.swift in Sources */,
 				BA90CEC0216E137000892462 /* JsonRPC.swift in Sources */,
 				BA9259FB217DCCF20002688E /* AddAccountController.swift in Sources */,

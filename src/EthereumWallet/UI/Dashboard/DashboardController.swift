@@ -14,6 +14,7 @@ class DashboardController: SlideMenuViewController {
 
     lazy var accountViewModel: AccountViewModel = container.resolve()
 
+    @IBOutlet weak var regularView: UIView!
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var rootScrollView: RootScrollView?
     @IBOutlet weak var accountAddressLabel: UILabel!
@@ -42,6 +43,7 @@ class DashboardController: SlideMenuViewController {
 
         addAccountCountroller?.viewModel.onAccountAdded = { [weak self] in
             self?.accountViewModel.reload(force: true)
+            self?.showAlert(title: "Your wallet has been created!")
         }
 
         copyAddressButton.command = accountViewModel.copyAddressCommand
@@ -64,7 +66,7 @@ class DashboardController: SlideMenuViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.setNavigationBarHidden(accountViewModel.account != nil, animated: animated)
     }
 
     override func viewDidLayoutSubviews() {
@@ -97,8 +99,13 @@ extension DashboardController: AccountView {
 
     func accountChanged(_ viewModel: AccountViewModel) {
         emptyView.isVisible = viewModel.account == nil
-        rootScrollView?.isVisible = viewModel.account != nil
+        regularView?.isVisible = viewModel.account != nil
         accountAddressLabel.text = viewModel.account?.address
         transactionListController?.viewModel.account = viewModel.account
+        navigationController?.setNavigationBarHidden(viewModel.account != nil, animated: true)
+
+        UIView.animate(withDuration: 0.250) {
+            self.view.layoutSubviews()
+        }
     }
 }

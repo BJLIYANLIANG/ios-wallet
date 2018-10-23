@@ -9,16 +9,8 @@
 import Foundation
 import UIKit
 
-
-@IBDesignable
 class ShadowButton: UIButton {
 
-    @IBInspectable var cornerRadius: CGFloat = 0 {
-        didSet {
-            layer.cornerRadius = cornerRadius
-        }
-    }
-    
     @IBInspectable var shadowColor: UIColor = UIColor.clear {
         didSet {
             layer.shadowColor = shadowColor.cgColor
@@ -44,13 +36,31 @@ class ShadowButton: UIButton {
         }
     }
 
-    @IBInspectable var shadowOpacityPressed: Float = 0
+    @IBInspectable var shadowOpacityPressed: Float = 0.8
 
-    @IBInspectable var shadowRadiusPressed: CGFloat = 0
+    @IBInspectable var shadowRadiusPressed: CGFloat = 5
 
     @IBInspectable var shadowColorPressed: UIColor = UIColor.clear
 
-    @IBInspectable var shadowOffsetPressed: CGSize = CGSize.zero
+    @IBInspectable var shadowOffsetPressed: CGSize = CGSize(width: -1, height: 2)
+
+    @IBInspectable var backgroundColorPressed: UIColor? = nil {
+        didSet {
+            if let color = backgroundColorPressed  {
+                setBackgroundImage(UIImage(color: color), for: .highlighted)
+            }
+        }
+    }
+
+    override var backgroundColor: UIColor? {
+        didSet {
+            if let color = backgroundColor  {
+                setBackgroundImage(UIImage(color: color), for: .normal)
+            } else {
+                setBackgroundImage(nil, for: .normal)
+            }
+        }
+    }
 
     override var isHighlighted: Bool {
         get { return super.isHighlighted }
