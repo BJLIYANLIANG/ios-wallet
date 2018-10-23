@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BA08DB7B217E8149006B8DDF /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA08DB7A217E8149006B8DDF /* LocalStorage.swift */; };
+		BA7D1CAD217F7B7000DEA924 /* CreateMnemonicKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CAC217F7B7000DEA924 /* CreateMnemonicKeyController.swift */; };
+		BA7D1CB0217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CAF217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift */; };
 		BA8C8E7D217F59F4000BC7CF /* ImportMnemonicKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E7C217F59F4000BC7CF /* ImportMnemonicKeyController.swift */; };
 		BA8C8E7F217F652F000BC7CF /* CompareUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E7E217F652F000BC7CF /* CompareUtils.swift */; };
 		BA8C8E81217F6763000BC7CF /* ImportMnemonicKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E80217F6763000BC7CF /* ImportMnemonicKeyViewModel.swift */; };
@@ -68,6 +70,8 @@
 		22D39184D5616F0C18D8B7B9 /* Pods-EthereumWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthereumWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-EthereumWallet/Pods-EthereumWallet.release.xcconfig"; sourceTree = "<group>"; };
 		2B0AE80CC7B598D2C09EE79D /* Pods-EthereumWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthereumWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EthereumWallet/Pods-EthereumWallet.debug.xcconfig"; sourceTree = "<group>"; };
 		BA08DB7A217E8149006B8DDF /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		BA7D1CAC217F7B7000DEA924 /* CreateMnemonicKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMnemonicKeyController.swift; sourceTree = "<group>"; };
+		BA7D1CAF217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMnemonicKeyViewModel.swift; sourceTree = "<group>"; };
 		BA8C8E7C217F59F4000BC7CF /* ImportMnemonicKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMnemonicKeyController.swift; sourceTree = "<group>"; };
 		BA8C8E7E217F652F000BC7CF /* CompareUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareUtils.swift; sourceTree = "<group>"; };
 		BA8C8E80217F6763000BC7CF /* ImportMnemonicKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMnemonicKeyViewModel.swift; sourceTree = "<group>"; };
@@ -138,6 +142,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA7D1CAE217F7C0200DEA924 /* Mnemonic */ = {
+			isa = PBXGroup;
+			children = (
+				BA7D1CAC217F7B7000DEA924 /* CreateMnemonicKeyController.swift */,
+				BA7D1CAF217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift */,
+				BA8C8E80217F6763000BC7CF /* ImportMnemonicKeyViewModel.swift */,
+				BA8C8E7C217F59F4000BC7CF /* ImportMnemonicKeyController.swift */,
+			);
+			path = Mnemonic;
+			sourceTree = "<group>";
+		};
 		BA90CE6E216BA44300892462 = {
 			isa = PBXGroup;
 			children = (
@@ -211,13 +226,12 @@
 		BA90CE8F216BA70500892462 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				BA7D1CAE217F7C0200DEA924 /* Mnemonic */,
 				BA90CEB2216CE14D00892462 /* Account.storyboard */,
 				BA9259FA217DCCF20002688E /* AddAccountController.swift */,
 				BA90CE98216BABD400892462 /* AccountViewModel.swift */,
 				BA9259F8217A3B1B0002688E /* AccountListViewModel.swift */,
 				BAC97066217F253400D95CB8 /* AccountListController.swift */,
-				BA8C8E7C217F59F4000BC7CF /* ImportMnemonicKeyController.swift */,
-				BA8C8E80217F6763000BC7CF /* ImportMnemonicKeyViewModel.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -457,6 +471,7 @@
 				BA90CEAA216BC37A00892462 /* UIExtensions.swift in Sources */,
 				BA9259F52178AAC40002688E /* LocalLoginService.swift in Sources */,
 				BAC97057217DFC7900D95CB8 /* SendTransactionController.swift in Sources */,
+				BA7D1CAD217F7B7000DEA924 /* CreateMnemonicKeyController.swift in Sources */,
 				BAC97067217F253400D95CB8 /* AccountListController.swift in Sources */,
 				BA90CEBC216D16C900892462 /* AccountBalanceRepository.swift in Sources */,
 				BA90CE97216BAA6B00892462 /* Container.swift in Sources */,
@@ -481,6 +496,7 @@
 				BAA0FBEC217497B2000FEFCE /* Array+Extensions.swift in Sources */,
 				BA9259F9217A3B1B0002688E /* AccountListViewModel.swift in Sources */,
 				BA8C8E83217F6FF1000BC7CF /* Style.swift in Sources */,
+				BA7D1CB0217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift in Sources */,
 				BAA0FBE62170FB04000FEFCE /* TransactionListViewModel.swift in Sources */,
 				BA90CEAC216BC3E500892462 /* UtilsExtensions.swift in Sources */,
 				BAA0FBF02174CB36000FEFCE /* TransactionListCell.swift in Sources */,

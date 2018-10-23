@@ -44,7 +44,7 @@ class AddAccountViewModel: ViewModel {
     lazy var createKeyCommand = AsyncCommand(self, task: { $0.createKey() })
     lazy var importKeysCommand = AsyncCommand(self, task: { $0.importKeys() })
     lazy var mnemonicImportCommand = ActionCommand.pushScreen(self.view!, sbName: "Account", controllerId: "importMnemonic", configure: onKeyImported)
-    lazy var mnemonicCreateCommand = ActionCommand.pushScreen(self.view!, sbName: "Account", controllerId: "createMnemonic")
+    lazy var mnemonicCreateCommand = ActionCommand.pushScreen(self.view!, sbName: "Account", controllerId: "createMnemonic", configure: onKeyCreated)
 
     fileprivate func createKey() -> Task<Account> {
         return submit(task: repo.createNewAccount()).onSuccess{ [weak self] in
@@ -60,6 +60,13 @@ class AddAccountViewModel: ViewModel {
     }
 
     fileprivate func onKeyImported(ctrl: ImportMnemonicKeyController) {
+        ctrl.viewModel.onSuccess = { [weak self] in
+            self?.onAccountAdded?()
+            ctrl.navigationController?.popViewController(animated: true)
+        }
+    }
+
+    fileprivate func onKeyCreated(ctrl: CreateMnemonicKeyController) {
         ctrl.viewModel.onSuccess = { [weak self] in
             self?.onAccountAdded?()
             ctrl.navigationController?.popViewController(animated: true)

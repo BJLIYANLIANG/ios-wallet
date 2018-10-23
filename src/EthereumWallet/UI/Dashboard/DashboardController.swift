@@ -43,6 +43,7 @@ class DashboardController: SlideMenuViewController {
 
         addAccountCountroller?.viewModel.onAccountAdded = { [weak self] in
             self?.accountViewModel.reload(force: true)
+            self?.showAlert(title: "Your wallet has been created!")
         }
 
         copyAddressButton.command = accountViewModel.copyAddressCommand
