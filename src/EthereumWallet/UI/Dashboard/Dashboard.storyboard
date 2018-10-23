@@ -353,7 +353,7 @@
                                                 </constraints>
                                                 <state key="normal" title="Button" image="settings-icon"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="pressedImage" value="settings-icon"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="pressedImage" value="settings-icon-pressed"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                         </subviews>
@@ -432,5 +432,6 @@
         <image name="ethereum-icon" width="31" height="49"/>
         <image name="logo-small" width="40" height="40"/>
         <image name="settings-icon" width="40" height="40"/>
+        <image name="settings-icon-pressed" width="40" height="40"/>
     </resources>
 </document>
