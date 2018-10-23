@@ -32,3 +32,12 @@ extension HttpClient.URLSessionMockDecorator {
                        lifetime: lifetime)
     }
 }
+
+extension Task {
+
+    static func cancelled() -> Task {
+        let src = Task.Source()
+        try! src.cancel()
+        return src.task
+    }
+}

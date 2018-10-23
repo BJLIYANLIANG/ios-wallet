@@ -11,12 +11,6 @@ import UIKit
 
 class ShadowView: UIView {
 
-    @IBInspectable var cornerRadius: CGFloat = 0 {
-        didSet {
-            layer.cornerRadius = cornerRadius
-        }
-    }
-
     @IBInspectable var shadowColor: UIColor = UIColor.clear {
         didSet {
             layer.shadowColor = shadowColor.cgColor
