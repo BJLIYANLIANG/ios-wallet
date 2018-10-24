@@ -101,14 +101,11 @@ extension DashboardController: AccountView {
     }
 
     func accountChanged(_ viewModel: AccountViewModel) {
+        let acc = viewModel.account
         emptyView.isVisible = viewModel.account == nil
         regularView?.isVisible = viewModel.account != nil
         accountAddressLabel.text = viewModel.account?.address
         transactionListController?.viewModel.account = viewModel.account
         navigationController?.setNavigationBarHidden(viewModel.account != nil, animated: true)
-
-        UIView.animate(withDuration: 0.250) {
-            self.view.layoutSubviews()
-        }
     }
 }

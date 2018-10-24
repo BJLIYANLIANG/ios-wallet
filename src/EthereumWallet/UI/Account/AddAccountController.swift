@@ -61,15 +61,15 @@ class AddAccountViewModel: ViewModel {
 
     fileprivate func onKeyImported(ctrl: ImportMnemonicKeyController) {
         ctrl.viewModel.onSuccess = { [weak self] in
-            self?.onAccountAdded?()
             ctrl.navigationController?.popViewController(animated: true)
+            self?.onAccountAdded?()
         }
     }
 
     fileprivate func onKeyCreated(ctrl: CreateMnemonicKeyController) {
         ctrl.viewModel.onSuccess = { [weak self] in
-            self?.onAccountAdded?()
             ctrl.navigationController?.popViewController(animated: true)
+            self?.onAccountAdded?()
         }
     }
 }

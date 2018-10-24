@@ -17,12 +17,12 @@ class AccountRepository {
     init(keystoreProvider: KeystoreAccountProvider, loginService: LocalLoginService) {
         self.provider = keystoreProvider
         self.loginService = loginService
+        self.selected = UserDefaults.standard.value(forKey: LocalStorageKeys.selectedAccount)
     }
 
     var selected: Account? {
-        get { return UserDefaults.standard.value(forKey: LocalStorageKeys.selectedAccount) }
-        set {
-            UserDefaults.standard.set(newValue, forKey: LocalStorageKeys.selectedAccount)
+        didSet {
+            UserDefaults.standard.set(selected, forKey: LocalStorageKeys.selectedAccount)
             UserDefaults.standard.synchronize()
         }
     }

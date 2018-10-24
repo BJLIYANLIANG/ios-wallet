@@ -15,14 +15,14 @@ struct Network {
 
     // TODO: get from plist
     static let all: [Network] = [
-        Network(networkName: "rinkeby",
-                infuraUrl: URL(string: "https://rinkeby.infura.io/v3")!,
-                eherscanUrl: URL(string: "https://rinkeby.etherscan.io/api")!,
-                chainId: 4),
         Network(networkName: "ropsten",
                 infuraUrl: URL(string: "https://ropsten.infura.io/v3")!,
                 eherscanUrl: URL(string: "https://ropsten.etherscan.io/api")!,
                 chainId: 3),
+        Network(networkName: "rinkeby",
+                infuraUrl: URL(string: "https://rinkeby.infura.io/v3")!,
+                eherscanUrl: URL(string: "https://rinkeby.etherscan.io/api")!,
+                chainId: 4),
         Network(networkName: "kovan",
                 infuraUrl: URL(string: "https://kovan.infura.io/v3")!,
                 eherscanUrl: URL(string: "https://kovan.etherscan.io/api")!,

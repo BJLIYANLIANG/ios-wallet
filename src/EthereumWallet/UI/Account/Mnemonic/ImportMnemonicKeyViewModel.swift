@@ -49,7 +49,7 @@ class ImportMnemonicKeyViewModel: ViewModel {
             return Task.cancelled()
         }
 
-        guard let index = param.keyIndex, index > 0 else {
+        guard let index = param.keyIndex, index >= 0 else {
             errors.indexError = "<TODO> index error"
             return Task.cancelled()
         }
