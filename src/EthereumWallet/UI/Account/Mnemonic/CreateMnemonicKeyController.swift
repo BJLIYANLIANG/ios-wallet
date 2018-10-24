@@ -14,6 +14,7 @@ class CreateMnemonicKeyController: UIViewController {
 
     lazy var viewModel: CreateMnemonicKeyViewModel = container.resolve()
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var mnemonicTextView: UITextView!
     @IBOutlet weak var mnemonicErrorView: UIStackView!
     @IBOutlet weak var mnemonicTextError: UILabel!
@@ -33,6 +34,20 @@ class CreateMnemonicKeyController: UIViewController {
         confirmTextView.delegate = self
         confirmErrorView.isHidden = true
         mnemonicErrorView.isHidden = true
+        hideKeyboardWhenTappedAround()
+        adjustKeyboardInsets(to: scrollView)
+    }
+
+    override func keyboardPostWillShow(keyboardFrame: CGRect, scrollView: UIScrollView?) {
+        if confirmTextView.isFirstResponder {
+            let fieldFrame = confirmTextView.convert(confirmTextView.bounds, to: view)
+            let diff = keyboardFrame.minY - 16 - fieldFrame.maxY
+            if diff < 0 {
+                var offset = self.scrollView.contentOffset
+                offset.y -= diff
+                scrollView?.setContentOffset(offset, animated: true)
+            }
+        }
     }
 }
 

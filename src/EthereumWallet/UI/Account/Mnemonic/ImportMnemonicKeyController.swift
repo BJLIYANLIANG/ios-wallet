@@ -14,6 +14,7 @@ class ImportMnemonicKeyController: UIViewController {
 
     lazy var viewModel: ImportMnemonicKeyViewModel = container.resolve()
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var mnemonicField: UITextView!
     @IBOutlet weak var mnemonicErrorLabel: UILabel!
     @IBOutlet weak var mnemonicErrorView: UIStackView!
@@ -32,6 +33,8 @@ class ImportMnemonicKeyController: UIViewController {
         indexField.delegate = self
         mnemonicErrorView.isHidden = true
         indexErrorView.isHidden = true
+        adjustKeyboardInsets(to: scrollView)
+        hideKeyboardWhenTappedAround()
     }
 }
 

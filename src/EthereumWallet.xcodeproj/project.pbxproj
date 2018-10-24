@@ -10,18 +10,18 @@
 		BA08DB7B217E8149006B8DDF /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA08DB7A217E8149006B8DDF /* LocalStorage.swift */; };
 		BA7D1CAD217F7B7000DEA924 /* CreateMnemonicKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CAC217F7B7000DEA924 /* CreateMnemonicKeyController.swift */; };
 		BA7D1CB0217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CAF217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift */; };
+		BA7D1CB221807D4100DEA924 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CB121807D4100DEA924 /* UIViewController+Keyboard.swift */; };
 		BA8C8E7D217F59F4000BC7CF /* ImportMnemonicKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E7C217F59F4000BC7CF /* ImportMnemonicKeyController.swift */; };
 		BA8C8E7F217F652F000BC7CF /* CompareUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E7E217F652F000BC7CF /* CompareUtils.swift */; };
 		BA8C8E81217F6763000BC7CF /* ImportMnemonicKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E80217F6763000BC7CF /* ImportMnemonicKeyViewModel.swift */; };
 		BA8C8E83217F6FF1000BC7CF /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E82217F6FF1000BC7CF /* Style.swift */; };
 		BA8C8E85217F708C000BC7CF /* UIViewsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E84217F708C000BC7CF /* UIViewsExtensions.swift */; };
-		BA8C8E87217F70D3000BC7CF /* UIViewControllersExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E86217F70D3000BC7CF /* UIViewControllersExtensions.swift */; };
+		BA8C8E87217F70D3000BC7CF /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E86217F70D3000BC7CF /* UIViewController+Alerts.swift */; };
 		BA90CE7B216BA44300892462 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CE7A216BA44300892462 /* AppDelegate.swift */; };
 		BA90CE82216BA44300892462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA90CE81216BA44300892462 /* Assets.xcassets */; };
 		BA90CE85216BA44300892462 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA90CE83216BA44300892462 /* LaunchScreen.storyboard */; };
 		BA90CE97216BAA6B00892462 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CE96216BAA6B00892462 /* Container.swift */; };
 		BA90CE99216BABD400892462 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CE98216BABD400892462 /* AccountViewModel.swift */; };
-		BA90CEA0216BAFBB00892462 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CE9F216BAFBB00892462 /* User.swift */; };
 		BA90CEAA216BC37A00892462 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEA9216BC37A00892462 /* UIExtensions.swift */; };
 		BA90CEAC216BC3E500892462 /* UtilsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEAB216BC3E500892462 /* UtilsExtensions.swift */; };
 		BA90CEAE216CAF5A00892462 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEAD216CAF5A00892462 /* Network.swift */; };
@@ -72,12 +72,13 @@
 		BA08DB7A217E8149006B8DDF /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		BA7D1CAC217F7B7000DEA924 /* CreateMnemonicKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMnemonicKeyController.swift; sourceTree = "<group>"; };
 		BA7D1CAF217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMnemonicKeyViewModel.swift; sourceTree = "<group>"; };
+		BA7D1CB121807D4100DEA924 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		BA8C8E7C217F59F4000BC7CF /* ImportMnemonicKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMnemonicKeyController.swift; sourceTree = "<group>"; };
 		BA8C8E7E217F652F000BC7CF /* CompareUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareUtils.swift; sourceTree = "<group>"; };
 		BA8C8E80217F6763000BC7CF /* ImportMnemonicKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMnemonicKeyViewModel.swift; sourceTree = "<group>"; };
 		BA8C8E82217F6FF1000BC7CF /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		BA8C8E84217F708C000BC7CF /* UIViewsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewsExtensions.swift; sourceTree = "<group>"; };
-		BA8C8E86217F70D3000BC7CF /* UIViewControllersExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllersExtensions.swift; sourceTree = "<group>"; };
+		BA8C8E86217F70D3000BC7CF /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		BA90CE77216BA44300892462 /* EthereumWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EthereumWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA90CE7A216BA44300892462 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA90CE81216BA44300892462 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,7 +86,6 @@
 		BA90CE86216BA44300892462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA90CE96216BAA6B00892462 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		BA90CE98216BABD400892462 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
-		BA90CE9F216BAFBB00892462 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BA90CEA9216BC37A00892462 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		BA90CEAB216BC3E500892462 /* UtilsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsExtensions.swift; sourceTree = "<group>"; };
 		BA90CEAD216CAF5A00892462 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -178,6 +178,7 @@
 				BA90CE9E216BAFAE00892462 /* Model */,
 				BA90CE8D216BA6EB00892462 /* Services */,
 				BA90CE8C216BA6E200892462 /* UI */,
+				BA9259F1217798990002688E /* CustomViews */,
 				BA90CE96216BAA6B00892462 /* Container.swift */,
 				BA90CE7A216BA44300892462 /* AppDelegate.swift */,
 				BA90CE81216BA44300892462 /* Assets.xcassets */,
@@ -190,7 +191,6 @@
 		BA90CE8C216BA6E200892462 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				BA9259F1217798990002688E /* CustomViews */,
 				BAC9705D217E1F9400D95CB8 /* Contracts */,
 				BAC9705A217E1EED00D95CB8 /* Settings */,
 				BACD958121777E8C008396D5 /* PinCode */,
@@ -239,7 +239,6 @@
 		BA90CE9E216BAFAE00892462 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BA90CE9F216BAFBB00892462 /* User.swift */,
 				BA90CEAF216CB12800892462 /* Account.swift */,
 				BAA0FBDF2170F669000FEFCE /* Transaction.swift */,
 				BACAAD0E2174FA840039CC76 /* Wei.swift */,
@@ -266,7 +265,8 @@
 				BAC97058217E02BD00D95CB8 /* ShadowView.swift */,
 				BA8C8E82217F6FF1000BC7CF /* Style.swift */,
 				BA8C8E84217F708C000BC7CF /* UIViewsExtensions.swift */,
-				BA8C8E86217F70D3000BC7CF /* UIViewControllersExtensions.swift */,
+				BA8C8E86217F70D3000BC7CF /* UIViewController+Alerts.swift */,
+				BA7D1CB121807D4100DEA924 /* UIViewController+Keyboard.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -475,11 +475,11 @@
 				BAC97067217F253400D95CB8 /* AccountListController.swift in Sources */,
 				BA90CEBC216D16C900892462 /* AccountBalanceRepository.swift in Sources */,
 				BA90CE97216BAA6B00892462 /* Container.swift in Sources */,
-				BA90CEA0216BAFBB00892462 /* User.swift in Sources */,
 				BA90CE7B216BA44300892462 /* AppDelegate.swift in Sources */,
 				BAC97063217E20D500D95CB8 /* SettingsController.swift in Sources */,
 				BACD958721777F03008396D5 /* PinPadViewModel.swift in Sources */,
 				BA8C8E7D217F59F4000BC7CF /* ImportMnemonicKeyController.swift in Sources */,
+				BA7D1CB221807D4100DEA924 /* UIViewController+Keyboard.swift in Sources */,
 				BA90CEC8216F7F4300892462 /* TrezorCryptoHelper.swift in Sources */,
 				BACAAD092174EB1B0039CC76 /* TransactionService.swift in Sources */,
 				BACAAD0F2174FA840039CC76 /* Wei.swift in Sources */,
@@ -490,7 +490,7 @@
 				BAA0FBDE2170F564000FEFCE /* TransactionHistostyRepository.swift in Sources */,
 				BAA0FBE02170F669000FEFCE /* Transaction.swift in Sources */,
 				BAA0FBEE21749DDA000FEFCE /* DashboardController.swift in Sources */,
-				BA8C8E87217F70D3000BC7CF /* UIViewControllersExtensions.swift in Sources */,
+				BA8C8E87217F70D3000BC7CF /* UIViewController+Alerts.swift in Sources */,
 				BACAAD0D2174ED5F0039CC76 /* KeystoreProxy.swift in Sources */,
 				BA90CEB5216CE75400892462 /* KeystoreAccountProvider.swift in Sources */,
 				BAA0FBEC217497B2000FEFCE /* Array+Extensions.swift in Sources */,
