@@ -26,5 +26,3 @@ class Style {
         UITextView.appearance().borderWidth = 2
     }
 }
-
-

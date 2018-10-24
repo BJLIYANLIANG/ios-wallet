@@ -45,7 +45,7 @@ class ImportMnemonicKeyViewModel: ViewModel {
 
     fileprivate func validate(param: MnemonicImportParam) -> Task<MnemonicImportParam> {
         guard let text = param.mnemonicText, !text.isEmpty else {
-            errors.textError = "<TODO> text error"
+            errors.mnemonicError = "<TODO> text error"
             return Task.cancelled()
         }
 
@@ -59,7 +59,7 @@ class ImportMnemonicKeyViewModel: ViewModel {
 
     struct Errors {
         var indexError: String?
-        var textError: String?
+        var mnemonicError: String?
     }
 
     struct MnemonicImportParam {

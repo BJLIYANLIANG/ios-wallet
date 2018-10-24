@@ -14,7 +14,7 @@ class TransactionHistostyRepository {
     func fetchTransactions(account: Account) -> Task<[Transaction]> {
         let parameters = ["module":     "account",
                           "action":     "txlist",
-                          "address":    "0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae",//account.address,
+                          "address":    account.address,//"0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae",
                           "sort":       "ask",
                           "endblock":   "99999999",
                           "startblock": "0",

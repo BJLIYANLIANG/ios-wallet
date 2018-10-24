@@ -26,6 +26,7 @@ class RootScrollView: UIScrollView, UIScrollViewDelegate {
 
     var snapToOffsets: [CGFloat] = []
 
+    // TODO: decelerate scrolling out of bounds instead of locking
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let nested = nestedScrollView else {
             return
@@ -36,8 +37,16 @@ class RootScrollView: UIScrollView, UIScrollViewDelegate {
         let totalOffset = contentOffset.y + nested.contentOffset.y
         let nestedOffset = max(0, min(totalOffset - maxRootOffset, maxNested))
 
+        let actualContentSizeHeight = max(contentSize.height - nested.bounds.height + nested.contentSize.height, bounds.height)
+
+        var target = totalOffset - nestedOffset
+
+        if actualContentSizeHeight - bounds.height < target {
+            target = 0
+        }
+
         nested.contentOffset.y = nestedOffset
-        contentOffset.y = totalOffset - nestedOffset
+        contentOffset.y = target
     }
 
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
@@ -57,6 +66,16 @@ class RootScrollView: UIScrollView, UIScrollViewDelegate {
             }
 
             prev = level
+        }
+
+        guard let nested = nestedScrollView else {
+            return
+        }
+
+        let actualContentSizeHeight = max(contentSize.height - nested.bounds.height + nested.contentSize.height, bounds.height)
+
+        if actualContentSizeHeight - target < bounds.height {
+            targetContentOffset.pointee.y = actualContentSizeHeight - bounds.height
         }
     }
 }

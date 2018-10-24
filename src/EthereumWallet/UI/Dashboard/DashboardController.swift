@@ -23,6 +23,7 @@ class DashboardController: SlideMenuViewController {
     @IBOutlet weak var contractButton: UIButton!
     @IBOutlet weak var settingButton: UIButton!
     @IBOutlet weak var copyAddressButton: UIButton!
+    @IBOutlet weak var noTransactionsView: UIView!
 
     let refresher: UIRefreshControl = UIRefreshControl()
 
@@ -62,6 +63,8 @@ class DashboardController: SlideMenuViewController {
         panMenuFromLeft = true
         menuController = accountList
         accountList.delegate = accountViewModel
+
+        transactionListController?.noTransactionsView = noTransactionsView
     }
 
     override func viewWillAppear(_ animated: Bool) {
