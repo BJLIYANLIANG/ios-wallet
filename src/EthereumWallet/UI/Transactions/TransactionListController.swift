@@ -14,6 +14,7 @@ class TransactionListController: UITableViewController {
 
     lazy var viewModel: TransactionListViewModel = container.resolve()
 
+    weak var noTransactionsView: UIView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ extension TransactionListController {
 
     func reloadTransactions() {
         tableView.reloadData()
+        noTransactionsView?.isVisible = viewModel.transactions?.isEmpty == true
     }
 }
 
