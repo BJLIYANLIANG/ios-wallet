@@ -16,7 +16,6 @@ class DashboardController: UIViewController {
 
     @IBOutlet weak var regularView: UIView!
     @IBOutlet weak var emptyView: UIView!
-    @IBOutlet weak var rootScrollView: RootScrollView?
     @IBOutlet weak var accountAddressLabel: UILabel!
     @IBOutlet weak var accountBalanceLabel: UILabel!
     @IBOutlet weak var sendButton: UIButton!
@@ -24,6 +23,7 @@ class DashboardController: UIViewController {
     @IBOutlet weak var settingButton: UIButton!
     @IBOutlet weak var copyAddressButton: UIButton!
     @IBOutlet weak var noTransactionsView: UIView!
+    @IBOutlet weak var headerView: UIView!
 
     let refresher: UIRefreshControl = UIRefreshControl()
 
@@ -54,12 +54,11 @@ class DashboardController: UIViewController {
         contractButton.command = ActionCommand.pushScreen(self, sbName: "Contracts", controllerId: "executeContract")
         settingButton.command = ActionCommand.pushScreen(self, sbName: "Settings", controllerId: "settings")
 
-        rootScrollView?.nestedScrollView =  transactionListController?.tableView
-        rootScrollView?.insertSubview(refresher, at: 0)
-
+        transactionListController?.tableView?.insertSubview(refresher, at: 0)
         refresher.addTarget(self, action: #selector(handleRefresher), for: .valueChanged)
 
         transactionListController?.noTransactionsView = noTransactionsView
+        transactionListController?.tableView.tableHeaderView = headerView
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -70,10 +69,10 @@ class DashboardController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-       rootScrollView?.snapToOffsets = [
-            accountBalanceLabel.convert(CGPoint.zero, to: rootScrollView).y,
-            sendButton.convert(CGPoint.zero, to: rootScrollView).y - 16,
-            transactionListController!.view.convert(CGPoint.zero, to: rootScrollView).y
+       transactionListController?.snapToOffsets = [
+            accountBalanceLabel.convert(CGPoint.zero, to: headerView).y,
+            sendButton.convert(CGPoint.zero, to: headerView).y - 16,
+            headerView.bounds.height
         ]
     }
 

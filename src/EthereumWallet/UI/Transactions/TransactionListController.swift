@@ -16,10 +16,34 @@ class TransactionListController: UITableViewController {
 
     weak var noTransactionsView: UIView?
 
+    var snapToOffsets: [CGFloat] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         add(viewModel)
         viewModel.view = self
+    }
+}
+
+extension TransactionListController {
+
+    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        guard !snapToOffsets.isEmpty else {
+            return
+        }
+
+        var prev: CGFloat = 0
+        let target = targetContentOffset.pointee.y
+
+        for level in snapToOffsets {
+            if target < level {
+                let mid = (level + prev) / 2
+                targetContentOffset.pointee.y = target > mid ? level : prev
+                break
+            }
+
+            prev = level
+        }
     }
 }
 
