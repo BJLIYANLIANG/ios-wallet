@@ -34,10 +34,15 @@ class AccountListViewModel: ViewModel {
 
     var selected: Account? {
         didSet {
-            accountsRepo.selected = selected
+            if storeSelection {
+                accountsRepo.selected = selected
+            }
+
             view?.selectedChanged(self)
         }
     }
+
+    var storeSelection: Bool = true
 
     override func loadData() -> NotifyCompletion {
         selected = accountsRepo.selected

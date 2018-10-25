@@ -11,6 +11,7 @@
 		BA7D1CAD217F7B7000DEA924 /* CreateMnemonicKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CAC217F7B7000DEA924 /* CreateMnemonicKeyController.swift */; };
 		BA7D1CB0217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CAF217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift */; };
 		BA7D1CB221807D4100DEA924 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CB121807D4100DEA924 /* UIViewController+Keyboard.swift */; };
+		BA7D1CB42180A6CA00DEA924 /* SendTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CB32180A6CA00DEA924 /* SendTransactionViewModel.swift */; };
 		BA8C8E7D217F59F4000BC7CF /* ImportMnemonicKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E7C217F59F4000BC7CF /* ImportMnemonicKeyController.swift */; };
 		BA8C8E7F217F652F000BC7CF /* CompareUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E7E217F652F000BC7CF /* CompareUtils.swift */; };
 		BA8C8E81217F6763000BC7CF /* ImportMnemonicKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E80217F6763000BC7CF /* ImportMnemonicKeyViewModel.swift */; };
@@ -73,6 +74,7 @@
 		BA7D1CAC217F7B7000DEA924 /* CreateMnemonicKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMnemonicKeyController.swift; sourceTree = "<group>"; };
 		BA7D1CAF217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMnemonicKeyViewModel.swift; sourceTree = "<group>"; };
 		BA7D1CB121807D4100DEA924 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
+		BA7D1CB32180A6CA00DEA924 /* SendTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTransactionViewModel.swift; sourceTree = "<group>"; };
 		BA8C8E7C217F59F4000BC7CF /* ImportMnemonicKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMnemonicKeyController.swift; sourceTree = "<group>"; };
 		BA8C8E7E217F652F000BC7CF /* CompareUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareUtils.swift; sourceTree = "<group>"; };
 		BA8C8E80217F6763000BC7CF /* ImportMnemonicKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMnemonicKeyViewModel.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				BAA0FBE52170FB04000FEFCE /* TransactionListViewModel.swift */,
 				BAA0FBEF2174CB36000FEFCE /* TransactionListCell.swift */,
 				BAC97056217DFC7900D95CB8 /* SendTransactionController.swift */,
+				BA7D1CB32180A6CA00DEA924 /* SendTransactionViewModel.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				BA7D1CB0217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift in Sources */,
 				BAA0FBE62170FB04000FEFCE /* TransactionListViewModel.swift in Sources */,
 				BA90CEAC216BC3E500892462 /* UtilsExtensions.swift in Sources */,
+				BA7D1CB42180A6CA00DEA924 /* SendTransactionViewModel.swift in Sources */,
 				BAA0FBF02174CB36000FEFCE /* TransactionListCell.swift in Sources */,
 				BA8C8E85217F708C000BC7CF /* UIViewsExtensions.swift in Sources */,
 				BA90CEBA216CF13300892462 /* AccountRepository.swift in Sources */,

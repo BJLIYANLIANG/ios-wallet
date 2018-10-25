@@ -18,7 +18,7 @@ struct Account: Codable {
 
 extension Account {
 
-    func numberTrancatedInMiddle(max symbols: Int = 11) -> String {
+    func addressTrancatedInMiddle(max symbols: Int = 11) -> String {
         // 0x reducing
         let cleanNumber = address.dropFirst(2)
 
