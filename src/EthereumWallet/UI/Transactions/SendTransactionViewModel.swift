@@ -47,10 +47,16 @@ class SendTransactionViewModel: ViewModel {
     lazy var sendTransactionCommand = AsyncCommand(self, task: { $0.send() }, canExecute: { !$0.loading })
 
     fileprivate func send() -> Task<TransactionHash> {
-        return submit(task: validate().chainOnSuccess { [service] in
+        guard let view = view else {
+            return Task.cancelled()
+        }
+
+        return submit(task: validate().chainOnSuccess { res in
+            view.showAlert(title: "Are you sure you want to send \(res.amount)ETH?", message: "This operation can no be undone.", ok: "OK", cancel: "Cancel").map { _ in res }
+        }.chainOnSuccess { [service] in
             service.transfer(from: $0.from, to: $0.to, amount: $0.amount, network: Network.current)
         }).onSuccess { [weak self] in
-            self?.view?.showAlert(title: "<TODO> Success", message: "<TODO> hash: \($0)")
+            self?.view?.showAlert(title: "Your payment has been sent!", message: "TxHash: \($0)")
         }.onFail { [weak self] in
             self?.view?.showError($0)
         }
@@ -74,5 +80,12 @@ class SendTransactionViewModel: ViewModel {
         case noFrom = "<TODO> select from"
         case noTo = "<TODO> select to"
         case wrongAmount = "<TODO> wrong amount"
+    }
+}
+
+extension SendTransactionViewModel: QRCoderDelegate {
+
+    func detected(_ scaner: QRCodeScanerController, qrCode: String) {
+        to = qrCode
     }
 }

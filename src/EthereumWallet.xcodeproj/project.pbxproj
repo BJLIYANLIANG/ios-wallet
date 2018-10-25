@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		BA08DB7B217E8149006B8DDF /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA08DB7A217E8149006B8DDF /* LocalStorage.swift */; };
+		BA18232F2182164D0053C78B /* AccountDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18232E2182164D0053C78B /* AccountDetailsController.swift */; };
 		BA7D1CAD217F7B7000DEA924 /* CreateMnemonicKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CAC217F7B7000DEA924 /* CreateMnemonicKeyController.swift */; };
 		BA7D1CB0217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CAF217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift */; };
 		BA7D1CB221807D4100DEA924 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CB121807D4100DEA924 /* UIViewController+Keyboard.swift */; };
 		BA7D1CB42180A6CA00DEA924 /* SendTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CB32180A6CA00DEA924 /* SendTransactionViewModel.swift */; };
+		BA7D1CB62181F5CE00DEA924 /* TextFieldWithInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CB52181F5CE00DEA924 /* TextFieldWithInsets.swift */; };
+		BA7D1CB82181F7AA00DEA924 /* QRCodeScaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CB72181F7AA00DEA924 /* QRCodeScaner.swift */; };
 		BA8C8E7D217F59F4000BC7CF /* ImportMnemonicKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E7C217F59F4000BC7CF /* ImportMnemonicKeyController.swift */; };
 		BA8C8E7F217F652F000BC7CF /* CompareUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E7E217F652F000BC7CF /* CompareUtils.swift */; };
 		BA8C8E81217F6763000BC7CF /* ImportMnemonicKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C8E80217F6763000BC7CF /* ImportMnemonicKeyViewModel.swift */; };
@@ -71,10 +74,13 @@
 		22D39184D5616F0C18D8B7B9 /* Pods-EthereumWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthereumWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-EthereumWallet/Pods-EthereumWallet.release.xcconfig"; sourceTree = "<group>"; };
 		2B0AE80CC7B598D2C09EE79D /* Pods-EthereumWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthereumWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EthereumWallet/Pods-EthereumWallet.debug.xcconfig"; sourceTree = "<group>"; };
 		BA08DB7A217E8149006B8DDF /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		BA18232E2182164D0053C78B /* AccountDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsController.swift; sourceTree = "<group>"; };
 		BA7D1CAC217F7B7000DEA924 /* CreateMnemonicKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMnemonicKeyController.swift; sourceTree = "<group>"; };
 		BA7D1CAF217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMnemonicKeyViewModel.swift; sourceTree = "<group>"; };
 		BA7D1CB121807D4100DEA924 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		BA7D1CB32180A6CA00DEA924 /* SendTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTransactionViewModel.swift; sourceTree = "<group>"; };
+		BA7D1CB52181F5CE00DEA924 /* TextFieldWithInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithInsets.swift; sourceTree = "<group>"; };
+		BA7D1CB72181F7AA00DEA924 /* QRCodeScaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScaner.swift; sourceTree = "<group>"; };
 		BA8C8E7C217F59F4000BC7CF /* ImportMnemonicKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMnemonicKeyController.swift; sourceTree = "<group>"; };
 		BA8C8E7E217F652F000BC7CF /* CompareUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareUtils.swift; sourceTree = "<group>"; };
 		BA8C8E80217F6763000BC7CF /* ImportMnemonicKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMnemonicKeyViewModel.swift; sourceTree = "<group>"; };
@@ -234,6 +240,7 @@
 				BA90CE98216BABD400892462 /* AccountViewModel.swift */,
 				BA9259F8217A3B1B0002688E /* AccountListViewModel.swift */,
 				BAC97066217F253400D95CB8 /* AccountListController.swift */,
+				BA18232E2182164D0053C78B /* AccountDetailsController.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -263,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				BA9259F6217A22A40002688E /* RootScrollView.swift */,
+				BA7D1CB52181F5CE00DEA924 /* TextFieldWithInsets.swift */,
 				BACF7A88217DE31900B1F9C4 /* ShadowButton.swift */,
 				BAC97058217E02BD00D95CB8 /* ShadowView.swift */,
 				BA8C8E82217F6FF1000BC7CF /* Style.swift */,
@@ -282,6 +290,7 @@
 				BAA0FBEF2174CB36000FEFCE /* TransactionListCell.swift */,
 				BAC97056217DFC7900D95CB8 /* SendTransactionController.swift */,
 				BA7D1CB32180A6CA00DEA924 /* SendTransactionViewModel.swift */,
+				BA7D1CB72181F7AA00DEA924 /* QRCodeScaner.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -500,8 +509,10 @@
 				BA9259F9217A3B1B0002688E /* AccountListViewModel.swift in Sources */,
 				BA8C8E83217F6FF1000BC7CF /* Style.swift in Sources */,
 				BA7D1CB0217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift in Sources */,
+				BA7D1CB82181F7AA00DEA924 /* QRCodeScaner.swift in Sources */,
 				BAA0FBE62170FB04000FEFCE /* TransactionListViewModel.swift in Sources */,
 				BA90CEAC216BC3E500892462 /* UtilsExtensions.swift in Sources */,
+				BA7D1CB62181F5CE00DEA924 /* TextFieldWithInsets.swift in Sources */,
 				BA7D1CB42180A6CA00DEA924 /* SendTransactionViewModel.swift in Sources */,
 				BAA0FBF02174CB36000FEFCE /* TransactionListCell.swift in Sources */,
 				BA8C8E85217F708C000BC7CF /* UIViewsExtensions.swift in Sources */,
@@ -509,6 +520,7 @@
 				BA90CEC0216E137000892462 /* JsonRPC.swift in Sources */,
 				BA9259FB217DCCF20002688E /* AddAccountController.swift in Sources */,
 				BA9259F7217A22A40002688E /* RootScrollView.swift in Sources */,
+				BA18232F2182164D0053C78B /* AccountDetailsController.swift in Sources */,
 				BAC97059217E02BD00D95CB8 /* ShadowView.swift in Sources */,
 				BA08DB7B217E8149006B8DDF /* LocalStorage.swift in Sources */,
 				BA90CEC4216E373800892462 /* DeterministicAccountFactory.swift in Sources */,

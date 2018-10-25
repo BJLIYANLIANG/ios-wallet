@@ -25,21 +25,24 @@ class AccountListController: UITableViewController, MenuController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.register(AccountCell.self, forCellReuseIdentifier: "accountCell")
-
         viewModel.view = self
         add(viewModel)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 }
 
 extension AccountListController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "accountCell") as! AccountCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: AccountCell.cellId) as! AccountCell
         cell.account = viewModel.accounts?[indexPath.row]
         cell.selectionStyle = .none
-        cell.accessoryType = cell.account?.address == viewModel.selected?.address ? .checkmark : .none
+        cell.selectionImage.isVisible = cell.account?.address == viewModel.selected?.address
+        cell.parent = self
         return cell
     }
 
@@ -66,9 +69,28 @@ extension AccountListController: AccountListView {
 
 class AccountCell: UITableViewCell {
 
+    static let cellId = "accountListCell"
+
+    weak var parent: UIViewController?
+
+    @IBOutlet weak var selectionImage: UIImageView!
+    @IBOutlet weak var showDetailsButton: UIButton!
+    @IBOutlet weak var accontAddressLabel: UILabel!
+
     var account: Account? {
         didSet {
-            textLabel?.text = account?.address
+            accontAddressLabel?.text = account?.address
+        }
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        showDetailsButton.command = ActionCommand(self) {
+            let sb = UIStoryboard(name: "Account", bundle: nil)
+            let controller = sb.instantiateViewController(withIdentifier: "accountDetails") as! AccountDetailsController
+            controller.account = $0.account
+            $0.parent?.navigationController?.pushViewController(controller, animated: true)
         }
     }
 }

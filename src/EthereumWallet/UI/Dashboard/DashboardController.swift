@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import JetLib
 
-class DashboardController: SlideMenuViewController {
+class DashboardController: UIViewController {
 
     lazy var accountViewModel: AccountViewModel = container.resolve()
 
@@ -43,8 +43,9 @@ class DashboardController: SlideMenuViewController {
         accountViewModel.view = self
 
         addAccountCountroller?.viewModel.onAccountAdded = { [weak self] in
-            self?.accountViewModel.reload(force: true)
+            self?.accountViewModel.account = self?.accountViewModel.accountsRepo.selected
             self?.showAlert(title: "Your wallet has been created!")
+            self?.navigationController?.setNavigationBarHidden(true, animated: true)
         }
 
         copyAddressButton.command = accountViewModel.copyAddressCommand
@@ -57,12 +58,6 @@ class DashboardController: SlideMenuViewController {
         rootScrollView?.insertSubview(refresher, at: 0)
 
         refresher.addTarget(self, action: #selector(handleRefresher), for: .valueChanged)
-
-        let accountStoryboard = UIStoryboard(name: "Account", bundle: nil)
-        let accountList = accountStoryboard.instantiateViewController(withIdentifier: "accountList") as! AccountListController
-        panMenuFromLeft = true
-        menuController = accountList
-        accountList.delegate = accountViewModel
 
         transactionListController?.noTransactionsView = noTransactionsView
     }
@@ -80,6 +75,12 @@ class DashboardController: SlideMenuViewController {
             sendButton.convert(CGPoint.zero, to: rootScrollView).y - 16,
             transactionListController!.view.convert(CGPoint.zero, to: rootScrollView).y
         ]
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let accountList = segue.destination as? AccountListController {
+            accountList.delegate = accountViewModel
+        }
     }
 
     @objc
@@ -101,11 +102,10 @@ extension DashboardController: AccountView {
     }
 
     func accountChanged(_ viewModel: AccountViewModel) {
-        let acc = viewModel.account
         emptyView.isVisible = viewModel.account == nil
+        self.navigationItem.title = viewModel.account == nil ? "Add new wallet" : "Dashboard"
         regularView?.isVisible = viewModel.account != nil
         accountAddressLabel.text = viewModel.account?.address
         transactionListController?.viewModel.account = viewModel.account
-        navigationController?.setNavigationBarHidden(viewModel.account != nil, animated: true)
     }
 }

@@ -14,12 +14,14 @@ class SendTransactionController: UIViewController {
 
     lazy var viewModel: SendTransactionViewModel = container.resolve()
     lazy var accountList: AccountListViewModel = container.resolve()
+    lazy var accountBalance: AccountViewModel = container.resolve()
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var fromField: UITextField!
     @IBOutlet weak var fromPicker: UIPickerView!
     @IBOutlet weak var fromErrorView: UIStackView!
     @IBOutlet weak var fromErrorLabel: UILabel!
+    @IBOutlet weak var balanceLabel: UILabel!
 
     @IBOutlet weak var targetField: UITextField!
     @IBOutlet weak var targetErrorView: UIStackView!
@@ -30,15 +32,17 @@ class SendTransactionController: UIViewController {
     @IBOutlet weak var amountErrorLabel: UILabel!
 
     @IBOutlet weak var sendButton: ShadowButton!
+    @IBOutlet weak var scanButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         accountList.storeSelection = false
-        accountList.view = self
         add(accountList)
-
-        viewModel.view = self
+        add(accountBalance)
         add(viewModel)
+        viewModel.view = self
+        accountList.view = self
+        accountBalance.view = self
 
         fromPicker.isHidden = true
         hideAllErrors()
@@ -52,6 +56,12 @@ class SendTransactionController: UIViewController {
         adjustKeyboardInsets(to: scrollView)
 
         sendButton.command = viewModel.sendTransactionCommand
+        scanButton.command = ActionCommand(self) {
+            let controller = QRCodeScanerController()
+            let decorated = UINavigationController(rootViewController: controller)
+            controller.delegate = $0.viewModel
+            $0.present(decorated, animated: true, completion: nil)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -174,5 +184,16 @@ extension SendTransactionController: AccountListView {
 
     func selectedChanged(_ viewModel: AccountListViewModel) {
         self.viewModel.from = viewModel.selected
+        self.accountBalance.account = viewModel.selected
+    }
+}
+
+extension SendTransactionController: AccountView {
+
+    func balanceChanged(_ viewModel: AccountViewModel) {
+        balanceLabel.text = viewModel.balance?.description ?? " - "
+    }
+
+    func accountChanged(_ viewModel: AccountViewModel) {
     }
 }

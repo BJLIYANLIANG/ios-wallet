@@ -11,22 +11,58 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Account List Controller-->
+        <!--Accounts-->
         <scene sceneID="kL3-Zx-gLl">
             <objects>
-                <tableViewController storyboardIdentifier="accountList" id="2KW-Jt-gfr" customClass="AccountListController" customModule="EthereumWallet" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wK0-Ca-pV4">
+                <tableViewController storyboardIdentifier="accountList" title="Accounts" id="2KW-Jt-gfr" customClass="AccountListController" customModule="EthereumWallet" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="wK0-Ca-pV4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="K7c-jd-Of3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="accountListCell" id="K7c-jd-Of3" customClass="AccountCell" customModule="EthereumWallet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K7c-jd-Of3" id="Ged-vk-JeT">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="59.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="4YY-6q-NE6">
+                                            <rect key="frame" x="0.0" y="0.0" width="44" height="59.666666666666664"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="Vef-qE-1Af"/>
+                                            </constraints>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uiz-N1-y08">
+                                            <rect key="frame" x="331" y="0.0" width="44" height="59.666666666666664"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="gUm-3e-uiw"/>
+                                            </constraints>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZC2-xk-J9w">
+                                            <rect key="frame" x="44" y="19.333333333333332" width="287" height="20.999999999999996"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="4YY-6q-NE6" firstAttribute="leading" secondItem="Ged-vk-JeT" secondAttribute="leading" id="0CN-i4-Vav"/>
+                                        <constraint firstItem="4YY-6q-NE6" firstAttribute="top" secondItem="Ged-vk-JeT" secondAttribute="top" id="APp-Br-6Cq"/>
+                                        <constraint firstItem="Uiz-N1-y08" firstAttribute="top" secondItem="Ged-vk-JeT" secondAttribute="top" id="AiV-9K-F2T"/>
+                                        <constraint firstItem="Uiz-N1-y08" firstAttribute="leading" secondItem="ZC2-xk-J9w" secondAttribute="trailing" id="Eox-gX-6Cy"/>
+                                        <constraint firstAttribute="bottom" secondItem="4YY-6q-NE6" secondAttribute="bottom" id="G6M-ww-8af"/>
+                                        <constraint firstItem="ZC2-xk-J9w" firstAttribute="leading" secondItem="Ged-vk-JeT" secondAttribute="leading" constant="44" id="JCr-Mp-N7x"/>
+                                        <constraint firstAttribute="trailing" secondItem="Uiz-N1-y08" secondAttribute="trailing" id="L2Z-yi-bDO"/>
+                                        <constraint firstItem="ZC2-xk-J9w" firstAttribute="centerY" secondItem="Ged-vk-JeT" secondAttribute="centerY" id="gw6-oI-ExS"/>
+                                        <constraint firstAttribute="bottom" secondItem="Uiz-N1-y08" secondAttribute="bottom" id="z8w-R8-HyH"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="accontAddressLabel" destination="ZC2-xk-J9w" id="UyG-id-kjd"/>
+                                    <outlet property="selectionImage" destination="4YY-6q-NE6" id="B2k-by-gee"/>
+                                    <outlet property="showDetailsButton" destination="Uiz-N1-y08" id="Afb-6f-yMP"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -34,10 +70,19 @@
                             <outlet property="delegate" destination="2KW-Jt-gfr" id="vo2-Ed-ayy"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Accounts" largeTitleDisplayMode="always" id="L3h-0N-8dp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NQG-hT-HdY">
+                            <connections>
+                                <segue destination="VhH-El-Suu" kind="show" id="V5K-Uv-85O"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o5I-BE-fpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1079" y="-1305"/>
+            <point key="canvasLocation" x="-136.80000000000001" y="-1305.6650246305419"/>
         </scene>
         <!--Import mnemonic key-->
         <scene sceneID="hgu-3v-Tk4">
@@ -260,7 +305,107 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCx-rZ-MHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-52" y="-1307.1428571428571"/>
+            <point key="canvasLocation" x="890.39999999999998" y="-1307.1428571428571"/>
+        </scene>
+        <!--Account Details Controller-->
+        <scene sceneID="b7K-Gf-mxZ">
+            <objects>
+                <viewController storyboardIdentifier="accountDetails" id="jAZ-Ax-Tgu" customClass="AccountDetailsController" customModule="EthereumWallet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="8hZ-Qv-jxv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJK-cQ-5MB">
+                                <rect key="frame" x="20" y="83.999999999999972" width="335" height="375.33333333333326"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Sl-Ya-uEL">
+                                        <rect key="frame" x="20" y="20" width="295" height="295"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="8Sl-Ya-uEL" secondAttribute="height" multiplier="1:1" id="9JG-9b-rx0"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPc-pO-NFj">
+                                        <rect key="frame" x="20" y="335" width="295" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="8Sl-Ya-uEL" secondAttribute="trailing" id="CHq-6G-eAa"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="aPc-pO-NFj" secondAttribute="trailing" id="E4t-ZU-6wb"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="aPc-pO-NFj" secondAttribute="bottom" id="Fb8-2B-fMw"/>
+                                    <constraint firstItem="8Sl-Ya-uEL" firstAttribute="leading" secondItem="fJK-cQ-5MB" secondAttribute="leadingMargin" id="PsI-Bq-4c3"/>
+                                    <constraint firstItem="aPc-pO-NFj" firstAttribute="leading" secondItem="fJK-cQ-5MB" secondAttribute="leadingMargin" id="Seq-xC-VeE"/>
+                                    <constraint firstItem="aPc-pO-NFj" firstAttribute="top" secondItem="8Sl-Ya-uEL" secondAttribute="bottom" constant="20" id="cRV-GD-xWp"/>
+                                    <constraint firstItem="8Sl-Ya-uEL" firstAttribute="top" secondItem="fJK-cQ-5MB" secondAttribute="topMargin" id="keo-6w-dfh"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="20" left="20" bottom="20" right="20"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46B-nD-cRZ" customClass="ShadowButton" customModule="EthereumWallet" customModuleProvider="target">
+                                <rect key="frame" x="40" y="499.33333333333326" width="295" height="60"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="Copy Address" backgroundImage="button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.01798035794" green="0.30566608490000002" blue="0.33763116570000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="-4" height="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="pressedBackImage" value="button-pressed"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacityPressed">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadiusPressed">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffsetPressed">
+                                        <size key="value" width="-1" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColorPressed">
+                                        <color key="value" red="0.01798035794" green="0.30566608490000002" blue="0.33763116570000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fJK-cQ-5MB" firstAttribute="top" secondItem="8hZ-Qv-jxv" secondAttribute="topMargin" id="02W-mf-5mu"/>
+                            <constraint firstItem="fJK-cQ-5MB" firstAttribute="leading" secondItem="8hZ-Qv-jxv" secondAttribute="leadingMargin" id="05K-ry-TCH"/>
+                            <constraint firstItem="46B-nD-cRZ" firstAttribute="trailing" secondItem="fJK-cQ-5MB" secondAttribute="trailing" constant="-20" id="GH4-Rj-rrd"/>
+                            <constraint firstItem="46B-nD-cRZ" firstAttribute="leading" secondItem="fJK-cQ-5MB" secondAttribute="leading" constant="20" id="L0p-mj-C1v"/>
+                            <constraint firstItem="46B-nD-cRZ" firstAttribute="top" secondItem="fJK-cQ-5MB" secondAttribute="bottom" constant="40" id="cz8-KF-Rop"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fJK-cQ-5MB" secondAttribute="trailing" id="hzz-CH-3LT"/>
+                        </constraints>
+                        <edgeInsets key="layoutMargins" top="40" left="20" bottom="0.0" right="20"/>
+                        <viewLayoutGuide key="safeArea" id="S9h-Nh-z7C"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="aPc-pO-NFj" id="Qq5-xc-90m"/>
+                        <outlet property="copyAddressButton" destination="46B-nD-cRZ" id="DMH-Yb-rCg"/>
+                        <outlet property="qrcodeBackView" destination="fJK-cQ-5MB" id="h7v-9F-GUf"/>
+                        <outlet property="qrcodeView" destination="8Sl-Ya-uEL" id="g8D-vI-Ca5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d7k-JY-tV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888.79999999999995" y="-500.24630541871926"/>
         </scene>
         <!--New mnemonic key-->
         <scene sceneID="Ryb-6k-dtt">
@@ -493,12 +638,236 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T4d-tZ-lJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="887.20000000000005" y="-1307.1428571428571"/>
+            <point key="canvasLocation" x="1829.5999999999999" y="-1307.1428571428571"/>
+        </scene>
+        <!--Add new wallet-->
+        <scene sceneID="9BF-3e-JFk">
+            <objects>
+                <viewController storyboardIdentifier="addAccount" title="Add new wallet" id="VhH-El-Suu" customClass="AddAccountController" customModule="EthereumWallet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fpa-j9-M2k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Be3-2m-4tf">
+                                <rect key="frame" x="56.333333333333343" y="184.66666666666666" width="262.33333333333326" height="442.66666666666674"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wgT-Kk-uZG">
+                                        <rect key="frame" x="0.0" y="0.0" width="262.33333333333331" height="442.66666666666669"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How would you like to access your wallet? " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0t-tS-cGd">
+                                                <rect key="frame" x="0.0" y="0.0" width="262.33333333333331" height="40.666666666666664"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnq-cU-ePL">
+                                                <rect key="frame" x="0.0" y="60.666666666666686" width="262.33333333333331" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mnemonic key" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWa-Iv-Gmo">
+                                                        <rect key="frame" x="0.0" y="10" width="262.33333333333331" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="4Bq-r7-p9k"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="CWa-Iv-Gmo" firstAttribute="leading" secondItem="mnq-cU-ePL" secondAttribute="leading" id="L1g-3F-RjV"/>
+                                                    <constraint firstAttribute="bottom" secondItem="CWa-Iv-Gmo" secondAttribute="bottom" id="PXf-4C-YzS"/>
+                                                    <constraint firstItem="CWa-Iv-Gmo" firstAttribute="top" secondItem="mnq-cU-ePL" secondAttribute="top" constant="10" id="g3D-6Z-jv1"/>
+                                                    <constraint firstAttribute="trailing" secondItem="CWa-Iv-Gmo" secondAttribute="trailing" id="syW-3C-Oca"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipj-Wn-xec" customClass="ShadowButton" customModule="EthereumWallet" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="111.66666666666666" width="262.33333333333331" height="80"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="x0r-RX-QZn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="Create mnemonic key">
+                                                    <color key="titleColor" red="0.027450980390000001" green="0.56862745100000001" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadiusPressed">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                        <size key="value" width="-2" height="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorPressed">
+                                                        <color key="value" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacityPressed">
+                                                        <real key="value" value="0.80000000000000004"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffsetPressed">
+                                                        <size key="value" width="-1" height="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColorPressed">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40z-68-lcQ" customClass="ShadowButton" customModule="EthereumWallet" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="211.66666666666666" width="262.33333333333331" height="79.999999999999972"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="nF4-yW-b3G"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="Import mnemonic key">
+                                                    <color key="titleColor" red="0.027450980390000001" green="0.56862745100000001" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadiusPressed">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                        <size key="value" width="-2" height="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorPressed">
+                                                        <color key="value" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacityPressed">
+                                                        <real key="value" value="0.80000000000000004"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffsetPressed">
+                                                        <size key="value" width="-1" height="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColorPressed">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XwJ-J8-LoQ">
+                                                <rect key="frame" x="0.0" y="311.66666666666663" width="262.33333333333331" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Private key" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hth-Jv-QxD">
+                                                        <rect key="frame" x="0.0" y="10" width="262.33333333333331" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="Xgm-y7-yi3"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="Hth-Jv-QxD" firstAttribute="top" secondItem="XwJ-J8-LoQ" secondAttribute="top" constant="10" id="GF8-Vi-X3P"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Hth-Jv-QxD" secondAttribute="bottom" id="IMY-AH-loI"/>
+                                                    <constraint firstItem="Hth-Jv-QxD" firstAttribute="leading" secondItem="XwJ-J8-LoQ" secondAttribute="leading" id="aJX-xU-aQd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Hth-Jv-QxD" secondAttribute="trailing" id="hJy-HZ-PMI"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6c-Pi-jQX" customClass="ShadowButton" customModule="EthereumWallet" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="362.66666666666674" width="262.33333333333331" height="80"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="dcP-cr-g5X"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="Generate new key">
+                                                    <color key="titleColor" red="0.027450980390000001" green="0.56862745100000001" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadiusPressed">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                        <size key="value" width="-2" height="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorPressed">
+                                                        <color key="value" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacityPressed">
+                                                        <real key="value" value="0.80000000000000004"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffsetPressed">
+                                                        <size key="value" width="-1" height="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColorPressed">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="wgT-Kk-uZG" firstAttribute="leading" secondItem="Be3-2m-4tf" secondAttribute="leading" id="Nmr-4X-K9I"/>
+                                    <constraint firstItem="wgT-Kk-uZG" firstAttribute="top" secondItem="Be3-2m-4tf" secondAttribute="top" id="TDq-T6-638"/>
+                                    <constraint firstAttribute="bottom" secondItem="wgT-Kk-uZG" secondAttribute="bottom" id="djz-yD-fhg"/>
+                                    <constraint firstAttribute="trailing" secondItem="wgT-Kk-uZG" secondAttribute="trailing" id="zlS-Hn-x3E"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Be3-2m-4tf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2j1-DH-XJ0" secondAttribute="top" constant="24" id="4bE-uw-fj5"/>
+                            <constraint firstItem="Be3-2m-4tf" firstAttribute="width" secondItem="Fpa-j9-M2k" secondAttribute="width" multiplier="0.7" id="Ud9-1F-Bpw"/>
+                            <constraint firstItem="Be3-2m-4tf" firstAttribute="centerX" secondItem="Fpa-j9-M2k" secondAttribute="centerX" id="cWz-gh-Qdk"/>
+                            <constraint firstItem="Be3-2m-4tf" firstAttribute="centerY" secondItem="Fpa-j9-M2k" secondAttribute="centerY" priority="750" id="s9q-s4-n8v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2j1-DH-XJ0"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="mnemonicCreate" destination="ipj-Wn-xec" id="mHm-Wr-zgI"/>
+                        <outlet property="mnemonicImport" destination="40z-68-lcQ" id="M7U-0z-qiC"/>
+                        <outlet property="regularCreate" destination="b6c-Pi-jQX" id="tdI-GK-Ude"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cSH-7N-iWW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="-2219"/>
         </scene>
     </scenes>
     <resources>
         <image name="button" width="160" height="60"/>
         <image name="button-pressed" width="160" height="60"/>
         <image name="error-sign" width="19" height="19"/>
+        <image name="tick" width="13" height="10"/>
     </resources>
 </document>
