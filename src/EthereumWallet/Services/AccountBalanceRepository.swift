@@ -15,8 +15,8 @@ class AccountBalanceRepository {
 
     func fetchBalance(for account: Account) -> Task<AccountBalance> {
         return try! HttpClient.default.post(Network.current.jsonRpc, jsonBody: JsonRPC.Request.balance(for: account))
-            .map { (response: JsonResponse<JsonRPC.Response<String>>) in
-                return try AccountBalance(account: account, balance: JsonRPC.EthConverters.ether(from: response.data?.result))
+            .map { (response: JsonResponse<JsonRPC.Response<Wei>>) in
+                return try AccountBalance(account: account, balance: JsonRPC.Converters.ether(from: response.data?.result))
             }
     }
 }

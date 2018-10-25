@@ -10,7 +10,7 @@ import Foundation
 
 extension JsonRPC {
 
-    class EthConverters {
+    class Converters {
 
         static func ether(from string: String?) throws -> Ether {
             guard let string = string else {
@@ -35,10 +35,11 @@ extension JsonRPC {
 
             return string
         }
+    }
 
-        enum Errors: Error {
-            case nilValue
-            case incorrectFormat
-        }
+
+    enum Errors: Error {
+        case nilValue
+        case incorrectFormat
     }
 }

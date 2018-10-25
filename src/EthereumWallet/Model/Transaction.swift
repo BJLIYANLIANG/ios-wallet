@@ -8,9 +8,11 @@
 
 import Foundation
 
+typealias TransactionHash = String
+
 struct Transaction {
     let timeStamp: Date
-    let hash: String
+    let hash: TransactionHash
     let value: Ether
     let direction: Direction
 

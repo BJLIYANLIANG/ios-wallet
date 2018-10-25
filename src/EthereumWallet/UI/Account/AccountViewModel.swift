@@ -23,6 +23,8 @@ class AccountViewModel: ViewModel {
     init(accountsRepo: AccountRepository, balancesRepo: AccountBalanceRepository) {
         self.accountsRepo = accountsRepo
         self.balancesRepo = balancesRepo
+
+        self.account = accountsRepo.selected
     }
 
     weak var view: AccountView?
@@ -32,7 +34,12 @@ class AccountViewModel: ViewModel {
     }
 
     var account: Account? {
-        return accountsRepo.selected
+        didSet {
+            if oldValue?.address != account?.address {
+                reloadBalance()
+            }
+            view?.accountChanged(self)
+        }
     }
 
     var balance: Ether? {
@@ -66,6 +73,6 @@ class AccountViewModel: ViewModel {
 extension AccountViewModel: SelectedAccountDelegate {
 
     func accountChanged(_ account: Account?) {
-        reload(force: true)
+        self.account = account
     }
 }

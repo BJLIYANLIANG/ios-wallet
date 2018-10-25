@@ -34,6 +34,27 @@ class JsonRPC {
         }
     }
 
+    struct GenericRequest<Content: Codable>: Codable {
+        init(_ method: String, content: Content, version: String = "2.0") {
+            self.method = method
+            self.content = content
+            self.version = version
+            self.requestId = OSAtomicIncrement64(&JsonRPC.lastRequestNumber)
+        }
+
+        let version: String
+        let method: String
+        let content: Content
+        let requestId: Int64
+
+        enum CodingKeys: String, CodingKey {
+            case version = "jsonrpc"
+            case method = "method"
+            case content = "params"
+            case requestId = "id"
+        }
+    }
+
     struct Response<T: Codable>: Codable {
         let version: String
         let requestId: Int64
