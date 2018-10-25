@@ -41,7 +41,6 @@
 		BA90CEC4216E373800892462 /* DeterministicAccountFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEC3216E373800892462 /* DeterministicAccountFactory.swift */; };
 		BA90CEC8216F7F4300892462 /* TrezorCryptoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEC7216F7F4300892462 /* TrezorCryptoHelper.swift */; };
 		BA9259F52178AAC40002688E /* LocalLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9259F42178AAC40002688E /* LocalLoginService.swift */; };
-		BA9259F7217A22A40002688E /* RootScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9259F6217A22A40002688E /* RootScrollView.swift */; };
 		BA9259F9217A3B1B0002688E /* AccountListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9259F8217A3B1B0002688E /* AccountListViewModel.swift */; };
 		BA9259FB217DCCF20002688E /* AddAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9259FA217DCCF20002688E /* AddAccountController.swift */; };
 		BAA0FBDE2170F564000FEFCE /* TransactionHistostyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBDD2170F564000FEFCE /* TransactionHistostyRepository.swift */; };
@@ -109,7 +108,6 @@
 		BA90CEC3216E373800892462 /* DeterministicAccountFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeterministicAccountFactory.swift; sourceTree = "<group>"; };
 		BA90CEC7216F7F4300892462 /* TrezorCryptoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrezorCryptoHelper.swift; sourceTree = "<group>"; };
 		BA9259F42178AAC40002688E /* LocalLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLoginService.swift; sourceTree = "<group>"; };
-		BA9259F6217A22A40002688E /* RootScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScrollView.swift; sourceTree = "<group>"; };
 		BA9259F8217A3B1B0002688E /* AccountListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListViewModel.swift; sourceTree = "<group>"; };
 		BA9259FA217DCCF20002688E /* AddAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountController.swift; sourceTree = "<group>"; };
 		BAA0FBDD2170F564000FEFCE /* TransactionHistostyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistostyRepository.swift; sourceTree = "<group>"; };
@@ -269,7 +267,6 @@
 		BA9259F1217798990002688E /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				BA9259F6217A22A40002688E /* RootScrollView.swift */,
 				BA7D1CB52181F5CE00DEA924 /* TextFieldWithInsets.swift */,
 				BACF7A88217DE31900B1F9C4 /* ShadowButton.swift */,
 				BAC97058217E02BD00D95CB8 /* ShadowView.swift */,
@@ -519,7 +516,6 @@
 				BA90CEBA216CF13300892462 /* AccountRepository.swift in Sources */,
 				BA90CEC0216E137000892462 /* JsonRPC.swift in Sources */,
 				BA9259FB217DCCF20002688E /* AddAccountController.swift in Sources */,
-				BA9259F7217A22A40002688E /* RootScrollView.swift in Sources */,
 				BA18232F2182164D0053C78B /* AccountDetailsController.swift in Sources */,
 				BAC97059217E02BD00D95CB8 /* ShadowView.swift in Sources */,
 				BA08DB7B217E8149006B8DDF /* LocalStorage.swift in Sources */,
@@ -671,7 +667,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.devpool.ethereum-wallet";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.devpool.ether-wallet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -692,7 +688,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.devpool.ethereum-wallet";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.devpool.ether-wallet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
