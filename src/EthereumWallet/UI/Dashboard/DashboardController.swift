@@ -59,6 +59,7 @@ class DashboardController: UIViewController {
 
         transactionListController?.noTransactionsView = noTransactionsView
         transactionListController?.tableView.tableHeaderView = headerView
+        transactionListController?.tableView.widthAnchor.constraint(equalTo: headerView.widthAnchor).isActive = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
