@@ -19,6 +19,7 @@ class SendTransactionController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var fromField: UITextField!
     @IBOutlet weak var fromPicker: UIPickerView!
+    @IBOutlet weak var fromPickerIcon: UIImageView!
     @IBOutlet weak var fromErrorView: UIStackView!
     @IBOutlet weak var fromErrorLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
@@ -71,13 +72,26 @@ class SendTransactionController: UIViewController {
 
     override func dismissKeyboard() {
         super.dismissKeyboard()
-        fromPicker.isHidden = true
+        showHidePickerIfPossible(show: false)
     }
 
     fileprivate func hideAllErrors() {
         fromErrorView.isHidden = true
         targetErrorView.isHidden = true
         amountErrorView.isHidden = true
+    }
+
+    fileprivate func showHidePickerIfPossible(show: Bool) {
+        var hidden = true
+
+        if let account = accountList.accounts, account.count > 1 {
+            hidden = !show
+        }
+
+        UIView.animate(withDuration: 0.250, animations: {
+            self.fromPicker.isHidden = hidden
+            self.view.layoutSubviews()
+        })
     }
 }
 
@@ -113,10 +127,9 @@ extension SendTransactionController: UITextFieldDelegate {
         }
 
         if textField == fromField {
-            fromPicker.isHidden = false
+            showHidePickerIfPossible(show: fromPicker.isHidden)
             return false
         } else {
-            fromPicker.isHidden = true
             return true
         }
     }
@@ -177,6 +190,13 @@ extension SendTransactionController {
 extension SendTransactionController: AccountListView {
 
     func collectionChanged(_ viewModel: AccountListViewModel) {
+        if let accounts = viewModel.accounts, accounts.count > 1 {
+            fromPickerIcon.isHidden = false
+        } else {
+            showHidePickerIfPossible(show: false)
+            fromPickerIcon.isHidden = true
+        }
+
         fromPicker.reloadAllComponents()
         if let selected = viewModel.selected, let index = viewModel.accounts?.index(of: selected) {
             fromPicker.selectRow(index, inComponent: 0, animated: false)
