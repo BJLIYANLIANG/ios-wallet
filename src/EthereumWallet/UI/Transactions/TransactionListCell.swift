@@ -47,7 +47,7 @@ class TrasactionListCell: UITableViewCell {
 
             valueLable.text = transaction?.value.description
             hashLabel.text = transaction?.hash
-            dateLabel.text = transaction?.timeStamp.description
+            dateLabel.text = transaction?.timeStamp.trasactionDateTime
         }
     }
 
