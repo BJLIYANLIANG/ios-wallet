@@ -56,4 +56,29 @@ class AccountListViewModel: ViewModel {
 
         return super.loadData()
     }
+
+    func delete(account: Account?) {
+        guard let account = account else {
+            view?.collectionChanged(self)
+            return
+        }
+
+        submit(task: accountsRepo.remove(account: account)).onSuccess { [weak self] (_) in
+            if account == self?.selected {
+                self?.selected = self?.accounts?.filter { $0 != account }.first
+            }
+            self?.reload(force: true)
+        }.onFail { [weak self] in
+            guard let vm = self else { return }
+            vm.view?.showAlert(error: $0)
+            vm.view?.collectionChanged(vm)
+        }
+    }
+
+    func canDelete(_ account: Account?) -> Bool {
+        guard account != nil, let collection = accounts, collection.count > 1 else {
+            return false
+        }
+        return true
+    }
 }

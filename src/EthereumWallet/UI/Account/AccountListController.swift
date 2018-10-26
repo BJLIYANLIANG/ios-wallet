@@ -55,6 +55,14 @@ extension AccountListController {
         viewModel.selected = viewModel.accounts?[indexPath.row]
         delegate?.accountChanged(viewModel.selected)
     }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        viewModel.delete(account: (tableView.cellForRow(at: indexPath) as? AccountCell)?.account)
+    }
+
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return viewModel.canDelete((tableView.cellForRow(at: indexPath) as? AccountCell)?.account)
+    }
 }
 
 extension AccountListController: AccountListView {

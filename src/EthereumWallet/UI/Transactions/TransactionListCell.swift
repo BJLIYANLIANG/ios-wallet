@@ -28,6 +28,8 @@ class TrasactionListCell: UITableViewCell {
 
     @IBOutlet weak var compactAddress: UILabel?
 
+    var skipSelectionAnimation: Bool = false
+
     var transaction: Transaction? {
         didSet {
             switch transaction?.direction {
@@ -51,19 +53,20 @@ class TrasactionListCell: UITableViewCell {
         }
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        stackConstraint.isActive = selected
 
-        UIView.animate(withDuration: 0.250) {
-            self.compactAddress?.isHidden = selected
-            self.arrowImage.image = selected ? #imageLiteral(resourceName: "arrow-up") :#imageLiteral(resourceName: "arrow-down")
-            self.layoutSubviews()
+        stackConstraint.isActive = selected
+        arrowImage.image = selected ? #imageLiteral(resourceName: "arrow-up") :#imageLiteral(resourceName: "arrow-down")
+
+        if !skipSelectionAnimation {
+            UIView.animate(withDuration: 0.250) {
+                self.layoutSubviews()
+                self.compactAddress?.isHidden = selected
+            }
+        } else {
+            compactAddress?.isHidden = selected
         }
     }
 }
