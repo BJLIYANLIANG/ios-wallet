@@ -44,8 +44,8 @@ class DashboardController: UIViewController {
 
         addAccountCountroller?.viewModel.onAccountAdded = { [weak self] in
             self?.accountViewModel.account = self?.accountViewModel.accountsRepo.selected
-            self?.showAlert(title: "Your wallet has been created!")
             self?.navigationController?.setNavigationBarHidden(true, animated: true)
+            self?.showAlert(title: "Your wallet has been created!")
         }
 
         copyAddressButton.command = accountViewModel.copyAddressCommand

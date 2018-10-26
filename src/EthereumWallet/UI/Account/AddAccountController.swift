@@ -52,8 +52,6 @@ class AddAccountViewModel: ViewModel {
             self?.onAccountAdded?()
         }.onFail { [weak self] in
             self?.view?.showAlert(error: $0)
-        }.onSuccess {_ in
-            self.view?.showAlert(title: "Your wallet has been created!")
         }
     }
 
