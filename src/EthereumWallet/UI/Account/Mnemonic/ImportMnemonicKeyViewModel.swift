@@ -39,7 +39,7 @@ class ImportMnemonicKeyViewModel: ViewModel {
             repo.selected = $0
             onSuccess?()
         }.onFail { [weak view] in
-            view?.showAlert(title: $0.localizedDescription) // TODO
+            view?.showAlert(error: $0)
         }
     }
 

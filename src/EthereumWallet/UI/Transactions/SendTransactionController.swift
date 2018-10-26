@@ -170,8 +170,6 @@ extension SendTransactionController {
         case .wrongAmount:
             amountErrorLabel.text = validationsError.localizedDescription
             amountErrorView.isHidden = false
-        default:
-            showAlert(title: error.localizedDescription)
         }
     }
 }

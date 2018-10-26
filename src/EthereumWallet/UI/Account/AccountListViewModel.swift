@@ -51,7 +51,7 @@ class AccountListViewModel: ViewModel {
             self?.accounts = $0
         }.onFail { [weak self] in
             Logger.error($0)
-            self?.view?.showAlert(title: $0.localizedDescription) // TODO
+            self?.view?.showAlert(error: $0)
         }
 
         return super.loadData()

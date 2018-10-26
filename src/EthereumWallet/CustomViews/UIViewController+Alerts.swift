@@ -24,6 +24,11 @@ extension AlertPresenter {
     }
 
     @discardableResult
+    func showAlert(error: Error?) -> Task<Bool> {
+        return showAlert(title: "Error", message: error?.localizedDescription, ok: "OK", cancel: nil)
+    }
+
+    @discardableResult
     func showAlert(title: String?, message: String?) -> Task<Bool> {
         return showAlert(title: title, message: message, ok: "OK", cancel: nil)
     }
