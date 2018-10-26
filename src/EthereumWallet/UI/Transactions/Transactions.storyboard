@@ -270,7 +270,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ed9-cE-nll">
                                                         <rect key="frame" x="0.0" y="31" width="315" height="41"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="&lt;TODO&gt; select account" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WzH-EQ-Bti" customClass="TextFieldWithInsets" customModule="EthereumWallet" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Account" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WzH-EQ-Bti" customClass="TextFieldWithInsets" customModule="EthereumWallet" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="41"/>
                                                                 <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>

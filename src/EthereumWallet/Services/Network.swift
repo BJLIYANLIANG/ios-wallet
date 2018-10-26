@@ -33,7 +33,6 @@ struct Network: Codable, Equatable {
                 chainId: 42)
     ]
 
-    // TODO: store last selection
     static private (set) var current: Network = UserDefaults.standard.value(forKey: LocalStorageKeys.selectedNetwork) ?? Network.all.first!
 
     let networkName: String

@@ -175,13 +175,13 @@ extension SendTransactionController {
 
         switch validationsError {
         case .noFrom:
-            fromErrorLabel.text = validationsError.localizedDescription
+            fromErrorLabel.text = validationsError.rawValue
             fromErrorView.isHidden = false
         case .noTo:
-            targetErrorLabel.text = validationsError.localizedDescription
+            targetErrorLabel.text = validationsError.rawValue
             targetErrorView.isHidden = false
         case .wrongAmount:
-            amountErrorLabel.text = validationsError.localizedDescription
+            amountErrorLabel.text = validationsError.rawValue
             amountErrorView.isHidden = false
         }
     }

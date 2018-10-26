@@ -45,12 +45,12 @@ class ImportMnemonicKeyViewModel: ViewModel {
 
     fileprivate func validate(param: MnemonicImportParam) -> Task<MnemonicImportParam> {
         guard let text = param.mnemonicText, !text.isEmpty else {
-            errors.mnemonicError = "<TODO> text error"
+            errors.mnemonicError = "Mnemonic text is empty"
             return Task.cancelled()
         }
 
         guard let index = param.keyIndex, index >= 0 else {
-            errors.indexError = "<TODO> index error"
+            errors.indexError = "Wrong wallet number"
             return Task.cancelled()
         }
 

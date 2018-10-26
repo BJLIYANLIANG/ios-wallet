@@ -84,7 +84,7 @@ extension PinPadController {
     }
 
     func showWongCode() {
-        // TODO: alert or animation
+        self.showAlert(title: "<TODO> Incorrect pin code")
     }
 
     func showPincode(_ pincode: PinPadViewModel.PinCode) {
