@@ -43,6 +43,16 @@ class AccountRepository {
         }))
     }
 
+    func remove(account: Account) -> Task<Bool> {
+        return provider.syncQueue.async(Task(execute: {
+            guard let passphrase = try self.loginService.readPincodeFromKeychain() else {
+                throw LocalLoginService.Errors.pincodeNotSet
+            }
+            try self.provider.delete(account: account, passphrase: passphrase)
+            return true
+        }))
+    }
+
     func createNewAccount() -> Task<Account> {
         return provider.syncQueue.async(Task(execute: {
             guard let passphrase = try self.loginService.readPincodeFromKeychain() else {

@@ -30,7 +30,7 @@ class LocalLoginService {
     private let serviceName = "devpool"
 
     init() {
-        context.localizedCancelTitle = "<TODO> Enter Pincode"
+        context.localizedCancelTitle = "Enter Pincode"
     }
 
     var isBiometricLoginPreffered: Bool {

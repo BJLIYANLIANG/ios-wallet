@@ -13,6 +13,7 @@ enum LocalStorageKeys: String {
     case useBiomericLogin
     case pincodeInited
     case selectedAccount
+    case selectedNetwork
 }
 
 extension UserDefaults {

@@ -51,7 +51,9 @@ class AddAccountViewModel: ViewModel {
             self?.repo.selected = $0
             self?.onAccountAdded?()
         }.onFail { [weak self] in
-            self?.view?.showAlert(title: $0.localizedDescription) // TODO
+            self?.view?.showAlert(error: $0)
+        }.onSuccess {_ in
+            self.view?.showAlert(title: "Your wallet has been created!")
         }
     }
 

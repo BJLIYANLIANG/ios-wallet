@@ -35,7 +35,10 @@ class AccountDetailsController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        qrcodeView.image = generateQrCodeImage(code: account.address, color: UIColor.black, size: qrcodeView.bounds.size)
+
+        if qrcodeView.image == nil {
+            qrcodeView.image = generateQrCodeImage(code: account.address, color: UIColor.black, size: qrcodeView.bounds.size)
+        }
     }
 
     func generateQrCodeImage(code: String, color: UIColor, size: CGSize) -> UIImage? {

@@ -39,18 +39,18 @@ class ImportMnemonicKeyViewModel: ViewModel {
             repo.selected = $0
             onSuccess?()
         }.onFail { [weak view] in
-            view?.showAlert(title: $0.localizedDescription) // TODO
+            view?.showAlert(error: $0)
         }
     }
 
     fileprivate func validate(param: MnemonicImportParam) -> Task<MnemonicImportParam> {
         guard let text = param.mnemonicText, !text.isEmpty else {
-            errors.mnemonicError = "<TODO> text error"
+            errors.mnemonicError = "Mnemonic text is empty"
             return Task.cancelled()
         }
 
         guard let index = param.keyIndex, index >= 0 else {
-            errors.indexError = "<TODO> index error"
+            errors.indexError = "Wrong wallet number"
             return Task.cancelled()
         }
 

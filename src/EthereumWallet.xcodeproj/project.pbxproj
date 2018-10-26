@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BA08DB7B217E8149006B8DDF /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA08DB7A217E8149006B8DDF /* LocalStorage.swift */; };
 		BA18232F2182164D0053C78B /* AccountDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18232E2182164D0053C78B /* AccountDetailsController.swift */; };
+		BA18233121833A840053C78B /* Formats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18233021833A840053C78B /* Formats.swift */; };
 		BA7D1CAD217F7B7000DEA924 /* CreateMnemonicKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CAC217F7B7000DEA924 /* CreateMnemonicKeyController.swift */; };
 		BA7D1CB0217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CAF217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift */; };
 		BA7D1CB221807D4100DEA924 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CB121807D4100DEA924 /* UIViewController+Keyboard.swift */; };
@@ -35,7 +36,6 @@
 		BA90CEB8216CEAE000892462 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEB7216CEAE000892462 /* Logger.swift */; };
 		BA90CEBA216CF13300892462 /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEB9216CF13300892462 /* AccountRepository.swift */; };
 		BA90CEBC216D16C900892462 /* AccountBalanceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEBB216D16C900892462 /* AccountBalanceRepository.swift */; };
-		BA90CEBE216DF97100892462 /* UIContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEBD216DF97100892462 /* UIContants.swift */; };
 		BA90CEC0216E137000892462 /* JsonRPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEBF216E137000892462 /* JsonRPC.swift */; };
 		BA90CEC2216E13A000892462 /* JsonRPC+EthConverters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEC1216E13A000892462 /* JsonRPC+EthConverters.swift */; };
 		BA90CEC4216E373800892462 /* DeterministicAccountFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90CEC3216E373800892462 /* DeterministicAccountFactory.swift */; };
@@ -74,6 +74,7 @@
 		2B0AE80CC7B598D2C09EE79D /* Pods-EthereumWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthereumWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EthereumWallet/Pods-EthereumWallet.debug.xcconfig"; sourceTree = "<group>"; };
 		BA08DB7A217E8149006B8DDF /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		BA18232E2182164D0053C78B /* AccountDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsController.swift; sourceTree = "<group>"; };
+		BA18233021833A840053C78B /* Formats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formats.swift; sourceTree = "<group>"; };
 		BA7D1CAC217F7B7000DEA924 /* CreateMnemonicKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMnemonicKeyController.swift; sourceTree = "<group>"; };
 		BA7D1CAF217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMnemonicKeyViewModel.swift; sourceTree = "<group>"; };
 		BA7D1CB121807D4100DEA924 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
@@ -102,7 +103,6 @@
 		BA90CEB7216CEAE000892462 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		BA90CEB9216CF13300892462 /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
 		BA90CEBB216D16C900892462 /* AccountBalanceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBalanceRepository.swift; sourceTree = "<group>"; };
-		BA90CEBD216DF97100892462 /* UIContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIContants.swift; sourceTree = "<group>"; };
 		BA90CEBF216E137000892462 /* JsonRPC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonRPC.swift; sourceTree = "<group>"; };
 		BA90CEC1216E13A000892462 /* JsonRPC+EthConverters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JsonRPC+EthConverters.swift"; sourceTree = "<group>"; };
 		BA90CEC3216E373800892462 /* DeterministicAccountFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeterministicAccountFactory.swift; sourceTree = "<group>"; };
@@ -204,7 +204,7 @@
 				BAA0FBE12170F9C0000FEFCE /* Transactions */,
 				BA90CE8F216BA70500892462 /* Account */,
 				BA90CEA9216BC37A00892462 /* UIExtensions.swift */,
-				BA90CEBD216DF97100892462 /* UIContants.swift */,
+				BA18233021833A840053C78B /* Formats.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -491,10 +491,10 @@
 				BA7D1CB221807D4100DEA924 /* UIViewController+Keyboard.swift in Sources */,
 				BA90CEC8216F7F4300892462 /* TrezorCryptoHelper.swift in Sources */,
 				BACAAD092174EB1B0039CC76 /* TransactionService.swift in Sources */,
+				BA18233121833A840053C78B /* Formats.swift in Sources */,
 				BACAAD0F2174FA840039CC76 /* Wei.swift in Sources */,
 				BA90CEB8216CEAE000892462 /* Logger.swift in Sources */,
 				BACF7A89217DE31900B1F9C4 /* ShadowButton.swift in Sources */,
-				BA90CEBE216DF97100892462 /* UIContants.swift in Sources */,
 				BA8C8E7F217F652F000BC7CF /* CompareUtils.swift in Sources */,
 				BAA0FBDE2170F564000FEFCE /* TransactionHistostyRepository.swift in Sources */,
 				BAA0FBE02170F669000FEFCE /* Transaction.swift in Sources */,
