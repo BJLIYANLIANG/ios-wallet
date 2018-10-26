@@ -87,5 +87,6 @@ extension SendTransactionViewModel: QRCoderDelegate {
 
     func detected(_ scaner: QRCodeScanerController, qrCode: String) {
         to = qrCode
+        scaner.dismiss(animated: true)
     }
 }
