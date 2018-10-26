@@ -40,6 +40,7 @@ private func newContainer() -> DIContainer {
     container.register(AccountBalanceRepository.init).lifetime(.perContainer(.strong))
     container.register(TransactionHistostyRepository.init).lifetime(.perContainer(.strong))
 
+    container.register(SettingsViewModel.init).lifetime(.objectGraph)
     container.register1(SendTransactionViewModel.init).lifetime(.objectGraph)
     container.register1(CreateMnemonicKeyViewModel.init).lifetime(.objectGraph)
     container.register1(ImportMnemonicKeyViewModel.init).lifetime(.objectGraph)

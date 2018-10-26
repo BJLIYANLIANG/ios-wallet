@@ -8,13 +8,17 @@
 
 import Foundation
 
-struct Network {
+struct Network: Codable, Equatable {
 
     static let infuraApiKey = "74d6c4da5ad64f609cf2eccd62a5d2c5"
     static let etherscanApiKey = "XFZIBYHKYPY7FRIZ6FZRC6EZCF9ESNX856"
 
     // TODO: get from plist
     static let all: [Network] = [
+        Network(networkName: "mainnet",
+                infuraUrl: URL(string: "https://mainnet.infura.io/v3")!,
+                eherscanUrl: URL(string: "https://api.etherscan.io/api")!,
+                chainId: 1),
         Network(networkName: "rinkeby",
                 infuraUrl: URL(string: "https://rinkeby.infura.io/v3")!,
                 eherscanUrl: URL(string: "https://rinkeby.etherscan.io/api")!,
@@ -26,15 +30,11 @@ struct Network {
         Network(networkName: "kovan",
                 infuraUrl: URL(string: "https://kovan.infura.io/v3")!,
                 eherscanUrl: URL(string: "https://kovan.etherscan.io/api")!,
-                chainId: 42),
-        Network(networkName: "mainnet",
-                infuraUrl: URL(string: "https://mainnet.infura.io/v3")!,
-                eherscanUrl: URL(string: "https://???.etherscan.io/api")!,
-                chainId: 1),
+                chainId: 42)
     ]
 
     // TODO: store last selection
-    static var current: Network = Network.all.first!
+    static private (set) var current: Network = UserDefaults.standard.value(forKey: LocalStorageKeys.selectedNetwork) ?? Network.all.first!
 
     let networkName: String
 
@@ -48,5 +48,11 @@ struct Network {
 
     var eherscan: URL {
         return Network.current.eherscanUrl
+    }
+
+    static func selectNetwork(network: Network) {
+        current = network
+        UserDefaults.standard.set(network, forKey: LocalStorageKeys.selectedNetwork)
+        UserDefaults.standard.synchronize()
     }
 }
