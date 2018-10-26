@@ -27,6 +27,7 @@ class AccountListController: UITableViewController, MenuController {
         super.viewDidLoad()
         viewModel.view = self
         add(viewModel)
+        tableView.backgroundColor = UIColor.white
     }
 
     override func viewWillAppear(_ animated: Bool) {

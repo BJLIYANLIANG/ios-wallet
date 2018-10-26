@@ -15,13 +15,14 @@
         <scene sceneID="kL3-Zx-gLl">
             <objects>
                 <tableViewController storyboardIdentifier="accountList" title="Accounts" id="2KW-Jt-gfr" customClass="AccountListController" customModule="EthereumWallet" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="wK0-Ca-pV4">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="60" estimatedRowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" id="wK0-Ca-pV4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="accountListCell" id="K7c-jd-Of3" customClass="AccountCell" customModule="EthereumWallet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="55.333333333333343" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K7c-jd-Of3" id="Ged-vk-JeT">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="59.666666666666664"/>
@@ -315,83 +316,108 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJK-cQ-5MB">
-                                <rect key="frame" x="20" y="83.999999999999972" width="335" height="375.33333333333326"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOR-c4-Vax">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Sl-Ya-uEL">
-                                        <rect key="frame" x="20" y="20" width="295" height="295"/>
+                                    <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ehv-Fo-x4i">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJK-cQ-5MB">
+                                                <rect key="frame" x="20" y="40" width="335" height="375.33333333333331"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Sl-Ya-uEL">
+                                                        <rect key="frame" x="20" y="20" width="295" height="295"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="8Sl-Ya-uEL" secondAttribute="height" multiplier="1:1" id="9JG-9b-rx0"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPc-pO-NFj">
+                                                        <rect key="frame" x="20" y="335" width="295" height="20.333333333333314"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="8Sl-Ya-uEL" secondAttribute="trailing" id="CHq-6G-eAa"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="aPc-pO-NFj" secondAttribute="trailing" id="E4t-ZU-6wb"/>
+                                                    <constraint firstAttribute="bottomMargin" secondItem="aPc-pO-NFj" secondAttribute="bottom" id="Fb8-2B-fMw"/>
+                                                    <constraint firstItem="8Sl-Ya-uEL" firstAttribute="leading" secondItem="fJK-cQ-5MB" secondAttribute="leadingMargin" id="PsI-Bq-4c3"/>
+                                                    <constraint firstItem="aPc-pO-NFj" firstAttribute="leading" secondItem="fJK-cQ-5MB" secondAttribute="leadingMargin" id="Seq-xC-VeE"/>
+                                                    <constraint firstItem="aPc-pO-NFj" firstAttribute="top" secondItem="8Sl-Ya-uEL" secondAttribute="bottom" constant="20" id="cRV-GD-xWp"/>
+                                                    <constraint firstItem="8Sl-Ya-uEL" firstAttribute="top" secondItem="fJK-cQ-5MB" secondAttribute="topMargin" id="keo-6w-dfh"/>
+                                                </constraints>
+                                                <edgeInsets key="layoutMargins" top="20" left="20" bottom="20" right="20"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46B-nD-cRZ" customClass="ShadowButton" customModule="EthereumWallet" customModuleProvider="target">
+                                                <rect key="frame" x="40" y="455.33333333333331" width="295" height="59.999999999999943"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="Copy Address" backgroundImage="button"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" red="0.01798035794" green="0.30566608490000002" blue="0.33763116570000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                        <size key="value" width="-4" height="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="pressedBackImage" value="button-pressed"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacityPressed">
+                                                        <real key="value" value="0.80000000000000004"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadiusPressed">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffsetPressed">
+                                                        <size key="value" width="-1" height="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColorPressed">
+                                                        <color key="value" red="0.01798035794" green="0.30566608490000002" blue="0.33763116570000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="8Sl-Ya-uEL" secondAttribute="height" multiplier="1:1" id="9JG-9b-rx0"/>
+                                            <constraint firstItem="46B-nD-cRZ" firstAttribute="trailing" secondItem="fJK-cQ-5MB" secondAttribute="trailing" constant="-20" id="2Cf-aw-0up"/>
+                                            <constraint firstItem="46B-nD-cRZ" firstAttribute="top" secondItem="fJK-cQ-5MB" secondAttribute="bottom" constant="40" id="GUA-YW-hN0"/>
+                                            <constraint firstItem="fJK-cQ-5MB" firstAttribute="leading" secondItem="Ehv-Fo-x4i" secondAttribute="leadingMargin" id="QiT-zg-CnV"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="fJK-cQ-5MB" secondAttribute="trailing" id="V0O-N5-nDR"/>
+                                            <constraint firstItem="fJK-cQ-5MB" firstAttribute="top" secondItem="Ehv-Fo-x4i" secondAttribute="topMargin" id="bbV-BS-XhJ"/>
+                                            <constraint firstItem="46B-nD-cRZ" firstAttribute="leading" secondItem="fJK-cQ-5MB" secondAttribute="leading" constant="20" id="eE5-lU-D7q"/>
                                         </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPc-pO-NFj">
-                                        <rect key="frame" x="20" y="335" width="295" height="20.333333333333314"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailingMargin" secondItem="8Sl-Ya-uEL" secondAttribute="trailing" id="CHq-6G-eAa"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="aPc-pO-NFj" secondAttribute="trailing" id="E4t-ZU-6wb"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="aPc-pO-NFj" secondAttribute="bottom" id="Fb8-2B-fMw"/>
-                                    <constraint firstItem="8Sl-Ya-uEL" firstAttribute="leading" secondItem="fJK-cQ-5MB" secondAttribute="leadingMargin" id="PsI-Bq-4c3"/>
-                                    <constraint firstItem="aPc-pO-NFj" firstAttribute="leading" secondItem="fJK-cQ-5MB" secondAttribute="leadingMargin" id="Seq-xC-VeE"/>
-                                    <constraint firstItem="aPc-pO-NFj" firstAttribute="top" secondItem="8Sl-Ya-uEL" secondAttribute="bottom" constant="20" id="cRV-GD-xWp"/>
-                                    <constraint firstItem="8Sl-Ya-uEL" firstAttribute="top" secondItem="fJK-cQ-5MB" secondAttribute="topMargin" id="keo-6w-dfh"/>
+                                    <constraint firstItem="Ehv-Fo-x4i" firstAttribute="height" secondItem="mOR-c4-Vax" secondAttribute="height" id="3B1-iB-oII"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ehv-Fo-x4i" secondAttribute="bottom" id="CeQ-b1-Qwy"/>
+                                    <constraint firstItem="Ehv-Fo-x4i" firstAttribute="top" secondItem="mOR-c4-Vax" secondAttribute="top" id="W1d-rq-CUy"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ehv-Fo-x4i" secondAttribute="trailing" id="hzC-wo-Sfr"/>
+                                    <constraint firstItem="Ehv-Fo-x4i" firstAttribute="leading" secondItem="mOR-c4-Vax" secondAttribute="leading" id="v6d-XX-SGT"/>
+                                    <constraint firstItem="Ehv-Fo-x4i" firstAttribute="width" secondItem="mOR-c4-Vax" secondAttribute="width" id="xEr-wH-dJx"/>
                                 </constraints>
-                                <edgeInsets key="layoutMargins" top="20" left="20" bottom="20" right="20"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46B-nD-cRZ" customClass="ShadowButton" customModule="EthereumWallet" customModuleProvider="target">
-                                <rect key="frame" x="40" y="499.33333333333326" width="295" height="60"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <state key="normal" title="Copy Address" backgroundImage="button"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" red="0.01798035794" green="0.30566608490000002" blue="0.33763116570000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="-4" height="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="pressedBackImage" value="button-pressed"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacityPressed">
-                                        <real key="value" value="0.80000000000000004"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadiusPressed">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffsetPressed">
-                                        <size key="value" width="-1" height="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColorPressed">
-                                        <color key="value" red="0.01798035794" green="0.30566608490000002" blue="0.33763116570000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="fJK-cQ-5MB" firstAttribute="top" secondItem="8hZ-Qv-jxv" secondAttribute="topMargin" id="02W-mf-5mu"/>
-                            <constraint firstItem="fJK-cQ-5MB" firstAttribute="leading" secondItem="8hZ-Qv-jxv" secondAttribute="leadingMargin" id="05K-ry-TCH"/>
-                            <constraint firstItem="46B-nD-cRZ" firstAttribute="trailing" secondItem="fJK-cQ-5MB" secondAttribute="trailing" constant="-20" id="GH4-Rj-rrd"/>
-                            <constraint firstItem="46B-nD-cRZ" firstAttribute="leading" secondItem="fJK-cQ-5MB" secondAttribute="leading" constant="20" id="L0p-mj-C1v"/>
-                            <constraint firstItem="46B-nD-cRZ" firstAttribute="top" secondItem="fJK-cQ-5MB" secondAttribute="bottom" constant="40" id="cz8-KF-Rop"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fJK-cQ-5MB" secondAttribute="trailing" id="hzz-CH-3LT"/>
+                            <constraint firstItem="S9h-Nh-z7C" firstAttribute="trailing" secondItem="mOR-c4-Vax" secondAttribute="trailing" id="5Fn-k6-cH8"/>
+                            <constraint firstItem="mOR-c4-Vax" firstAttribute="top" secondItem="S9h-Nh-z7C" secondAttribute="top" id="HbP-ks-bh0"/>
+                            <constraint firstItem="S9h-Nh-z7C" firstAttribute="bottom" secondItem="mOR-c4-Vax" secondAttribute="bottom" id="IAf-Qv-Spe"/>
+                            <constraint firstItem="mOR-c4-Vax" firstAttribute="leading" secondItem="S9h-Nh-z7C" secondAttribute="leading" id="S6c-V4-L0n"/>
                         </constraints>
                         <edgeInsets key="layoutMargins" top="40" left="20" bottom="0.0" right="20"/>
                         <viewLayoutGuide key="safeArea" id="S9h-Nh-z7C"/>
