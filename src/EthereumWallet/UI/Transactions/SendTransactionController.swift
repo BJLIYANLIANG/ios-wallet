@@ -178,6 +178,9 @@ extension SendTransactionController: AccountListView {
 
     func collectionChanged(_ viewModel: AccountListViewModel) {
         fromPicker.reloadAllComponents()
+        if let selected = viewModel.selected, let index = viewModel.accounts?.index(of: selected) {
+            fromPicker.selectRow(index, inComponent: 0, animated: false)
+        }
     }
 
     func selectedChanged(_ viewModel: AccountListViewModel) {

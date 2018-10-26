@@ -11,7 +11,7 @@ import Geth
 
 typealias AccountAddress = String
 
-struct Account: Codable {
+struct Account: Codable, Equatable {
 
     let address: AccountAddress
 }
