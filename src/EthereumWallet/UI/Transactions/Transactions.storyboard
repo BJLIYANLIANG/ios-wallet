@@ -19,41 +19,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="nqr-7N-uzM">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction history" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87v-Z6-zj1">
-                                    <rect key="frame" x="8" y="52" width="359" height="20.666666666666671"/>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                    <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info: etherscan.io" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCd-Kf-pgJ">
-                                    <rect key="frame" x="8" y="72.666666666666671" width="359" height="16"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                    <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="trailingMargin" secondItem="zCd-Kf-pgJ" secondAttribute="trailing" id="11m-hz-RzM"/>
-                                <constraint firstItem="zCd-Kf-pgJ" firstAttribute="leading" secondItem="nqr-7N-uzM" secondAttribute="leadingMargin" id="5dB-fN-M4w"/>
-                                <constraint firstAttribute="trailingMargin" secondItem="87v-Z6-zj1" secondAttribute="trailing" id="I3B-fc-qWO"/>
-                                <constraint firstItem="87v-Z6-zj1" firstAttribute="top" secondItem="nqr-7N-uzM" secondAttribute="topMargin" id="JOE-da-0zO"/>
-                                <constraint firstItem="zCd-Kf-pgJ" firstAttribute="top" secondItem="87v-Z6-zj1" secondAttribute="bottom" id="MfD-ZD-Po6"/>
-                                <constraint firstItem="87v-Z6-zj1" firstAttribute="leading" secondItem="nqr-7N-uzM" secondAttribute="leadingMargin" id="q1r-lz-STq"/>
-                            </constraints>
-                        </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="RdE-uG-757">
-                            <rect key="frame" x="0.0" y="284" width="375" height="1"/>
+                            <rect key="frame" x="0.0" y="228" width="375" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" indentationWidth="10" reuseIdentifier="transactionCell" focusStyle="custom" rowHeight="200" id="cyb-Y1-EuV" customClass="TrasactionListCell" customModule="EthereumWallet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="84" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cyb-Y1-EuV" id="pgN-ze-nhk">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>

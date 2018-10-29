@@ -500,7 +500,7 @@
                                                             <constraint firstAttribute="height" constant="10" id="lvB-jI-P9d"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WG-k3-ym5">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm mnemomic key" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WG-k3-ym5">
                                                         <rect key="frame" x="0.0" y="221" width="260" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="hwq-rF-TYq"/>

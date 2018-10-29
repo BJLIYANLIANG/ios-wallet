@@ -61,7 +61,7 @@
 		BAC97067217F253400D95CB8 /* AccountListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC97066217F253400D95CB8 /* AccountListController.swift */; };
 		BACAAD092174EB1B0039CC76 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACAAD082174EB1B0039CC76 /* TransactionService.swift */; };
 		BACAAD0D2174ED5F0039CC76 /* KeystoreProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACAAD0C2174ED5F0039CC76 /* KeystoreProxy.swift */; };
-		BACAAD0F2174FA840039CC76 /* Wei.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACAAD0E2174FA840039CC76 /* Wei.swift */; };
+		BACAAD0F2174FA840039CC76 /* Ether.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACAAD0E2174FA840039CC76 /* Ether.swift */; };
 		BACD958321777EA8008396D5 /* PinCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BACD958221777EA8008396D5 /* PinCode.storyboard */; };
 		BACD958521777ECC008396D5 /* PinPadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACD958421777ECC008396D5 /* PinPadController.swift */; };
 		BACD958721777F03008396D5 /* PinPadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACD958621777F03008396D5 /* PinPadViewModel.swift */; };
@@ -128,7 +128,7 @@
 		BAC97066217F253400D95CB8 /* AccountListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListController.swift; sourceTree = "<group>"; };
 		BACAAD082174EB1B0039CC76 /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
 		BACAAD0C2174ED5F0039CC76 /* KeystoreProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeystoreProxy.swift; sourceTree = "<group>"; };
-		BACAAD0E2174FA840039CC76 /* Wei.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wei.swift; sourceTree = "<group>"; };
+		BACAAD0E2174FA840039CC76 /* Ether.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ether.swift; sourceTree = "<group>"; };
 		BACD958221777EA8008396D5 /* PinCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PinCode.storyboard; sourceTree = "<group>"; };
 		BACD958421777ECC008396D5 /* PinPadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinPadController.swift; sourceTree = "<group>"; };
 		BACD958621777F03008396D5 /* PinPadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinPadViewModel.swift; sourceTree = "<group>"; };
@@ -248,7 +248,7 @@
 			children = (
 				BA90CEAF216CB12800892462 /* Account.swift */,
 				BAA0FBDF2170F669000FEFCE /* Transaction.swift */,
-				BACAAD0E2174FA840039CC76 /* Wei.swift */,
+				BACAAD0E2174FA840039CC76 /* Ether.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -427,15 +427,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-EthereumWallet/Pods-EthereumWallet-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
 				"${BUILT_PRODUCTS_DIR}/DITranquillity/DITranquillity.framework",
 				"${BUILT_PRODUCTS_DIR}/JetLib/JetLib.framework",
+				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftLazy/SwiftLazy.framework",
 				"${BUILT_PRODUCTS_DIR}/TrezorCrypto/TrezorCrypto.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DITranquillity.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JetLib.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLazy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TrezorCrypto.framework",
 			);
@@ -492,7 +496,7 @@
 				BA90CEC8216F7F4300892462 /* TrezorCryptoHelper.swift in Sources */,
 				BACAAD092174EB1B0039CC76 /* TransactionService.swift in Sources */,
 				BA18233121833A840053C78B /* Formats.swift in Sources */,
-				BACAAD0F2174FA840039CC76 /* Wei.swift in Sources */,
+				BACAAD0F2174FA840039CC76 /* Ether.swift in Sources */,
 				BA90CEB8216CEAE000892462 /* Logger.swift in Sources */,
 				BACF7A89217DE31900B1F9C4 /* ShadowButton.swift in Sources */,
 				BA8C8E7F217F652F000BC7CF /* CompareUtils.swift in Sources */,

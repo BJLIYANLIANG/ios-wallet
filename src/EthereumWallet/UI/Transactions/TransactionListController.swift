@@ -47,7 +47,7 @@ extension TransactionListController {
     }
 }
 
-extension TransactionListController {
+extension TransactionListController: TransactionListView {
 
     func reloadTransactions() {
         tableView.reloadData()

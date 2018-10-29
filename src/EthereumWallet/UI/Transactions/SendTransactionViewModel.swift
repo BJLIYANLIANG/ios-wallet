@@ -40,8 +40,10 @@ class SendTransactionViewModel: ViewModel {
     var amount: Ether? {
         guard let str = amountString else {
             return nil
+
         }
-        return Ether(string: str)
+
+        return Ether(etherDecimalString: str)
     }
 
     lazy var sendTransactionCommand = AsyncCommand(self, task: { $0.send() }, canExecute: { !$0.loading })

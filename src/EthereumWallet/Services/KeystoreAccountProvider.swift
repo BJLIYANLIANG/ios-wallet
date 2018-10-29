@@ -67,7 +67,6 @@ class KeystoreAccountProvider {
 private extension GethAccount {
 
     func convert() -> Account {
-        return Account(address: self.getAddress()!.getHex())
+        return Account(address: self.getAddress()!.getHex()!.lowercased())
     }
 }
-

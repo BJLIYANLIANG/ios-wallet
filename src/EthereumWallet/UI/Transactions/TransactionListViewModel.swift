@@ -9,6 +9,10 @@
 import Foundation
 import JetLib
 
+protocol TransactionListView: View, AlertPresenter {
+    func reloadTransactions()
+}
+
 class TransactionListViewModel: ViewModel {
 
     private let historyRepo: TransactionHistostyRepository
@@ -17,7 +21,7 @@ class TransactionListViewModel: ViewModel {
         self.historyRepo = historyRepo
     }
 
-    weak var view: TransactionListController?
+    weak var view: TransactionListView?
 
     var account: Account? {
         didSet {
@@ -42,12 +46,39 @@ class TransactionListViewModel: ViewModel {
         }
 
         load(task: historyRepo.fetchTransactions(account: account)).onSuccess { [weak self] in
-            self?.transactions = $0
+            self?.transactions = SelfTransactionExpander().process($0)
         }.onFail { [weak self] in
             Logger.error($0)
             self?.view?.showAlert(error: $0)
         }
 
         return super.loadData()
+    }
+}
+
+fileprivate protocol TransactionListPostProcessor {
+    func process(_ origin: [Transaction]) -> [Transaction]
+}
+
+class SelfTransactionExpander: TransactionListPostProcessor {
+
+    func process(_ origin: [Transaction]) -> [Transaction] {
+        var resultCollection = [Transaction]()
+
+        for transaction in origin {
+            switch transaction.direction {
+            case .self(let account):
+                var inTr = transaction
+                var outTr = transaction
+                inTr.direction = Transaction.Direction.income(account: account)
+                outTr.direction = Transaction.Direction.outcome(account: account)
+                resultCollection.append(inTr)
+                resultCollection.append(outTr)
+            default:
+                resultCollection.append(transaction)
+            }
+        }
+
+        return resultCollection
     }
 }

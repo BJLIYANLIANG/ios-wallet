@@ -11,14 +11,15 @@ import Foundation
 typealias TransactionHash = String
 
 struct Transaction {
-    let timeStamp: Date
-    let hash: TransactionHash
-    let value: Ether
-    let direction: Direction
+    var timeStamp: Date
+    var hash: TransactionHash
+    var value: Ether
+    var direction: Direction
 
     enum Direction {
         case income(account: AccountAddress)
         case outcome(account: AccountAddress)
+        case `self`(account: AccountAddress)
     }
 }
 
