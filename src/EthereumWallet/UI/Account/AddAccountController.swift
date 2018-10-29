@@ -35,6 +35,8 @@ class AddAccountViewModel: ViewModel {
 
     init(repo: AccountRepository) {
         self.repo = repo
+        super.init()
+        self.onAccountAdded = { [weak self] in self?.view?.showAlert(title: "Your wallet has been added!") }
     }
 
     weak var view: AddAccountController?
