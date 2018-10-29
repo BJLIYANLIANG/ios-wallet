@@ -59,10 +59,24 @@ class TransactionHistostyRepository {
         let confirmations: String
 
         func convert(myAccount: Account) -> Transaction {
+            let myAddress = myAccount.address.lowercased()
+            let to = self.to.lowercased()
+            let from = self.from.lowercased()
+
+            var side: Transaction.Direction!
+
+            if myAddress == to && myAddress == from {
+                side = .self(account: myAddress)
+            } else if myAddress == from.lowercased() {
+                side = .outcome(account: to.lowercased())
+            } else if myAddress == to.lowercased() {
+                side = .income(account: from.lowercased())
+            }
+
             return Transaction(timeStamp: Date(timeIntervalSince1970: TimeInterval(timeStamp) ?? 0),
                                hash: hash,
                                value: value.ether!,
-                               direction: myAccount.address == from ? .outcome(account: to) : .income(account: from))
+                               direction: side)
         }
     }
 }

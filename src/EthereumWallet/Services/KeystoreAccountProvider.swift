@@ -70,4 +70,3 @@ private extension GethAccount {
         return Account(address: self.getAddress()!.getHex()!.lowercased())
     }
 }
-
