@@ -7,4 +7,5 @@ target 'EthereumWallet' do
     pod 'DITranquillity'
     pod 'Geth'
     pod 'TrezorCrypto'
+    pod 'BigInt'
 end
