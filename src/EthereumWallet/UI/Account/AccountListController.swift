@@ -73,6 +73,7 @@ extension AccountListController: AccountListView {
 
     func selectedChanged(_ viewModel: AccountListViewModel) {
         tableView.reloadData()
+        delegate?.accountChanged(viewModel.selected)
     }
 }
 
