@@ -9,6 +9,10 @@
 import Foundation
 import JetLib
 
+protocol TransactionListView: View, AlertPresenter {
+    func reloadTransactions()
+}
+
 class TransactionListViewModel: ViewModel {
 
     private let historyRepo: TransactionHistostyRepository
@@ -17,7 +21,7 @@ class TransactionListViewModel: ViewModel {
         self.historyRepo = historyRepo
     }
 
-    weak var view: TransactionListController?
+    weak var view: TransactionListView?
 
     var account: Account? {
         didSet {

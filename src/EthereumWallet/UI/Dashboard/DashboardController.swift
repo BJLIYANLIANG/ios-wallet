@@ -14,6 +14,8 @@ class DashboardController: UIViewController {
 
     lazy var accountViewModel: AccountViewModel = container.resolve()
 
+    lazy var transactionViewModel: TransactionListViewModel = container.resolve()
+
     @IBOutlet weak var regularView: UIView!
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var accountAddressLabel: UILabel!
@@ -24,22 +26,23 @@ class DashboardController: UIViewController {
     @IBOutlet weak var copyAddressButton: UIButton!
     @IBOutlet weak var noTransactionsView: UIView!
     @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var transactionTableView: UITableView!
 
     let refresher: UIRefreshControl = UIRefreshControl()
-
-    var transactionListController: TransactionListController? {
-        return children.first(where: { $0 is TransactionListController }) as? TransactionListController
-    }
 
     var addAccountCountroller: AddAccountController? {
         return children.first(where: { $0 is AddAccountController }) as? AddAccountController
     }
 
+    var snapToOffsets: [CGFloat] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         add(accountViewModel)
+        add(transactionViewModel)
 
+        transactionViewModel.view = self
         accountViewModel.view = self
 
         addAccountCountroller?.viewModel.onAccountAdded = { [weak self] in
@@ -54,12 +57,9 @@ class DashboardController: UIViewController {
         contractButton.command = ActionCommand.pushScreen(self, sbName: "Contracts", controllerId: "executeContract")
         settingButton.command = ActionCommand.pushScreen(self, sbName: "Settings", controllerId: "settings")
 
-        transactionListController?.tableView?.insertSubview(refresher, at: 0)
         refresher.addTarget(self, action: #selector(handleRefresher), for: .valueChanged)
 
-        transactionListController?.noTransactionsView = noTransactionsView
-        transactionListController?.tableView.tableHeaderView = headerView
-        transactionListController?.tableView.widthAnchor.constraint(equalTo: headerView.widthAnchor).isActive = true
+        transactionTableView.insertSubview(refresher, at: 0)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -70,7 +70,7 @@ class DashboardController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-       transactionListController?.snapToOffsets = [
+        self.snapToOffsets = [
             accountBalanceLabel.convert(CGPoint.zero, to: headerView).y,
             sendButton.convert(CGPoint.zero, to: headerView).y - 16,
             headerView.bounds.height
@@ -87,8 +87,7 @@ class DashboardController: UIViewController {
     fileprivate func handleRefresher(_ sender: UIRefreshControl) {
         let group = DispatchGroup()
         accountViewModel.dataUpdateRequested(initiator: group)
-        transactionListController?.viewModel.dataUpdateRequested(initiator: group)
-
+        transactionViewModel.dataUpdateRequested(initiator: group)
         group.notify(queue: DispatchQueue.main) {
             sender.endRefreshing()
         }
@@ -106,6 +105,80 @@ extension DashboardController: AccountView {
         self.navigationItem.title = viewModel.account == nil ? "Add new wallet" : "Dashboard"
         regularView?.isVisible = viewModel.account != nil
         accountAddressLabel.text = viewModel.account?.address
-        transactionListController?.viewModel.account = viewModel.account
+        transactionViewModel.account = viewModel.account
+    }
+}
+
+extension DashboardController: TransactionListView {
+
+    func reloadTransactions() {
+        transactionTableView.reloadData()
+        noTransactionsView?.isVisible = transactionViewModel.transactions?.isEmpty == true
+    }
+}
+
+
+extension DashboardController: UIScrollViewDelegate {
+
+
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        guard !snapToOffsets.isEmpty else {
+            return
+        }
+
+        var prev: CGFloat = 0
+        let target = targetContentOffset.pointee.y
+
+        for level in snapToOffsets {
+            if target < level {
+                let mid = (level + prev) / 2
+                targetContentOffset.pointee.y = target > mid ? level : prev
+                break
+            }
+
+            prev = level
+        }
+    }
+}
+
+extension DashboardController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return transactionViewModel.transactions?.count ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "transactionCell") as! TrasactionListCell
+        cell.transaction = transactionViewModel.transactions![indexPath.row]
+        cell.skipSelectionAnimation = true
+        cell.isSelected = tableView.indexPathsForSelectedRows?.contains(indexPath) == true
+        cell.skipSelectionAnimation = false
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return indexPath
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.indexPathsForSelectedRows?.contains(indexPath) == true
+            ? TrasactionListCell.expandedHeight
+            : TrasactionListCell.collapsedHeight
+    }
+
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.indexPathsForSelectedRows?.contains(indexPath) == true
+            ? TrasactionListCell.expandedHeight
+            : TrasactionListCell.collapsedHeight
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
 }
