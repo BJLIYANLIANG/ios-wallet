@@ -41,7 +41,7 @@ class SendTransactionViewModel: ViewModel {
         guard let str = amountString else {
             return nil
         }
-        return Ether(string: str)
+        return Ether(wei: str)
     }
 
     lazy var sendTransactionCommand = AsyncCommand(self, task: { $0.send() }, canExecute: { !$0.loading })

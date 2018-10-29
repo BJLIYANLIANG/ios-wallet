@@ -10,6 +10,7 @@
 		BA08DB7B217E8149006B8DDF /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA08DB7A217E8149006B8DDF /* LocalStorage.swift */; };
 		BA18232F2182164D0053C78B /* AccountDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18232E2182164D0053C78B /* AccountDetailsController.swift */; };
 		BA18233121833A840053C78B /* Formats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18233021833A840053C78B /* Formats.swift */; };
+		BA18233B218365100053C78B /* UnitConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18233A218365100053C78B /* UnitConversionTests.swift */; };
 		BA7D1CAD217F7B7000DEA924 /* CreateMnemonicKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CAC217F7B7000DEA924 /* CreateMnemonicKeyController.swift */; };
 		BA7D1CB0217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CAF217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift */; };
 		BA7D1CB221807D4100DEA924 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D1CB121807D4100DEA924 /* UIViewController+Keyboard.swift */; };
@@ -69,12 +70,25 @@
 		D298205C9BB74A34B73592AB /* Pods_EthereumWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C007EE49DBF447D9503B0E53 /* Pods_EthereumWallet.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BA18233D218365100053C78B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA90CE6F216BA44300892462 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA90CE76216BA44300892462;
+			remoteInfo = EthereumWallet;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		22D39184D5616F0C18D8B7B9 /* Pods-EthereumWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthereumWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-EthereumWallet/Pods-EthereumWallet.release.xcconfig"; sourceTree = "<group>"; };
 		2B0AE80CC7B598D2C09EE79D /* Pods-EthereumWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthereumWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EthereumWallet/Pods-EthereumWallet.debug.xcconfig"; sourceTree = "<group>"; };
 		BA08DB7A217E8149006B8DDF /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		BA18232E2182164D0053C78B /* AccountDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsController.swift; sourceTree = "<group>"; };
 		BA18233021833A840053C78B /* Formats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formats.swift; sourceTree = "<group>"; };
+		BA182338218365100053C78B /* EthereumWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EthereumWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA18233A218365100053C78B /* UnitConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConversionTests.swift; sourceTree = "<group>"; };
+		BA18233C218365100053C78B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA7D1CAC217F7B7000DEA924 /* CreateMnemonicKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMnemonicKeyController.swift; sourceTree = "<group>"; };
 		BA7D1CAF217F7C1A00DEA924 /* CreateMnemonicKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMnemonicKeyViewModel.swift; sourceTree = "<group>"; };
 		BA7D1CB121807D4100DEA924 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
@@ -137,6 +151,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BA182335218365100053C78B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA90CE74216BA44300892462 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -148,6 +169,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA182339218365100053C78B /* EthereumWalletTests */ = {
+			isa = PBXGroup;
+			children = (
+				BA18233A218365100053C78B /* UnitConversionTests.swift */,
+				BA18233C218365100053C78B /* Info.plist */,
+			);
+			path = EthereumWalletTests;
+			sourceTree = "<group>";
+		};
 		BA7D1CAE217F7C0200DEA924 /* Mnemonic */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				BA90CE79216BA44300892462 /* EthereumWallet */,
+				BA182339218365100053C78B /* EthereumWalletTests */,
 				BA90CE78216BA44300892462 /* Products */,
 				D3E955FE5F3E342EE3CDA713 /* Pods */,
 				F6BDE16176C2F9574204DFDD /* Frameworks */,
@@ -173,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				BA90CE77216BA44300892462 /* EthereumWallet.app */,
+				BA182338218365100053C78B /* EthereumWalletTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -349,6 +381,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BA182337218365100053C78B /* EthereumWalletTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA182341218365100053C78B /* Build configuration list for PBXNativeTarget "EthereumWalletTests" */;
+			buildPhases = (
+				BA182334218365100053C78B /* Sources */,
+				BA182335218365100053C78B /* Frameworks */,
+				BA182336218365100053C78B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA18233E218365100053C78B /* PBXTargetDependency */,
+			);
+			name = EthereumWalletTests;
+			productName = EthereumWalletTests;
+			productReference = BA182338218365100053C78B /* EthereumWalletTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BA90CE76216BA44300892462 /* EthereumWallet */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA90CE89216BA44300892462 /* Build configuration list for PBXNativeTarget "EthereumWallet" */;
@@ -378,6 +428,10 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = devpool;
 				TargetAttributes = {
+					BA182337218365100053C78B = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = BA90CE76216BA44300892462;
+					};
 					BA90CE76216BA44300892462 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -397,11 +451,19 @@
 			projectRoot = "";
 			targets = (
 				BA90CE76216BA44300892462 /* EthereumWallet */,
+				BA182337218365100053C78B /* EthereumWalletTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BA182336218365100053C78B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA90CE75216BA44300892462 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -465,6 +527,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BA182334218365100053C78B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA18233B218365100053C78B /* UnitConversionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA90CE73216BA44300892462 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -525,6 +595,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		BA18233E218365100053C78B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA90CE76216BA44300892462 /* EthereumWallet */;
+			targetProxy = BA18233D218365100053C78B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		BA90CE83216BA44300892462 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -537,6 +615,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BA18233F218365100053C78B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MJ5AUMQ9YX;
+				INFOPLIST_FILE = EthereumWalletTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.devpool.EthereumWalletTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EthereumWallet.app/EthereumWallet";
+			};
+			name = Debug;
+		};
+		BA182340218365100053C78B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MJ5AUMQ9YX;
+				INFOPLIST_FILE = EthereumWalletTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.devpool.EthereumWalletTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EthereumWallet.app/EthereumWallet";
+			};
+			name = Release;
+		};
 		BA90CE87216BA44300892462 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -698,6 +816,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BA182341218365100053C78B /* Build configuration list for PBXNativeTarget "EthereumWalletTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA18233F218365100053C78B /* Debug */,
+				BA182340218365100053C78B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BA90CE72216BA44300892462 /* Build configuration list for PBXProject "EthereumWallet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

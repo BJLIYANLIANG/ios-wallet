@@ -9,10 +9,26 @@
 import Foundation
 
 typealias Wei = String
-typealias Ether = Decimal
 typealias IntHex = String
 
 private let weiExponent = 18
+
+struct Ether {
+
+    let wei: Wei
+
+    var decimal: Decimal? {
+        guard let dec = wei.decimal else {
+            return nil
+        }
+
+        if wei.starts(with: "0x") {
+            return Decimal(sign: .plus, exponent: -weiExponent, significand: dec)
+        } else {
+            return Decimal(sign: .plus, exponent: -weiExponent, significand: dec)
+        }
+    }
+}
 
 extension IntHex {
 
@@ -33,26 +49,17 @@ extension IntHex {
     }
 }
 
-extension Wei {
+extension Ether: CustomStringConvertible {
 
-    var ether: Ether? {
-        guard let decimal = self.decimal else {
-            return nil
-        }
-
-        if self.starts(with: "0x") {
-            return Ether(sign: .plus, exponent: -weiExponent, significand: decimal)
-        } else {
-            return Ether(sign: .plus, exponent: -weiExponent, significand: decimal)
-        }
+    var description: String {
+        return decimal?.description ?? " - "
     }
 }
 
-extension Ether {
+extension Wei {
 
-    var wei: Wei {
-        let wei = Ether(sign: .plus, exponent: weiExponent, significand: self) as NSNumber
-        return "0x" + String(wei.int64Value, radix: 16)
+    var ether: Ether? {
+        return Ether(wei: self)
     }
 }
 
