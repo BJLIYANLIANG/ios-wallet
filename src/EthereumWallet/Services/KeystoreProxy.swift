@@ -29,7 +29,7 @@ extension GethKeyStore {
         for i in 0..<collection.size() {
             let gaccount = try collection.get(i)
 
-            if gaccount.getAddress()?.getHex() == adress {
+            if gaccount.getAddress()?.getHex()?.lowercased() == adress.lowercased() {
                 return gaccount
             }
         }
