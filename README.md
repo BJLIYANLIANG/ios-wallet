@@ -10,6 +10,7 @@
   - View transactions history (via [Etherscan](https://etherscan.io))
 
 ![Login](https://github.com/tigerdevpool/ios-wallet/blob/master/screenshots/Login.PNG)
+![Face ID](https://github.com/tigerdevpool/ios-wallet/blob/master/screenshots/FaceId.PNG)
 ![Sign-Up](https://github.com/tigerdevpool/ios-wallet/blob/master/screenshots/SignUp.PNG)
 ![Transaction](https://github.com/tigerdevpool/ios-wallet/blob/master/screenshots/Transaction.PNG)
 ![Settings](https://github.com/tigerdevpool/ios-wallet/blob/master/screenshots/Settings.PNG)
