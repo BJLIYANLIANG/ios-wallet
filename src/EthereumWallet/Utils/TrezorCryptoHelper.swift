@@ -49,4 +49,11 @@ class TrezorCrypto {
         keccak_256(publicKey, publicKey.count, &address)
         return Array(address[12...31])
     }
+
+    static func keccak256(string: String) -> [UInt8] {
+        let input = [UInt8](string.data(using: .ascii)!)
+        var output = [UInt8](repeating: 0, count: Int(sha3_256_hash_size))
+        keccak_256(input, input.count, &output)
+        return output
+    }
 }

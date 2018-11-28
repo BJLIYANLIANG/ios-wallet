@@ -52,6 +52,9 @@
 		BAA0FBEC217497B2000FEFCE /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBEB217497B2000FEFCE /* Array+Extensions.swift */; };
 		BAA0FBEE21749DDA000FEFCE /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBED21749DDA000FEFCE /* DashboardController.swift */; };
 		BAA0FBF02174CB36000FEFCE /* TransactionListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0FBEF2174CB36000FEFCE /* TransactionListCell.swift */; };
+		BAB0575621AEAE34008BA43C /* ABIFunctionEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB0575521AEAE34008BA43C /* ABIFunctionEncoding.swift */; };
+		BAB0575821AEAEAA008BA43C /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB0575721AEAEAA008BA43C /* Function.swift */; };
+		BAB0575B21AEBB40008BA43C /* FunctionEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB0575A21AEBB40008BA43C /* FunctionEncoder.swift */; };
 		BAC97057217DFC7900D95CB8 /* SendTransactionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC97056217DFC7900D95CB8 /* SendTransactionController.swift */; };
 		BAC97059217E02BD00D95CB8 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC97058217E02BD00D95CB8 /* ShadowView.swift */; };
 		BAC9705C217E1EFB00D95CB8 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAC9705B217E1EFB00D95CB8 /* Settings.storyboard */; };
@@ -68,6 +71,16 @@
 		BACF7A89217DE31900B1F9C4 /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACF7A88217DE31900B1F9C4 /* ShadowButton.swift */; };
 		D298205C9BB74A34B73592AB /* Pods_EthereumWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C007EE49DBF447D9503B0E53 /* Pods_EthereumWallet.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BAB0575021AEADD3008BA43C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA90CE6F216BA44300892462 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA90CE76216BA44300892462;
+			remoteInfo = EthereumWallet;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		22D39184D5616F0C18D8B7B9 /* Pods-EthereumWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthereumWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-EthereumWallet/Pods-EthereumWallet.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +132,11 @@
 		BAA0FBEB217497B2000FEFCE /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		BAA0FBED21749DDA000FEFCE /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		BAA0FBEF2174CB36000FEFCE /* TransactionListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListCell.swift; sourceTree = "<group>"; };
+		BAB0574B21AEADD3008BA43C /* EthereumWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EthereumWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAB0574F21AEADD3008BA43C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAB0575521AEAE34008BA43C /* ABIFunctionEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABIFunctionEncoding.swift; sourceTree = "<group>"; };
+		BAB0575721AEAEAA008BA43C /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
+		BAB0575A21AEBB40008BA43C /* FunctionEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionEncoder.swift; sourceTree = "<group>"; };
 		BAC97056217DFC7900D95CB8 /* SendTransactionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTransactionController.swift; sourceTree = "<group>"; };
 		BAC97058217E02BD00D95CB8 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		BAC9705B217E1EFB00D95CB8 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -145,6 +163,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BAB0574821AEADD3008BA43C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -163,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				BA90CE79216BA44300892462 /* EthereumWallet */,
+				BAB0574C21AEADD3008BA43C /* EthereumWalletTests */,
 				BA90CE78216BA44300892462 /* Products */,
 				D3E955FE5F3E342EE3CDA713 /* Pods */,
 				F6BDE16176C2F9574204DFDD /* Frameworks */,
@@ -173,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				BA90CE77216BA44300892462 /* EthereumWallet.app */,
+				BAB0574B21AEADD3008BA43C /* EthereumWalletTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -212,6 +239,7 @@
 		BA90CE8D216BA6EB00892462 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				BAB0575921AEBB2F008BA43C /* API */,
 				BA90CEAD216CAF5A00892462 /* Network.swift */,
 				BA90CEAB216BC3E500892462 /* UtilsExtensions.swift */,
 				BA90CEB9216CF13300892462 /* AccountRepository.swift */,
@@ -249,6 +277,7 @@
 				BA90CEAF216CB12800892462 /* Account.swift */,
 				BAA0FBDF2170F669000FEFCE /* Transaction.swift */,
 				BACAAD0E2174FA840039CC76 /* Ether.swift */,
+				BAB0575721AEAEAA008BA43C /* Function.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,6 +328,23 @@
 				BAA0FBED21749DDA000FEFCE /* DashboardController.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		BAB0574C21AEADD3008BA43C /* EthereumWalletTests */ = {
+			isa = PBXGroup;
+			children = (
+				BAB0574F21AEADD3008BA43C /* Info.plist */,
+				BAB0575521AEAE34008BA43C /* ABIFunctionEncoding.swift */,
+			);
+			path = EthereumWalletTests;
+			sourceTree = "<group>";
+		};
+		BAB0575921AEBB2F008BA43C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				BAB0575A21AEBB40008BA43C /* FunctionEncoder.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		BAC9705A217E1EED00D95CB8 /* Settings */ = {
@@ -368,18 +414,40 @@
 			productReference = BA90CE77216BA44300892462 /* EthereumWallet.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BAB0574A21AEADD3008BA43C /* EthereumWalletTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAB0575421AEADD3008BA43C /* Build configuration list for PBXNativeTarget "EthereumWalletTests" */;
+			buildPhases = (
+				BAB0574721AEADD3008BA43C /* Sources */,
+				BAB0574821AEADD3008BA43C /* Frameworks */,
+				BAB0574921AEADD3008BA43C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BAB0575121AEADD3008BA43C /* PBXTargetDependency */,
+			);
+			name = EthereumWalletTests;
+			productName = EthereumWalletTests;
+			productReference = BAB0574B21AEADD3008BA43C /* EthereumWalletTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		BA90CE6F216BA44300892462 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = devpool;
 				TargetAttributes = {
 					BA90CE76216BA44300892462 = {
 						CreatedOnToolsVersion = 10.0;
+					};
+					BAB0574A21AEADD3008BA43C = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = BA90CE76216BA44300892462;
 					};
 				};
 			};
@@ -397,6 +465,7 @@
 			projectRoot = "";
 			targets = (
 				BA90CE76216BA44300892462 /* EthereumWallet */,
+				BAB0574A21AEADD3008BA43C /* EthereumWalletTests */,
 			);
 		};
 /* End PBXProject section */
@@ -414,6 +483,13 @@
 				BAA0FBE8217103C6000FEFCE /* Dashboard.storyboard in Resources */,
 				BAA0FBEA21710456000FEFCE /* Transactions.storyboard in Resources */,
 				BAC9705C217E1EFB00D95CB8 /* Settings.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAB0574921AEADD3008BA43C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,11 +564,13 @@
 				BAC97067217F253400D95CB8 /* AccountListController.swift in Sources */,
 				BA90CEBC216D16C900892462 /* AccountBalanceRepository.swift in Sources */,
 				BA90CE97216BAA6B00892462 /* Container.swift in Sources */,
+				BAB0575821AEAEAA008BA43C /* Function.swift in Sources */,
 				BA90CE7B216BA44300892462 /* AppDelegate.swift in Sources */,
 				BAC97063217E20D500D95CB8 /* SettingsController.swift in Sources */,
 				BACD958721777F03008396D5 /* PinPadViewModel.swift in Sources */,
 				BA8C8E7D217F59F4000BC7CF /* ImportMnemonicKeyController.swift in Sources */,
 				BA7D1CB221807D4100DEA924 /* UIViewController+Keyboard.swift in Sources */,
+				BAB0575B21AEBB40008BA43C /* FunctionEncoder.swift in Sources */,
 				BA90CEC8216F7F4300892462 /* TrezorCryptoHelper.swift in Sources */,
 				BACAAD092174EB1B0039CC76 /* TransactionService.swift in Sources */,
 				BA18233121833A840053C78B /* Formats.swift in Sources */,
@@ -527,7 +605,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BAB0574721AEADD3008BA43C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAB0575621AEAE34008BA43C /* ABIFunctionEncoding.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BAB0575121AEADD3008BA43C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA90CE76216BA44300892462 /* EthereumWallet */;
+			targetProxy = BAB0575021AEADD3008BA43C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BA90CE83216BA44300892462 /* LaunchScreen.storyboard */ = {
@@ -699,6 +793,48 @@
 			};
 			name = Release;
 		};
+		BAB0575221AEADD3008BA43C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MJ5AUMQ9YX;
+				INFOPLIST_FILE = EthereumWalletTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.devpool.EthereumWalletTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EthereumWallet.app/EthereumWallet";
+			};
+			name = Debug;
+		};
+		BAB0575321AEADD3008BA43C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MJ5AUMQ9YX;
+				INFOPLIST_FILE = EthereumWalletTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.devpool.EthereumWalletTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EthereumWallet.app/EthereumWallet";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -716,6 +852,15 @@
 			buildConfigurations = (
 				BA90CE8A216BA44300892462 /* Debug */,
 				BA90CE8B216BA44300892462 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAB0575421AEADD3008BA43C /* Build configuration list for PBXNativeTarget "EthereumWalletTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAB0575221AEADD3008BA43C /* Debug */,
+				BAB0575321AEADD3008BA43C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
